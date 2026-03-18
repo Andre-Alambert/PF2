@@ -1,0 +1,2 @@
+py-dss-interface==2.3.0
+pygad==3.5.0
