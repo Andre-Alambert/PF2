@@ -1,10 +1,20 @@
-from fitness.evaluation import evaluate_solution
-from opendss.opendss_interface import create_dss, compile_circuit
-from config import CONFIG
+from .config import CONFIG
+from .opendss.opendss_interface import create_dss, compile_circuit
+from .fitness.evaluation import evaluate_solution
 
-dss = create_dss()
+dss = create_dss(allow_forms=CONFIG["allow_forms"])
 compile_circuit(dss, CONFIG["circuit_path"])
 
-solution = [500, 1.0]
+test_solutions = [
+    [0.0, 1.00],
+    [300.0, 1.00],
+    [600.0, 1.00],
+    [600.0, 0.98],
+    [600.0, 1.02],
+]
 
-print(evaluate_solution(dss, solution, CONFIG))
+for sol in test_solutions:
+    result = evaluate_solution(dss, sol, CONFIG)
+    print(f"Solução: {sol}")
+    print(result)
+    print("-" * 50)

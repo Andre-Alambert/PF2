@@ -91,7 +91,7 @@ def get_bus_voltage_pu_by_name(dss: DSS, bus_name: str) -> List[float]:
     """
     dss.circuit.set_active_bus(bus_name)
 
-    pu_vals = dss.bus.pu_vmag_angle
+    pu_vals = dss.bus.vmag_angle_pu
 
     magnitudes = []
 
