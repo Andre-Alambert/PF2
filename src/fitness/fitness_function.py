@@ -1,7 +1,7 @@
-from ..config import CONFIG
-from .evaluation import evaluate_solution
-from .penalties import voltage_penalty, convergence_penalty
-from ..opendss.opendss_interface import create_dss, compile_circuit
+from src.config import CONFIG
+from src.fitness.evaluation import evaluate_solution
+from src.fitness.penalties import voltage_penalty, convergence_penalty
+from src.opendss.opendss_interface import create_dss, compile_circuit
 
 dss = create_dss(allow_forms=CONFIG["allow_forms"])
 compile_circuit(dss, CONFIG["circuit_path"])

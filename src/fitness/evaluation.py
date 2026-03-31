@@ -1,5 +1,5 @@
-from ..genetic_algorithm.encoding import decode_solution
-from ..opendss.opendss_interface import (
+from src.genetic_algorithm.encoding import decode_solution
+from src.opendss.opendss_interface import (
     apply_solution,
     solve_power_flow,
     get_total_losses_kw,

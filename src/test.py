@@ -1,6 +1,6 @@
-from .config import CONFIG
-from .opendss.opendss_interface import create_dss, compile_circuit
-from .fitness.evaluation import evaluate_solution
+from src.config import CONFIG
+from src.opendss.opendss_interface import create_dss, compile_circuit
+from src.fitness.evaluation import evaluate_solution
 
 dss = create_dss(allow_forms=CONFIG["allow_forms"])
 compile_circuit(dss, CONFIG["circuit_path"])

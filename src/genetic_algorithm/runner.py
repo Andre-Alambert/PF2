@@ -2,7 +2,15 @@ import pygad
 
 
 def on_generation(ga_instance):
-    solution, solution_fitness, _ = ga_instance.best_solution()
+    if ga_instance.last_generation_fitness is None:
+        return
+
+    best_idx = max(
+        range(len(ga_instance.last_generation_fitness)),
+        key=lambda i: ga_instance.last_generation_fitness[i],
+    )
+    solution = ga_instance.population[best_idx]
+    solution_fitness = ga_instance.last_generation_fitness[best_idx]
     print("\n===== FIM DA GERAÇÃO =====")
     print(f"Geração: {ga_instance.generations_completed}")
     print(f"Melhor solução: {solution}")
@@ -19,7 +27,7 @@ def build_ga_instance(config, gene_space, fitness_func):
         gene_space=gene_space,
         fitness_func=fitness_func,
         mutation_percent_genes=50,
-        save_best_solutions=True,
+        save_best_solutions=False,
         on_generation=on_generation,
     )
     return ga_instance
@@ -28,7 +36,15 @@ def build_ga_instance(config, gene_space, fitness_func):
 def run_ga(ga_instance):
     ga_instance.run()
 
-    solution, solution_fitness, solution_idx = ga_instance.best_solution()
+    if ga_instance.last_generation_fitness is None:
+        raise RuntimeError("GA finished without fitness values.")
+
+    solution_idx = max(
+        range(len(ga_instance.last_generation_fitness)),
+        key=lambda i: ga_instance.last_generation_fitness[i],
+    )
+    solution = ga_instance.population[solution_idx]
+    solution_fitness = ga_instance.last_generation_fitness[solution_idx]
 
     print("\n=== MELHOR SOLUÇÃO FINAL ===")
     print("solution =", solution)
