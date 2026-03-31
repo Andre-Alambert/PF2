@@ -1,34 +1,50 @@
 import pygad
 
-
-def on_generation(ga_instance):
-    if ga_instance.last_generation_fitness is None:
-        return
-
-    best_idx = max(
-        range(len(ga_instance.last_generation_fitness)),
-        key=lambda i: ga_instance.last_generation_fitness[i],
-    )
-    solution = ga_instance.population[best_idx]
-    solution_fitness = ga_instance.last_generation_fitness[best_idx]
-    print("\n===== FIM DA GERAÇÃO =====")
-    print(f"Geração: {ga_instance.generations_completed}")
-    print(f"Melhor solução: {solution}")
-    print(f"Melhor fitness: {solution_fitness}")
-    print("=" * 40)
+from src.fitness.fitness_function import get_eval_cache
 
 
-def build_ga_instance(config, gene_space, fitness_func):
+def _make_on_generation(logger=None):
+    def on_generation(ga_instance):
+        if ga_instance.last_generation_fitness is None:
+            return
+
+        best_idx = max(
+            range(len(ga_instance.last_generation_fitness)),
+            key=lambda i: ga_instance.last_generation_fitness[i],
+        )
+        solution = ga_instance.population[best_idx]
+        solution_fitness = ga_instance.last_generation_fitness[best_idx]
+
+        metrics = get_eval_cache().get(best_idx, {})
+
+        if logger:
+            logger.log_generation(
+                generation=ga_instance.generations_completed,
+                best_fitness=solution_fitness,
+                best_solution=solution,
+                metrics=metrics,
+            )
+
+        print("\n===== FIM DA GERAÇÃO =====")
+        print(f"Geração: {ga_instance.generations_completed}")
+        print(f"Melhor solução: {solution}")
+        print(f"Melhor fitness: {solution_fitness}")
+        print("=" * 40)
+
+    return on_generation
+
+
+def build_ga_instance(config, gene_space, fitness_func, logger=None):
     ga_instance = pygad.GA(
-        num_generations=5,
-        num_parents_mating=3,
-        sol_per_pop=6,
+        num_generations=config["num_generations"],
+        num_parents_mating=config["num_parents_mating"],
+        sol_per_pop=config["population_size"],
         num_genes=len(gene_space),
         gene_space=gene_space,
         fitness_func=fitness_func,
         mutation_percent_genes=50,
         save_best_solutions=False,
-        on_generation=on_generation,
+        on_generation=_make_on_generation(logger),
     )
     return ga_instance
 

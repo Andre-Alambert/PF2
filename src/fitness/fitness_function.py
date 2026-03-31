@@ -6,9 +6,16 @@ from src.opendss.opendss_interface import create_dss, compile_circuit
 dss = create_dss(allow_forms=CONFIG["allow_forms"])
 compile_circuit(dss, CONFIG["circuit_path"])
 
+_eval_cache = {}
+
+
+def get_eval_cache():
+    return _eval_cache
+
 
 def fitness_function(ga_instance, solution, solution_idx):
     metrics = evaluate_solution(dss, solution, CONFIG)
+    _eval_cache[solution_idx] = metrics
 
     if not metrics["converged"]:
         total_cost = convergence_penalty(
