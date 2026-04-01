@@ -7,10 +7,20 @@ dss = create_dss(allow_forms=CONFIG["allow_forms"])
 compile_circuit(dss, CONFIG["circuit_path"])
 
 _eval_cache = {}
+_verbose = True
 
 
 def get_eval_cache():
     return _eval_cache
+
+
+def clear_eval_cache():
+    _eval_cache.clear()
+
+
+def set_verbose(value: bool):
+    global _verbose
+    _verbose = value
 
 
 def fitness_function(ga_instance, solution, solution_idx):
@@ -24,7 +34,8 @@ def fitness_function(ga_instance, solution, solution_idx):
         )
         fitness = 1.0 / (1.0 + total_cost)
 
-        print(f"[{solution_idx}] sol={solution} | NÃO CONVERGIU | fitness={fitness}")
+        if _verbose:
+            print(f"[{solution_idx}] sol={solution} | NÃO CONVERGIU | fitness={fitness}")
         return fitness
 
     losses_kw = metrics["losses_kw"]
@@ -39,11 +50,12 @@ def fitness_function(ga_instance, solution, solution_idx):
     total_cost = losses_kw + pen_v
     fitness = 1.0 / (1.0 + total_cost)
 
-    print(
-        f"[{solution_idx}] sol={solution} | "
-        f"losses={losses_kw:.3f} | "
-        f"vmin={metrics['v_min']:.3f} | vmax={metrics['v_max']:.3f} | "
-        f"pen_v={pen_v:.3f} | fitness={fitness:.8f}"
-    )
+    if _verbose:
+        print(
+            f"[{solution_idx}] sol={solution} | "
+            f"losses={losses_kw:.3f} | "
+            f"vmin={metrics['v_min']:.3f} | vmax={metrics['v_max']:.3f} | "
+            f"pen_v={pen_v:.3f} | fitness={fitness:.8f}"
+        )
 
     return fitness
