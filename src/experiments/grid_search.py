@@ -12,7 +12,7 @@ import pygad
 
 from src.config import CONFIG
 from src.genetic_algorithm.encoding import get_gene_space
-from src.fitness.fitness_function import fitness_function, clear_eval_cache, set_verbose
+from src.fitness.fitness_function import make_fitness_function, clear_eval_cache, set_verbose
 
 # ---------------------------------------------------------------------------
 # Hyperparameter grid
@@ -32,6 +32,7 @@ SEEDS = [42, 7, 99]
 def _run_single(pop_size, num_gen, mutation_pct, seed):
     gene_space = get_gene_space(CONFIG)
     num_parents = max(2, pop_size // 2)
+    fitness_function = make_fitness_function(CONFIG)
 
     fitness_history = []   # (generation, best_fitness)
 

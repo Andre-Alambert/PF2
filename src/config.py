@@ -12,19 +12,12 @@ CONFIG = {
     # =========================
     # Elementos do circuito
     # =========================
-    "generator_name": "G1",
-    "source_name": "source",
-
-    # =========================
-    # Variáveis de decisão
-    # =========================
-    # potência do gerador (kW)
-    "pg_min_kw": 0.0,
-    "pg_max_kw": 1500.0,
-
-    # tensão da fonte (pu)
-    "vg_min_pu": 0.95,
-    "vg_max_pu": 1.05,
+    # Lista de geradores: cada entrada define nome e limites de despacho ativo.
+    "generators": [
+        {"name": "G1", "pg_min_kw": 0.0, "pg_max_kw": 1500.0},
+    ],
+    # Fonte de tensão (opcional). Se presente, V_source é adicionado como gene.
+    "vsource": {"name": "source", "vg_min_pu": 0.95, "vg_max_pu": 1.05},
 
     # =========================
     # Limites operacionais

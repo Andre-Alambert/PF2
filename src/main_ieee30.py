@@ -1,14 +1,13 @@
 from pathlib import Path
 import sys
 
-# Allow running this file directly (python src/main.py) while keeping absolute imports.
 if __package__ is None or __package__ == "":
     project_root = Path(__file__).resolve().parent.parent
     if str(project_root) not in sys.path:
         sys.path.insert(0, str(project_root))
 
-from src.config import CONFIG
-from src.genetic_algorithm.encoding import get_gene_space, decode_solution
+from src.config_ieee30 import CONFIG_IEEE30 as CONFIG
+from src.genetic_algorithm.encoding import get_gene_space, decode_solution, get_gene_names
 from src.genetic_algorithm.runner import build_ga_instance, run_ga
 from src.fitness.fitness_function import make_fitness_function
 from src.results.logger import RunLogger
@@ -29,6 +28,10 @@ def main():
     gene_space = get_gene_space(CONFIG)
     fitness_function = make_fitness_function(CONFIG)
 
+    print(f"\nCircuito : {CONFIG['circuit_path'].name}")
+    print(f"Genes    : {get_gene_names(CONFIG)}")
+    print(f"Pop={CONFIG['population_size']}  Gen={CONFIG['num_generations']}\n")
+
     ga_instance = build_ga_instance(
         config=CONFIG,
         gene_space=gene_space,
@@ -45,21 +48,26 @@ def main():
 
     # --- Convergence plot ---
     if logger.history:
-        conv_path = logger.results_dir / f"convergence_{logger.timestamp}.png"
+        conv_path = logger.results_dir / f"convergence_ieee30_{logger.timestamp}.png"
         plot_convergence(logger.history, conv_path)
         print(f"Gráfico de convergência: {conv_path}")
+
+    # --- Decode and display best solution ---
+    decoded = decode_solution(solution, CONFIG)
+    print("\n=== MELHOR SOLUÇÃO — DESPACHO ATIVO ===")
+    for gen in decoded["generators"]:
+        print(f"  {gen['name']:>4}: P = {gen['kw']:>10.1f} kW")
 
     # --- Voltage profile of best solution ---
     dss = create_dss(allow_forms=CONFIG["allow_forms"])
     compile_circuit(dss, CONFIG["circuit_path"])
-    decoded = decode_solution(solution, CONFIG)
     apply_solution(dss, decoded, CONFIG)
     solve_power_flow(dss)
 
     bus_names = get_all_bus_names(dss)
     bus_voltages = [get_bus_voltage_pu_by_name(dss, name) for name in bus_names]
 
-    volt_path = logger.results_dir / f"voltage_profile_{logger.timestamp}.png"
+    volt_path = logger.results_dir / f"voltage_profile_ieee30_{logger.timestamp}.png"
     plot_voltage_profile(
         bus_names,
         bus_voltages,

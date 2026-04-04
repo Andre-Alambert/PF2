@@ -44,12 +44,16 @@ def set_source_pu(dss: DSS, source_name: str, pu: float) -> None:
     dss.text(f"Edit Vsource.{source_name} pu={pu}")
 
 
-def apply_solution(dss: DSS, decoded_solution: Dict[str, float], config: Dict) -> None:
+def apply_solution(dss: DSS, decoded_solution: Dict, config: Dict) -> None:
     """
     Aplica variáveis da solução no circuito.
+    Itera sobre todos os geradores e, se houver vsource no config, ajusta a tensão da fonte.
     """
-    set_generator_kw(dss, config["generator_name"], decoded_solution["P_g"])
-    set_source_pu(dss, config["source_name"], decoded_solution["V_g"])
+    for gen in decoded_solution["generators"]:
+        set_generator_kw(dss, gen["name"], gen["kw"])
+
+    if decoded_solution.get("vsource_pu") is not None:
+        set_source_pu(dss, config["vsource"]["name"], decoded_solution["vsource_pu"])
 
 
 def solve_power_flow(dss: DSS) -> bool:

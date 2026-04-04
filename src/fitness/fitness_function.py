@@ -1,10 +1,6 @@
-from src.config import CONFIG
 from src.fitness.evaluation import evaluate_solution
 from src.fitness.penalties import voltage_penalty, convergence_penalty
 from src.opendss.opendss_interface import create_dss, compile_circuit
-
-dss = create_dss(allow_forms=CONFIG["allow_forms"])
-compile_circuit(dss, CONFIG["circuit_path"])
 
 _eval_cache = {}
 _verbose = True
@@ -23,39 +19,49 @@ def set_verbose(value: bool):
     _verbose = value
 
 
-def fitness_function(ga_instance, solution, solution_idx):
-    metrics = evaluate_solution(dss, solution, CONFIG)
-    _eval_cache[solution_idx] = metrics
+def make_fitness_function(config):
+    """
+    Fábrica que cria e compila uma instância dedicada do OpenDSS para o circuito
+    definido em `config`, e retorna uma função de fitness compatível com o pygad.
+    """
+    dss = create_dss(allow_forms=config["allow_forms"])
+    compile_circuit(dss, config["circuit_path"])
 
-    if not metrics["converged"]:
-        total_cost = convergence_penalty(
-            metrics["converged"],
-            penalty_value=CONFIG["convergence_penalty"]
+    def fitness_fn(ga_instance, solution, solution_idx):
+        metrics = evaluate_solution(dss, solution, config)
+        _eval_cache[solution_idx] = metrics
+
+        if not metrics["converged"]:
+            total_cost = convergence_penalty(
+                metrics["converged"],
+                penalty_value=config["convergence_penalty"]
+            )
+            fitness = 1.0 / (1.0 + total_cost)
+
+            if _verbose:
+                print(f"[{solution_idx}] sol={solution} | NÃO CONVERGIU | fitness={fitness}")
+            return fitness
+
+        losses_kw = metrics["losses_kw"]
+
+        pen_v_raw = voltage_penalty(
+            metrics["voltages_pu"],
+            lower=config["voltage_lower_limit"],
+            upper=config["voltage_upper_limit"]
         )
+
+        pen_v = config["voltage_penalty_weight"] * pen_v_raw
+        total_cost = losses_kw + pen_v
         fitness = 1.0 / (1.0 + total_cost)
 
         if _verbose:
-            print(f"[{solution_idx}] sol={solution} | NÃO CONVERGIU | fitness={fitness}")
+            print(
+                f"[{solution_idx}] sol={solution} | "
+                f"losses={losses_kw:.3f} | "
+                f"vmin={metrics['v_min']:.3f} | vmax={metrics['v_max']:.3f} | "
+                f"pen_v={pen_v:.3f} | fitness={fitness:.8f}"
+            )
+
         return fitness
 
-    losses_kw = metrics["losses_kw"]
-
-    pen_v_raw = voltage_penalty(
-        metrics["voltages_pu"],
-        lower=CONFIG["voltage_lower_limit"],
-        upper=CONFIG["voltage_upper_limit"]
-    )
-
-    pen_v = CONFIG["voltage_penalty_weight"] * pen_v_raw
-    total_cost = losses_kw + pen_v
-    fitness = 1.0 / (1.0 + total_cost)
-
-    if _verbose:
-        print(
-            f"[{solution_idx}] sol={solution} | "
-            f"losses={losses_kw:.3f} | "
-            f"vmin={metrics['v_min']:.3f} | vmax={metrics['v_max']:.3f} | "
-            f"pen_v={pen_v:.3f} | fitness={fitness:.8f}"
-        )
-
-    return fitness
+    return fitness_fn

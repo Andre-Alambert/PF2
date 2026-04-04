@@ -12,7 +12,7 @@ def evaluate_solution(dss, solution, config):
     Avalia uma solução candidata no circuito OpenDSS.
     Retorna métricas elétricas que depois serão usadas na fitness.
     """
-    decoded_solution = decode_solution(solution)
+    decoded_solution = decode_solution(solution, config)
 
     apply_solution(dss, decoded_solution, config)
 
