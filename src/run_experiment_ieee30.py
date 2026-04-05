@@ -12,8 +12,7 @@ from src.results.pareto import plot_pareto
 
 
 def main():
-    results_dir = CONFIG["project_root"] / "results" / "ieee30"
-    results_dir.mkdir(parents=True, exist_ok=True)
+    results_dir = CONFIG["results_dir"]
 
     agg_rows, timestamp = run_all_experiments(results_dir, config=CONFIG)
 

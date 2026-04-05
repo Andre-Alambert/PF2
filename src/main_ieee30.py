@@ -23,7 +23,7 @@ from src.opendss.opendss_interface import (
 
 
 def main():
-    logger = RunLogger(CONFIG["project_root"] / "results")
+    logger = RunLogger(CONFIG["results_dir"])
 
     gene_space = get_gene_space(CONFIG)
     fitness_function = make_fitness_function(CONFIG)

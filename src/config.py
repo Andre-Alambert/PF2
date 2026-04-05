@@ -7,6 +7,7 @@ CONFIG = {
     # Paths
     # =========================
     "project_root": PROJECT_ROOT,
+    "results_dir": PROJECT_ROOT / "results" / "4bus",
     "circuit_path": PROJECT_ROOT / "data" / "IEEETestCases" / "4Bus-YY-Bal" / "4Bus-YY-Bal-Modified.dss",
 
     # =========================
