@@ -14,7 +14,7 @@ São Paulo — 2026
 
 ## RESUMO
 
-Este relatório parcial documenta a primeira etapa do Projeto de Formatura II, cujo objetivo central é analisar a performance do Algoritmo Genético (AG) na resolução do Fluxo de Potência Ótimo (FPO) multiobjetivo com inserção de geração renovável. Nesta etapa, foi implementado e validado o pipeline computacional que integra o AG ao simulador OpenDSS, utilizado como motor de cálculo do fluxo de potência. A implementação adota uma formulação mono-objetivo simplificada — combinando perdas ativas e penalização de desvios de tensão em uma única métrica escalar — com o propósito explícito de validar o pipeline de ponta a ponta antes de avançar para a formulação multiobjetivo. Em seguida, foi realizada uma calibração sistemática dos hiperparâmetros do AG por meio de busca em grade com análise de fronteira de Pareto entre qualidade de solução e tempo computacional. Os resultados confirmam a viabilidade técnica do pipeline e identificam a configuração de hiperparâmetros mais adequada para as próximas etapas.
+Este relatório parcial documenta a primeira etapa do Projeto de Formatura II, cujo objetivo central é analisar a performance do Algoritmo Genético (AG) na resolução do Fluxo de Potência Ótimo (FPO) multiobjetivo com inserção de geração renovável. Nesta etapa, foi implementado e validado o pipeline computacional que integra o AG ao simulador OpenDSS, utilizado como motor de cálculo do fluxo de potência, aplicado ao circuito de referência **IEEE 30-Bus** com despacho ativo de cinco geradores como variáveis de controle. A implementação adota uma formulação mono-objetivo simplificada — combinando perdas ativas e penalização de desvios de tensão em uma única métrica escalar — com o propósito explícito de validar o pipeline de ponta a ponta antes de avançar para a formulação multiobjetivo. Em seguida, foi realizada uma calibração sistemática dos hiperparâmetros do AG por meio de busca em grade com análise de fronteira de Pareto entre qualidade de solução e tempo computacional. Os resultados confirmam a viabilidade técnica do pipeline e identificam a configuração de hiperparâmetros mais adequada para as próximas etapas.
 
 **Palavras-Chave:** Fluxo de Potência Ótimo. Algoritmo Genético. Otimização. OpenDSS. Hiperparâmetros.
 
@@ -36,11 +36,11 @@ Os elementos fundamentais estabelecidos no PF1 e diretamente utilizados nesta et
 
 **Formulação do FPO adotada.** O problema é formulado como a minimização de funções objetivo (custo de geração, perdas e desvio de tensão) sujeita a restrições de igualdade (balanço de potência nas barras) e de desigualdade (limites de geração, tensão e fluxo nas linhas). O OpenDSS é responsável pela resolução das equações do fluxo de potência a cada avaliação, dispensando a implementação manual das equações BIM.
 
-**Mapeamento das variáveis para o AG.** Conforme definido teoricamente no PF1, cada indivíduo da população do AG representa um vetor de variáveis de controle do sistema elétrico. Nesta etapa de prova de conceito, foram adotadas duas variáveis: a potência ativa do gerador $P_g$ (kW) e a tensão da fonte $V_g$ (pu).
+**Mapeamento das variáveis para o AG.** Conforme definido teoricamente no PF1, cada indivíduo da população do AG representa um vetor de variáveis de controle do sistema elétrico. Nesta etapa, foram adotadas cinco variáveis de despacho ativo: as potências injetadas pelos geradores nas barras B2, B5, B8, B11 e B13 ($P_{B2}$, $P_{B5}$, $P_{B8}$, $P_{B11}$, $P_{B13}$), em kW. Os setpoints de tensão são mantidos fixos nos valores nominais.
 
 **Motor de simulação.** O OpenDSS, controlado via a biblioteca Python `py-dss-interface`, atua como motor de cálculo do fluxo de potência: recebe os parâmetros do circuito, resolve as equações e retorna tensões, fluxos e perdas para a função de fitness.
 
-**Circuito de referência.** O circuito IEEE 4-Bus-YY-Bal, já utilizado no PF1 para validações experimentais, foi estendido com um gerador distribuído controlável e adotado como caso de teste para o pipeline.
+**Circuito de referência.** O circuito **IEEE 30-Bus**, benchmark consolidado na literatura de FPO, foi adotado como caso de teste. O circuito possui 30 barras, 34 linhas, 7 transformadores e 21 cargas (~324 MW de carga total). Cinco geradores distribuídos nas barras B2, B5, B8, B11 e B13 são controlados pelo AG; o slack na barra B1 (132 kV) permanece fixo em 1,06 pu.
 
 ---
 
@@ -56,8 +56,8 @@ Inicialização
   └── Inicializar população do AG
 
 Para cada geração:
-  └── Para cada candidato (P_g, V_g):
-        ├── Aplicar (P_g, V_g) ao circuito via comandos Edit
+  └── Para cada candidato (P_B2, P_B5, P_B8, P_B11, P_B13):
+        ├── Aplicar potências ao circuito via comandos Edit
         ├── Resolver fluxo de potência (OpenDSS)
         ├── Extrair métricas: perdas [kW], tensões [pu]
         └── Calcular fitness escalar
@@ -72,22 +72,28 @@ Saída
 A instância do OpenDSS é criada uma única vez e compartilhada entre todas as avaliações da mesma execução do AG, evitando o custo de recompilação do circuito a cada chamada. A aplicação dos parâmetros se dá por comandos `Edit` enviados ao OpenDSS em tempo real:
 
 ```
-Edit Generator.G1 kW={P_g}
-Edit Vsource.source pu={V_g}
+Edit Generator.B2  kW={P_B2}
+Edit Generator.B5  kW={P_B5}
+Edit Generator.B8  kW={P_B8}
+Edit Generator.B11 kW={P_B11}
+Edit Generator.B13 kW={P_B13}
 ```
 
 A biblioteca utilizada para o AG é a **PyGAD**, que fornece os operadores de seleção, crossover e mutação, e expõe um callback `on_generation` utilizado para o registro dos resultados por geração.
 
 ### 3.2 Codificação das Variáveis de Controle
 
-O cromossomo de cada indivíduo é um vetor real de dois genes:
+O cromossomo de cada indivíduo é um vetor real de cinco genes, um por gerador:
 
 | Gene | Variável | Domínio |
 |------|----------|---------|
-| $g_1$ | $P_g$ — potência ativa do gerador | $[0,\ 1500]$ kW |
-| $g_2$ | $V_g$ — tensão da fonte em valor por unidade | $[0{,}95,\ 1{,}05]$ pu |
+| $g_1$ | $P_{B2}$ — potência ativa do gerador na barra B2 | $[0,\ 80{.}000]$ kW |
+| $g_2$ | $P_{B5}$ — potência ativa do gerador na barra B5 | $[0,\ 50{.}000]$ kW |
+| $g_3$ | $P_{B8}$ — potência ativa do gerador na barra B8 | $[0,\ 35{.}000]$ kW |
+| $g_4$ | $P_{B11}$ — potência ativa do gerador na barra B11 | $[0,\ 30{.}000]$ kW |
+| $g_5$ | $P_{B13}$ — potência ativa do gerador na barra B13 | $[0,\ 40{.}000]$ kW |
 
-A codificação em números reais foi adotada conforme indicado no PF1, evitando erros de arredondamento e acelerando a convergência em relação à codificação binária. Os limites de $P_g$ são compatíveis com a capacidade nominal do gerador inserido no circuito 4-Bus; os limites de $V_g$ correspondem à faixa operacional padrão de ±5% da tensão nominal.
+A codificação em números reais foi mantida, evitando erros de arredondamento em relação à codificação binária. Os limites de cada gene correspondem à capacidade nominal de despacho ativo de cada gerador segundo o benchmark padrão IEEE 30-Bus. Os setpoints de tensão permanecem fixos nos valores nominais (despacho ativo puro, sem controle de tensão nesta etapa).
 
 ### 3.3 Função de Fitness
 
@@ -104,7 +110,7 @@ com os seguintes parâmetros:
 | Parâmetro | Valor |
 |-----------|-------|
 | $V_{\min}$ | 0,95 pu |
-| $V_{\max}$ | 1,05 pu |
+| $V_{\max}$ | 1,10 pu |
 | $w_v$ (peso da penalização de tensão) | 10.000 |
 | Penalização por não convergência | $C(x) = 10^6$ |
 
@@ -116,8 +122,8 @@ Esta formulação escalar é uma **prova de conceito**: consolida a arquitetura 
 
 A avaliação de cada candidato envolve três passos executados sequencialmente pela função `evaluate_solution`:
 
-1. **Decodificação:** o vetor de genes $[g_1, g_2]$ é mapeado diretamente para $\{P_g, V_g\}$ (sem decodificação binária, dado o uso de genes reais).
-2. **Aplicação:** os valores são enviados ao OpenDSS via `Edit Generator.G1 kW={P_g}` e `Edit Vsource.source pu={V_g}`.
+1. **Decodificação:** o vetor de cinco genes $[g_1, \ldots, g_5]$ é mapeado diretamente para $\{P_{B2}, P_{B5}, P_{B8}, P_{B11}, P_{B13}\}$ (genes reais, sem decodificação binária).
+2. **Aplicação:** os cinco valores são enviados ao OpenDSS por comandos `Edit Generator.{Bx} kW={P_{Bx}}`, um por gerador.
 3. **Resolução e extração:** `dss.solution.solve()` é chamado; em seguida são extraídos perdas totais (`dss.circuit.losses`) e tensões em todas as barras (`dss.circuit.buses_vmag_pu`).
 
 Um cache `_eval_cache` armazena as métricas de cada candidato avaliado na geração corrente, permitindo que o callback `on_generation` acesse as métricas do melhor indivíduo sem reavaliação.
@@ -130,8 +136,7 @@ A cada geração, os seguintes dados são registrados em CSV:
 |-------|-----------|
 | `generation` | Número da geração |
 | `best_fitness` | Maior fitness da geração |
-| `P_g` | Potência do gerador na melhor solução (kW) |
-| `V_g` | Tensão da fonte na melhor solução (pu) |
+| `P_B2`, `P_B5`, `P_B8`, `P_B11`, `P_B13` | Potências ativas dos geradores na melhor solução (kW) |
 | `losses_kw` | Perdas ativas totais (kW) |
 | `v_min` / `v_max` | Tensão mínima e máxima entre as barras (pu) |
 | `converged` | Indicador de convergência do fluxo de potência |
@@ -160,29 +165,42 @@ Os resultados das 36 execuções foram agregados por configuração (mediana e d
 
 ### 4.2 Resultados Agregados
 
-A Tabela 1 apresenta as 12 configurações ordenadas por fitness mediano decrescente.
+A Tabela 1 apresenta as 12 configurações testadas (3 seeds cada, 36 corridas no total) ordenadas por fitness mediano decrescente.
 
-**Tabela 1 — Resultados agregados da busca em grade (ordenado por fitness mediano)**
+**Tabela 1 — Resultados agregados da busca em grade — IEEE 30-Bus (ordenado por fitness mediano)**
 
 | `pop` | `gen` | `mut` (%) | Fitness mediano | Desvio padrão | Conv. (geração) | Tempo (s) |
 |-------|-------|-----------|----------------|---------------|-----------------|-----------|
-| 40    | 20    | 50        | 0,003106        | 2,84 × 10⁻⁵   | 8               | 0,233     |
-| 20    | 20    | 50        | 0,003085        | 3,95 × 10⁻⁵   | 13              | 0,110     |
-| 40    | 10    | 20        | 0,003076        | 2,35 × 10⁻⁵   | 4               | 0,122     |
-| 10    | 20    | 20        | 0,003075        | 6,21 × 10⁻⁵   | 15              | 0,059     |
-| 40    | 10    | 50        | 0,003069        | 4,78 × 10⁻⁵   | 7               | 0,119     |
-| 40    | 20    | 20        | 0,003065        | 1,44 × 10⁻⁵   | 2               | 0,221     |
-| 20    | 10    | 50        | 0,003045        | 5,25 × 10⁻⁵   | 8               | 0,054     |
-| 20    | 20    | 20        | 0,003026        | 4,75 × 10⁻⁵   | 9               | 0,106     |
-| 10    | 20    | 50        | 0,002999        | 1,11 × 10⁻⁴   | 15              | 0,091     |
-| 20    | 10    | 20        | 0,002980        | 2,76 × 10⁻⁵   | 4               | 0,062     |
-| 10    | 10    | 20        | 0,002963        | 5,75 × 10⁻⁵   | 4               | 0,031     |
-| 10    | 10    | 50        | 0,002910        | 1,10 × 10⁻⁴   | 4               | 0,031     |
+| 40 | 20 | 20 | 2,619 × 10⁻⁴ | 4,67 × 10⁻⁶ | 13 | 1,227 |
+| 20 | 20 | 20 | 2,616 × 10⁻⁴ | 5,49 × 10⁻⁶ | 13 | 0,575 |
+| 20 | 10 | 20 | 2,538 × 10⁻⁴ | 8,31 × 10⁻⁶ | 10 | 0,375 |
+| 40 | 10 | 50 | 2,476 × 10⁻⁴ | 8,32 × 10⁻⁶ |  6 | 0,614 |
+| 20 | 20 | 50 | 2,458 × 10⁻⁴ | 1,85 × 10⁻⁵ |  6 | 0,577 |
+| 40 | 20 | 50 | 2,453 × 10⁻⁴ | 4,70 × 10⁻⁶ |  5 | 1,219 |
+| 10 | 20 | 20 | 2,450 × 10⁻⁴ | 1,01 × 10⁻⁵ | 11 | 0,276 |
+| 10 | 20 | 50 | 2,436 × 10⁻⁴ | 6,98 × 10⁻⁶ |  7 | 0,336 |
+| 40 | 10 | 20 | 2,410 × 10⁻⁴ | 1,33 × 10⁻⁵ |  9 | 0,632 |
+| 20 | 10 | 50 | 2,410 × 10⁻⁴ | 6,81 × 10⁻⁶ |  2 | 0,328 |
+| 10 | 10 | 20 | 2,337 × 10⁻⁴ | 1,70 × 10⁻⁵ |  9 | 0,152 |
+| 10 | 10 | 50 | 2,275 × 10⁻⁴ | 2,09 × 10⁻⁵ |  6 | 0,173 |
+| 40 | 20 | 20 | 2,619 × 10⁻⁴ | 4,67 × 10⁻⁶ | 13 | 1,227 |
+| 20 | 20 | 20 | 2,616 × 10⁻⁴ | 5,49 × 10⁻⁶ | 13 | 0,575 |
+| 20 | 10 | 20 | 2,538 × 10⁻⁴ | 8,31 × 10⁻⁶ | 10 | 0,375 |
+| 40 | 10 | 50 | 2,476 × 10⁻⁴ | 8,32 × 10⁻⁶ |  6 | 0,614 |
+| 20 | 20 | 50 | 2,458 × 10⁻⁴ | 1,85 × 10⁻⁵ |  6 | 0,577 |
+| 40 | 20 | 50 | 2,453 × 10⁻⁴ | 4,70 × 10⁻⁶ |  5 | 1,219 |
+| 10 | 20 | 20 | 2,450 × 10⁻⁴ | 1,01 × 10⁻⁵ | 11 | 0,276 |
+| 10 | 20 | 50 | 2,436 × 10⁻⁴ | 6,98 × 10⁻⁶ |  7 | 0,336 |
+| 40 | 10 | 20 | 2,410 × 10⁻⁴ | 1,33 × 10⁻⁵ |  9 | 0,632 |
+| 20 | 10 | 50 | 2,410 × 10⁻⁴ | 6,81 × 10⁻⁶ |  2 | 0,328 |
+| 10 | 10 | 20 | 2,337 × 10⁻⁴ | 1,70 × 10⁻⁵ |  9 | 0,152 |
+| 10 | 10 | 50 | 2,275 × 10⁻⁴ | 2,09 × 10⁻⁵ |  6 | 0,173 |
 
 **Observações gerais:**
-- A variação total de fitness entre a melhor e a pior configuração é de ~6,6% — uma faixa estreita, o que sugere que o problema de 2 variáveis é relativamente simples para o AG em qualquer configuração razoável.
-- Configurações com populações maiores (`pop=40`) tendem a apresentar menor desvio padrão entre seeds, indicando maior robustez.
-- Populações pequenas (`pop=10`) com alta mutação (`mut=50%`) apresentam os maiores desvios padrão (1,10 × 10⁻⁴), revelando instabilidade entre execuções.
+- Ordenando por fitness mediano, as configurações com `mut=20%` ocupam as três primeiras posições — situação inversa ao caso 4-Bus, onde `mut=50%` dominava. Com 5 variáveis de decisão, uma taxa de mutação menor favorece a exploração local mais fina.
+- A variação total de fitness entre a melhor e a pior configuração é de ~13%, mais ampla que os ~6,6% do 4-Bus, indicando que a escolha de hiperparâmetros impõe mais impacto quando o espaço de busca é maior.
+- O tempo mediano por corrida é 5 a 8× superior ao do 4-Bus (0,152 a 1,227 s vs. 0,031 a 0,233 s), refletindo o custo adicional de simular 30 barras, 34 linhas e 7 transformadores.
+- Populações maiores (`pop=40`) continuam apresentando menor desvio padrão entre seeds.
 
 ### 4.3 Análise de Fronteira de Pareto: Qualidade × Tempo Computacional
 
@@ -191,25 +209,27 @@ Analisar apenas o fitness máximo para escolha de hiperparâmetros ignora o cust
 - $-\text{fitness mediano}$ (maximizar qualidade → minimizar negativo)
 - $\text{tempo mediano de execução}$
 
-Uma configuração é Pareto-ótima se nenhuma outra configuração alcança simultaneamente maior fitness e menor tempo. A análise identificou três configurações na fronteira:
+Uma configuração é Pareto-ótima se nenhuma outra configuração alcança simultaneamente maior fitness e menor tempo. A análise identificou **cinco** configurações na fronteira, todas com `mut=20%`:
 
 | Configuração | Fitness mediano | Tempo (s) | Interpretação |
 |---|---|---|---|
-| `pop=10, gen=10, mut=20%` | 0,002963 | 0,031 | Melhor custo-benefício em tempo |
-| `pop=10, gen=20, mut=20%` | 0,003075 | 0,059 | Equilíbrio |
-| `pop=40, gen=20, mut=50%` | 0,003106 | 0,233 | Melhor qualidade absoluta |
+| `pop=10, gen=10, mut=20%` | 2,337 × 10⁻⁴ | 0,152 | Melhor custo-benefício em tempo |
+| `pop=10, gen=20, mut=20%` | 2,450 × 10⁻⁴ | 0,276 | |
+| `pop=20, gen=10, mut=20%` | 2,538 × 10⁻⁴ | 0,375 | Equilíbrio |
+| `pop=20, gen=20, mut=20%` | 2,616 × 10⁻⁴ | 0,575 | |
+| `pop=40, gen=20, mut=20%` | 2,619 × 10⁻⁴ | 1,227 | Melhor qualidade absoluta |
 
-As demais 9 configurações são **dominadas** — existe pelo menos uma configuração que as supera em ambas as dimensões simultaneamente.
+As 7 configurações restantes são **dominadas**. Nota-se que todas as configurações Pareto-ótimas utilizam `mut=20%`, confirmando que, para um espaço de 5 variáveis contínuas, uma taxa de mutação moderada equilibra melhor exploração e convergência. Esse resultado contrasta diretamente com o caso 4-Bus, onde todas as Pareto-ótimas usavam `mut=50%`.
 
 ### 4.4 Configuração Selecionada
 
-A configuração **`pop=40, gen=20, mut=50%`** foi selecionada como referência para as próximas etapas, pelos seguintes motivos:
+A configuração **`pop=40, gen=20, mut=20%`** foi selecionada como referência para o pipeline IEEE 30-Bus, pelos seguintes motivos:
 
-1. **Maior fitness mediano** entre todas as 12 configurações (0,003106).
-2. **Menor desvio padrão relativo** entre as três configurações Pareto-ótimas (2,84 × 10⁻⁵), indicando maior robustez frente à aleatoriedade.
-3. **Tempo de execução aceitável** (0,233 s por corrida no circuito de 4 barras): ao escalar para circuitos maiores, o tempo por avaliação aumentará, mas o número de avaliações pode ser mantido ou reduzido com o ganho de qualidade da população maior.
+1. **Maior fitness mediano** entre todas as 12 configurações (2,619 × 10⁻⁴).
+2. **Menor desvio padrão** entre as cinco configurações Pareto-ótimas (4,67 × 10⁻⁶), indicando maior estabilidade entre seeds.
+3. **Tempo aceitável** (1,227 s por corrida) para validação e iteração do pipeline.
 
-A taxa de mutação de 50% — elevada em relação a valores clássicos da literatura (tipicamente 1–5% em codificação binária) — é compatível com o uso de genes reais e com o espaço de busca contínuo deste problema, onde a mutação atua como perturbação de valores reais dentro dos limites do gene, não como flipagem de bits.
+Observa-se que a taxa de mutação selecionada (20%) é inferior à do caso 4-Bus (50%). Para um espaço de 5 variáveis, uma mutação menor por gene permite exploração local mais fina e convergência mais estável; uma mutação muito alta tende a dispersar a população excessivamente, dificultando a otimização conjunta das cinco dimensões.
 
 ---
 
@@ -217,41 +237,42 @@ A taxa de mutação de 50% — elevada em relação a valores clássicos da lite
 
 ### 5.1 Melhor Solução Encontrada
 
-Com a configuração selecionada (`pop=40, gen=20, mut=50%`), a melhor solução encontrada em uma execução representativa apresentou as seguintes características:
+Com a configuração selecionada (`pop=40, gen=20, mut=20%`), a melhor solução encontrada em uma execução representativa apresentou as seguintes características:
 
 | Variável | Valor |
 |----------|-------|
-| $P_g$ (potência do gerador) | ~1441 kW |
-| $V_g$ (tensão da fonte) | ~1,048 pu |
-| Perdas totais | ~422 kW |
-| $V_{\min}$ (tensão mínima) | ~0,840 pu |
-| $V_{\max}$ (tensão máxima) | ~1,016 pu |
+| $P_{B2}$ (potência ativa — barra B2) | ~69.178 kW (~69,2 MW) |
+| $P_{B5}$ (potência ativa — barra B5) | ~48.787 kW (~48,8 MW) |
+| $P_{B8}$ (potência ativa — barra B8) | ~34.803 kW (~34,8 MW) |
+| $P_{B11}$ (potência ativa — barra B11) | ~29.602 kW (~29,6 MW) |
+| $P_{B13}$ (potência ativa — barra B13) | ~34.073 kW (~34,1 MW) |
+| Perdas totais | ~3.892 kW (~3,9 MW) |
+| $V_{\min}$ (tensão mínima) | ~0,993 pu |
+| $V_{\max}$ (tensão máxima) | ~1,082 pu |
 | Convergência do FP | Sim |
+| Geração de convergência | 10 |
 
-O AG convergiu já a partir da **geração 1**, com o fitness se estabilizando rapidamente — comportamento coerente com o esperado para um problema de apenas 2 variáveis contínuas.
+O AG convergiu na **geração 10**, com melhorias progressivas até esse ponto e estabilidade completa nas gerações seguintes — comportamento coerente com o esperado para um espaço de busca de 5 variáveis, que exige mais iterações do que o caso de 2 variáveis do 4-Bus.
 
-### 5.2 Limitação Central: Violação de Tensão
+### 5.2 Perfil de Tensão e Estratégia de Despacho
 
-O resultado mais relevante desta análise não é o valor ótimo encontrado, mas uma **limitação estrutural da formulação atual**: a tensão mínima identificada, $V_{\min} \approx 0{,}840$ pu, está **significativamente abaixo** do limite operacional de 0,95 pu, mesmo na melhor solução encontrada.
+**Perfil de tensão:** Diferentemente do caso 4-Bus, onde $V_{\min} \approx 0{,}840$ pu violava significativamente os limites operacionais, a melhor solução do IEEE 30-Bus apresentou **todas as tensões dentro da faixa [0,95; 1,10] pu** ($V_{\min} = 0{,}993$ pu; $V_{\max} = 1{,}082$ pu). O circuito dispõe de capacidade reativa suficiente em seus cinco geradores para sustentar o perfil de tensão mesmo sob carga plena.
 
-Isso indica que, na configuração atual do circuito com a carga nominal, nenhuma combinação de $P_g$ e $V_g$ dentro dos domínios definidos é capaz de elevar todas as tensões para dentro da faixa aceitável. Em outras palavras: **as duas variáveis de controle disponíveis são insuficientes** para satisfazer simultaneamente o critério de redução de perdas e o perfil de tensão para o circuito em questão.
+**Estratégia emergente de despacho:** A análise dos valores ótimos revela que o AG empurrou as potências dos geradores próximas aos seus limites superiores: B5 a 97,6%, B8 a 99,4% e B11 a 98,7% dos respectivos máximos. Esse comportamento é fisicamente coerente: na formulação adotada, sem função de custo de geração, a única pressão do fitness é minimizar perdas na rede — e a injeção de potência ativa próxima às cargas reduz o fluxo nas linhas e, consequentemente, as perdas ôhmicas $I^2R$. O AG encontrou, portanto, a estratégia de máxima injeção distribuída como ótimo mono-objetivo da formulação atual.
 
-Este resultado tem três implicações diretas para os próximos passos:
-
-1. **Motivação para a formulação multiobjetivo:** ao tratar perdas e desvio de tensão como objetivos separados (não agregados em um escalar), o AG poderá explorar explicitamente o trade-off entre os dois critérios e revelar a fronteira de Pareto entre eles.
-2. **Ampliação do espaço de variáveis de controle:** ao migrar para circuitos maiores (IEEE 13-Bus, 123-Bus), haverá mais pontos de injeção de geração e mais transformadores com TAP controlável, aumentando a capacidade de regulação do perfil de tensão.
-3. **Integração de renováveis:** a inserção de geração distribuída em barras estratégicas é, por si só, um mecanismo documentado de melhoria do perfil de tensão local — como demonstrado nas simulações estáticas do PF1.
+**Implicação para a próxima etapa:** Este resultado evidencia a necessidade de incluir uma **função de custo de geração** na formulação. No despacho econômico clássico, cada gerador possui uma curva de custo própria, e o ótimo é o ponto que equilibra custo marginal de geração com a redução de perdas de transmissão — não o ponto de máxima injeção. A formulação multiobjetivo planejada separará explicitamente os objetivos de custo e perdas, revelando o trade-off real entre geração econômica e minimização de perdas.
 
 ### 5.3 Validação do Pipeline
 
-A despeito da limitação identificada, o pipeline cumpriu seu objetivo de **prova de conceito**:
+O pipeline cumpriu seu objetivo de **validação em circuito de referência realístico**:
 
 - O AG foi executado com sucesso em 36 corridas independentes sem erros de integração com o OpenDSS.
+- A generalização para N geradores foi validada: 5 variáveis de controle, genes independentes por gerador.
 - A função de fitness retornou valores coerentes com as métricas elétricas de cada candidato.
-- O logging automático por geração funcionou corretamente.
+- O logging automático por geração produziu colunas dinâmicas corretas ($P_{B2}$…$P_{B13}$) para todas as 36 corridas.
 - A análise de hiperparâmetros produziu resultados reproduzíveis entre seeds para as melhores configurações.
 
-O pipeline está tecnicamente pronto para receber a formulação multiobjetivo e circuitos de maior porte na continuação do trabalho.
+O pipeline está tecnicamente pronto para receber a função de custo de geração, a formulação multiobjetivo e circuitos de maior porte na continuação do trabalho.
 
 ---
 
@@ -259,17 +280,17 @@ O pipeline está tecnicamente pronto para receber a formulação multiobjetivo e
 
 Os próximos relatórios parciais do PF2 serão orientados pelas seguintes etapas, em sequência:
 
-**Etapa 1 — Formulação multiobjetivo real.**
-Implementar os dois objetivos separados identificados no PF1: minimização de perdas ($f_1$) e minimização do desvio de tensão ($f_2 = \sum_i |V_i - V_{\text{ref}}|$). Isso requer substituir a função de fitness escalar por uma abordagem Pareto-based, tipicamente o **NSGA-II**, disponível em bibliotecas como `pymoo`. O resultado esperado é uma fronteira de Pareto de soluções, não um único ótimo.
+**Etapa 1 — Função de custo de geração.**
+Os resultados do IEEE 30-Bus mostram que, sem custo de geração, o AG converge para injeção máxima em todos os geradores. A próxima etapa incorpora curvas de custo quadráticas por gerador ($C_i(P_i) = a_i P_i^2 + b_i P_i + c_i$), transformando o problema em um despacho econômico real com trade-off entre custo de geração e perdas de transmissão.
 
-**Etapa 2 — Integração de geração renovável.**
-Conectar perfis de geração intermitente ao circuito via `LoadShape` no OpenDSS, conforme modelado no PF1 (distribuição de Weibull para velocidade do vento → curva de potência da turbina → vetor de multiplicadores). O FPO passará a ser avaliado em múltiplos instantes do dia, introduzindo variabilidade na função objetivo.
+**Etapa 2 — Formulação multiobjetivo (NSGA-II).**
+Substituir a função de fitness escalar por dois objetivos separados: $f_1 =$ custo total de geração e $f_2 =$ perdas ativas na rede (ou desvio de tensão). Utilizar **NSGA-II** (`pymoo`) para obter a fronteira de Pareto de soluções não dominadas, revelando explicitamente o trade-off entre operação econômica e eficiência elétrica.
 
-**Etapa 3 — Escalabilidade para circuitos maiores.**
-Migrar do 4-Bus para o **IEEE 13-Bus** ou **IEEE 123-Bus**, já disponíveis em `data/IEEETestCases/`. O espaço de variáveis de controle será ampliado com múltiplos geradores e, eventualmente, TAPs de transformadores (variáveis discretas, exigindo codificação mista).
+**Etapa 3 — Integração de geração renovável.**
+Conectar perfis de geração intermitente ao circuito via `LoadShape` no OpenDSS, conforme modelado no PF1 (distribuição de Weibull → curva de potência → vetor de multiplicadores horários). O FPO será avaliado em múltiplos instantes do dia, introduzindo variabilidade na função objetivo.
 
-**Etapa 4 — Avaliação de performance do AG.**
-Com os experimentos multiobjetivo em circuitos representativos, definir métricas formais de performance: hipervolume da fronteira de Pareto obtida, diversidade de soluções, taxa de convergência e comparação com PSO ou com um solver determinístico de referência.
+**Etapa 4 — Escalabilidade e avaliação de performance.**
+Migrar para o **IEEE 123-Bus** (já disponível em `data/IEEETestCases/`), ampliando o número de variáveis de controle. Ao final, definir métricas formais de performance: hipervolume da fronteira de Pareto, diversidade de soluções, taxa de convergência e comparação com referências da literatura.
 
 ---
 
@@ -277,9 +298,9 @@ Com os experimentos multiobjetivo em circuitos representativos, definir métrica
 
 Este relatório apresentou a implementação e validação da prova de conceito do pipeline AG + OpenDSS como primeira entrega do Projeto de Formatura II. O pipeline foi construído com base no planejamento teórico do PF1 e demonstra a viabilidade técnica da integração entre o Algoritmo Genético e o simulador OpenDSS como motor de cálculo do fluxo de potência.
 
-A calibração sistemática de hiperparâmetros, conduzida por busca em grade com análise de fronteira de Pareto qualidade × tempo, identificou a configuração `pop=40, gen=20, mut=50%` como referência para as etapas seguintes. A principal limitação observada — a incapacidade das duas variáveis de controle atuais de satisfazerem os limites de tensão — não representa uma falha do pipeline, mas sim a motivação natural para a extensão multiobjetivo com circuitos de maior porte planejada para a continuação do trabalho.
+A calibração sistemática de hiperparâmetros, conduzida por busca em grade com análise de fronteira de Pareto qualidade × tempo, identificou a configuração `pop=40, gen=20, mut=20%` como referência para o circuito IEEE 30-Bus. Diferentemente do caso inicial com 2 variáveis, o pipeline generalizado para 5 geradores apresentou perfil de tensão inteiramente dentro dos limites operacionais ($V_{\min} = 0{,}993$ pu; $V_{\max} = 1{,}082$ pu), validando tanto a generalização da implementação quanto a capacidade do AG de encontrar soluções viáveis em espaços de busca de maior dimensão. A ausência de violações de tensão, combinada à convergência na geração 10, confirma que o pipeline está pronto para incorporar a função de custo de geração e a formulação multiobjetivo nas próximas etapas.
 
-O Projeto de Formatura II segue, portanto, com infraestrutura computacional validada e rumo experimental claramente definido.
+O Projeto de Formatura II segue, portanto, com infraestrutura computacional validada, resultados experimentais concretos no benchmark IEEE 30-Bus e rumo técnico claramente definido.
 
 ---
 

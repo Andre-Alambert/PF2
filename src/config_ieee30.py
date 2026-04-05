@@ -43,11 +43,14 @@ CONFIG_IEEE30 = {
     "convergence_penalty": 1e6,
 
     # =========================
-    # Parâmetros do GA (validação rápida)
+    # Parâmetros do GA
+    # Melhor configuração identificada pelo grid search (pop=40, gen=20, mut=20%):
+    #   fitness mediano = 0.000262 | std = 4.67e-6 | conv. gen = 13 | t = 1.227s
     # =========================
-    "population_size": 10,
-    "num_generations": 10,
-    "num_parents_mating": 5,
+    "population_size": 40,
+    "num_generations": 20,
+    "num_parents_mating": 20,
+    "mutation_percent_genes": 20,
 
     # =========================
     # OpenDSS

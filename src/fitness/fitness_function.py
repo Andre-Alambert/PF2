@@ -29,7 +29,7 @@ def make_fitness_function(config):
 
     def fitness_fn(ga_instance, solution, solution_idx):
         metrics = evaluate_solution(dss, solution, config)
-        _eval_cache[solution_idx] = metrics
+        _eval_cache[tuple(solution)] = metrics
 
         if not metrics["converged"]:
             total_cost = convergence_penalty(
