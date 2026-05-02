@@ -8,6 +8,7 @@ CONFIG_IEEE30 = {
     # =========================
     # Paths
     # =========================
+    "case_name": "ieee30",
     "project_root": PROJECT_ROOT,
     "results_dir": PROJECT_ROOT / "results" / "30bus",
     "circuit_path": PROJECT_ROOT / "data" / "IEEETestCases" / "IEEE 30 Bus" / "Master.dss",

@@ -6,6 +6,7 @@ CONFIG = {
     # =========================
     # Paths
     # =========================
+    "case_name": "4bus",
     "project_root": PROJECT_ROOT,
     "results_dir": PROJECT_ROOT / "results" / "4bus",
     "circuit_path": PROJECT_ROOT / "data" / "IEEETestCases" / "4Bus-YY-Bal" / "4Bus-YY-Bal-Modified.dss",
@@ -29,7 +30,7 @@ CONFIG = {
     # =========================
     # Penalizações
     # =========================
-    "voltage_penalty_weight": 10000.0,   # bem alto no começo
+    "voltage_penalty_weight": 10000.0,
     "convergence_penalty": 1e6,
 
     # =========================

@@ -1,30 +1,36 @@
 from pathlib import Path
 import sys
+import argparse
 
 if __package__ is None or __package__ == "":
     project_root = Path(__file__).resolve().parent.parent
     if str(project_root) not in sys.path:
         sys.path.insert(0, str(project_root))
 
-from src.config import CONFIG
+from src.configs import CONFIGS
 from src.experiments.grid_search import run_all_experiments
 from src.results.pareto import plot_pareto
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Grid search de hiperparâmetros do GA")
+    parser.add_argument("case", choices=list(CONFIGS.keys()), help="Caso a executar")
+    args = parser.parse_args()
+
+    CONFIG = CONFIGS[args.case]
+    case_name = CONFIG["case_name"]
     results_dir = CONFIG["results_dir"]
 
-    agg_rows, timestamp = run_all_experiments(results_dir)
+    agg_rows, timestamp = run_all_experiments(results_dir, config=CONFIG)
 
     if not agg_rows:
         print("Nenhum resultado para plotar.")
         return
 
-    pareto_path = results_dir / f"pareto_{timestamp}.png"
+    pareto_path = results_dir / f"pareto_{case_name}_{timestamp}.png"
     plot_pareto(agg_rows, pareto_path)
     print(f"\nGráfico Pareto: {pareto_path}")
 
-    # Print top-3 ranking in console
     print("\n-- Top 3 configuracoes (por fitness mediano) --")
     for rank, r in enumerate(agg_rows[:3], 1):
         print(

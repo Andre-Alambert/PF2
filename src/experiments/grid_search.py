@@ -10,7 +10,6 @@ from pathlib import Path
 import numpy as np
 import pygad
 
-from src.config import CONFIG
 from src.genetic_algorithm.encoding import get_gene_space
 from src.fitness.fitness_function import make_fitness_function, clear_eval_cache, set_verbose
 
@@ -29,9 +28,9 @@ SEEDS = [42, 7, 99]
 # Single run
 # ---------------------------------------------------------------------------
 
-def _run_single(pop_size, num_gen, mutation_pct, seed, config=None):
+def _run_single(pop_size, num_gen, mutation_pct, seed, config):
     if config is None:
-        config = CONFIG
+        raise ValueError("config is required")
     gene_space = get_gene_space(config)
     num_parents = max(2, pop_size // 2)
     fitness_function = make_fitness_function(config)
@@ -101,9 +100,9 @@ def _run_single(pop_size, num_gen, mutation_pct, seed, config=None):
 # Full experiment loop
 # ---------------------------------------------------------------------------
 
-def run_all_experiments(results_dir, config=None):
+def run_all_experiments(results_dir, config):
     if config is None:
-        config = CONFIG
+        raise ValueError("config is required")
     results_dir = Path(results_dir)
     results_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
