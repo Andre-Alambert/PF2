@@ -1,10 +1,10 @@
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 # Limites padrão de despacho ativo do IEEE 30-Bus (literatura clássica de OPF).
 # Referência: Lee, Park & Ortiz, IEE Trans. Power Apparatus & Systems, 1985.
-CONFIG_IEEE30 = {
+CONFIG = {
     # =========================
     # Paths
     # =========================
