@@ -16,7 +16,9 @@ CONFIG = {
     # =========================
     # Lista de geradores: cada entrada define nome e limites de despacho ativo.
     "generators": [
-        {"name": "G1", "pg_min_kw": 0.0, "pg_max_kw": 1500.0},
+        {"name": "G1", "pg_min_kw": 0.0, "pg_max_kw": 1500.0,
+         "cost_a": 0.01750, "cost_b": 1.75, "cost_c": 0.0,
+         "emit_alpha": 0.02543, "emit_beta": -0.06047, "emit_gamma": 0.05638},
     ],
     # Fonte de tensão (opcional). Se presente, V_source é adicionado como gene.
     "vsource": {"name": "source", "vg_min_pu": 0.95, "vg_max_pu": 1.05},
@@ -28,9 +30,16 @@ CONFIG = {
     "voltage_upper_limit": 1.05,
 
     # =========================
-    # Penalizações
+    # Função objetivo agregada
     # =========================
-    "voltage_penalty_weight": 10000.0,
+    "objective_weights": {"w_cost": 1.0, "w_voltage": 1.0, "w_emissions": 0.0},
+    "voltage_ref_pu": 1.0,
+    "f2_max_pu": 0.4,  # 4 barras × ~0.10 pu
+
+    # =========================
+    # Penalizações (restrições duras)
+    # =========================
+    "voltage_penalty_weight": 100.0,
     "convergence_penalty": 1e6,
 
     # =========================

@@ -18,12 +18,26 @@ CONFIG = {
     # =========================
     # Cinco geradores PV/PQ; o slack (B1/Vsource) permanece fixo em 1.06 pu.
     # Sem chave "vsource": tensão do slack não é variável de controle.
+    # Coeficientes de custo (a [$/MW²h], b [$/MWh], c [$/h]) e emissão
+    # (alpha [ton/h], beta [ton/MWh], gamma [ton/MW²h]) por gerador.
+    # Fonte: Lee, Park & Ortiz (1985) / El-Keib (1994) — benchmark IEEE 30-bus.
+    # Conversão de unidades: genes em kW → kw/1000 → MW dentro das funções objetivo.
     "generators": [
-        {"name": "B2",  "pg_min_kw":     0.0, "pg_max_kw":  80_000.0},
-        {"name": "B5",  "pg_min_kw":     0.0, "pg_max_kw":  50_000.0},
-        {"name": "B8",  "pg_min_kw":     0.0, "pg_max_kw":  35_000.0},
-        {"name": "B11", "pg_min_kw":     0.0, "pg_max_kw":  30_000.0},
-        {"name": "B13", "pg_min_kw":     0.0, "pg_max_kw":  40_000.0},
+        {"name": "B2",  "pg_min_kw": 0.0, "pg_max_kw": 80_000.0,
+         "cost_a": 0.00375, "cost_b": 2.00, "cost_c": 0.0,
+         "emit_alpha": 0.04091, "emit_beta": -0.05554, "emit_gamma": 0.06490},
+        {"name": "B5",  "pg_min_kw": 0.0, "pg_max_kw": 50_000.0,
+         "cost_a": 0.01750, "cost_b": 1.75, "cost_c": 0.0,
+         "emit_alpha": 0.02543, "emit_beta": -0.06047, "emit_gamma": 0.05638},
+        {"name": "B8",  "pg_min_kw": 0.0, "pg_max_kw": 35_000.0,
+         "cost_a": 0.06250, "cost_b": 1.00, "cost_c": 0.0,
+         "emit_alpha": 0.04258, "emit_beta": -0.05094, "emit_gamma": 0.04586},
+        {"name": "B11", "pg_min_kw": 0.0, "pg_max_kw": 30_000.0,
+         "cost_a": 0.00834, "cost_b": 3.25, "cost_c": 0.0,
+         "emit_alpha": 0.05326, "emit_beta": -0.03550, "emit_gamma": 0.03970},
+        {"name": "B13", "pg_min_kw": 0.0, "pg_max_kw": 40_000.0,
+         "cost_a": 0.02500, "cost_b": 3.00, "cost_c": 0.0,
+         "emit_alpha": 0.04716, "emit_beta": -0.05940, "emit_gamma": 0.05660},
     ],
 
     # =========================
@@ -35,12 +49,22 @@ CONFIG = {
     "voltage_upper_limit": 1.10,
 
     # =========================
-    # Penalizações
+    # Função objetivo agregada
     # =========================
-    # As perdas neste circuito são da ordem de 10–30 MW (10.000–30.000 kW).
-    # O peso de penalidade é mantido em 10.000 como ponto de partida;
-    # pode ser calibrado via experimento se violações forem sistematicamente ignoradas.
-    "voltage_penalty_weight": 10_000.0,
+    # Pesos da soma ponderada normalizada: F = w_cost·f1' + w_voltage·f2' + w_emissions·f3'
+    # w_emissions=0 desativa emissões na Etapa 1; basta mudar o valor para ativá-las.
+    "objective_weights": {"w_cost": 1.0, "w_voltage": 1.0, "w_emissions": 0.0},
+    "voltage_ref_pu": 1.0,
+    # Limite superior para normalizar f2 (desvio de tensão L1).
+    # 30 barras × desvio esperado máximo de ~0.10 pu = 3.0 pu.
+    "f2_max_pu": 3.0,
+
+    # =========================
+    # Penalizações (restrições duras)
+    # =========================
+    # F normalizado fica em [0, 2]; voltage_penalty_weight recalibrado para essa escala.
+    # Violação de 0.03 pu em 5 barras → pen_v ≈ 0.0009 × 5 × 100 = 0.45 >> F típico.
+    "voltage_penalty_weight": 100.0,
     "convergence_penalty": 1e6,
 
     # =========================
