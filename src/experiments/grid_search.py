@@ -12,7 +12,7 @@ import pygad
 
 from src.config import CONFIG
 from src.genetic_algorithm.encoding import get_gene_space
-from src.fitness.fitness_function import fitness_function, clear_eval_cache, set_verbose
+from src.fitness.fitness_function import make_fitness_function, clear_eval_cache, set_verbose
 
 # ---------------------------------------------------------------------------
 # Hyperparameter grid
@@ -29,9 +29,12 @@ SEEDS = [42, 7, 99]
 # Single run
 # ---------------------------------------------------------------------------
 
-def _run_single(pop_size, num_gen, mutation_pct, seed):
-    gene_space = get_gene_space(CONFIG)
+def _run_single(pop_size, num_gen, mutation_pct, seed, config=None):
+    if config is None:
+        config = CONFIG
+    gene_space = get_gene_space(config)
     num_parents = max(2, pop_size // 2)
+    fitness_function = make_fitness_function(config)
 
     fitness_history = []   # (generation, best_fitness)
 
@@ -98,7 +101,9 @@ def _run_single(pop_size, num_gen, mutation_pct, seed):
 # Full experiment loop
 # ---------------------------------------------------------------------------
 
-def run_all_experiments(results_dir):
+def run_all_experiments(results_dir, config=None):
+    if config is None:
+        config = CONFIG
     results_dir = Path(results_dir)
     results_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -129,6 +134,7 @@ def run_all_experiments(results_dir):
                 num_gen=params["num_generations"],
                 mutation_pct=params["mutation_percent_genes"],
                 seed=seed,
+                config=config,
             )
             if result:
                 rows.append(result)

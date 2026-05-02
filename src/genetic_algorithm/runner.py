@@ -15,7 +15,7 @@ def _make_on_generation(logger=None):
         solution = ga_instance.population[best_idx]
         solution_fitness = ga_instance.last_generation_fitness[best_idx]
 
-        metrics = get_eval_cache().get(best_idx, {})
+        metrics = get_eval_cache().get(tuple(solution), {})
 
         if logger:
             logger.log_generation(
@@ -42,7 +42,7 @@ def build_ga_instance(config, gene_space, fitness_func, logger=None):
         num_genes=len(gene_space),
         gene_space=gene_space,
         fitness_func=fitness_func,
-        mutation_percent_genes=50,
+        mutation_percent_genes=config.get("mutation_percent_genes", 50),
         save_best_solutions=False,
         on_generation=_make_on_generation(logger),
     )
