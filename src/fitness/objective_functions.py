@@ -7,9 +7,9 @@ def objective_generation_cost(generators_dispatched: list, config_generators: li
     return cost
 
 
-def objective_voltage_deviation(voltages_pu: list, v_ref: float = 1.0) -> float:
-    """f2 = Σ |Vᵢ - Vref| [pu]."""
-    return sum(abs(v - v_ref) for v in voltages_pu)
+def objective_voltage_deviation(voltages_pu: list, v_refs: list) -> float:
+    """f2 = Σ |Vᵢ - Vi_ref| [pu], referência por barra."""
+    return sum(abs(v - vref) for v, vref in zip(voltages_pu, v_refs))
 
 
 def objective_emissions(generators_dispatched: list, config_generators: list) -> float:
@@ -21,13 +21,16 @@ def objective_emissions(generators_dispatched: list, config_generators: list) ->
     return emissions
 
 
-def compute_normalization_bounds(config: dict) -> dict:
+def compute_normalization_bounds(config: dict, v_refs: list) -> dict:
     """
     Computa limites analíticos para normalização de cada objetivo.
     f1 e f3: avaliados em pg_min e pg_max de cada gerador.
-    f2: 0.0 no melhor caso; config["f2_max_pu"] no pior caso.
+    f2: 0 no caso base; máximo é a soma dos piores desvios possíveis por barra
+        (distância do v_ref ao limite operacional mais distante).
     """
     gens = config["generators"]
+    vlo = config.get("voltage_lower_limit", 0.95)
+    vhi = config.get("voltage_upper_limit", 1.10)
 
     def _cost(p_mw, g):
         return g["cost_a"] * p_mw ** 2 + g["cost_b"] * p_mw + g["cost_c"]
@@ -44,11 +47,15 @@ def compute_normalization_bounds(config: dict) -> dict:
     if f3_min > f3_max:
         f3_min, f3_max = f3_max, f3_min
 
+    # f2_max: pior desvio possível de cada barra em relação à sua referência nominal,
+    # limitado pela banda operacional [vlo, vhi].
+    f2_max = sum(max(abs(vref - vlo), abs(vref - vhi)) for vref in v_refs)
+
     return {
         "f1_min": f1_min,
         "f1_max": f1_max,
         "f2_min": 0.0,
-        "f2_max": config.get("f2_max_pu", 3.0),
+        "f2_max": f2_max,
         "f3_min": f3_min,
         "f3_max": f3_max,
     }

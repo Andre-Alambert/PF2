@@ -7,7 +7,7 @@ from src.fitness.objective_functions import (
     compute_normalization_bounds,
     normalize,
 )
-from src.opendss.opendss_interface import create_dss, compile_circuit
+from src.opendss.opendss_interface import create_dss, compile_circuit, solve_power_flow, get_all_bus_voltages_pu
 
 _eval_cache = {}
 _verbose = True
@@ -38,7 +38,9 @@ def make_fitness_function(config):
     """
     dss = create_dss(allow_forms=config["allow_forms"])
     compile_circuit(dss, config["circuit_path"])
-    bounds = compute_normalization_bounds(config)
+    solve_power_flow(dss)
+    v_refs_pu = get_all_bus_voltages_pu(dss)
+    bounds = compute_normalization_bounds(config, v_refs_pu)
 
     def fitness_fn(ga_instance, solution, solution_idx):
         metrics = evaluate_solution(dss, solution, config)
@@ -56,7 +58,7 @@ def make_fitness_function(config):
             return fitness
 
         f1 = objective_generation_cost(metrics["generators_dispatched"], config["generators"])
-        f2 = objective_voltage_deviation(metrics["voltages_pu"], config.get("voltage_ref_pu", 1.0))
+        f2 = objective_voltage_deviation(metrics["voltages_pu"], v_refs_pu)
         f3 = objective_emissions(metrics["generators_dispatched"], config["generators"])
 
         f1_n = normalize(f1, bounds["f1_min"], bounds["f1_max"])

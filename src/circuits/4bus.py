@@ -33,8 +33,6 @@ CONFIG = {
     # Função objetivo agregada
     # =========================
     "objective_weights": {"w_cost": 1.0, "w_voltage": 1.0, "w_emissions": 0.0},
-    "voltage_ref_pu": 1.0,
-    "f2_max_pu": 0.4,  # 4 barras × ~0.10 pu
 
     # =========================
     # Penalizações (restrições duras)

@@ -54,10 +54,6 @@ CONFIG = {
     # Pesos da soma ponderada normalizada: F = w_cost·f1' + w_voltage·f2' + w_emissions·f3'
     # w_emissions=0 desativa emissões na Etapa 1; basta mudar o valor para ativá-las.
     "objective_weights": {"w_cost": 1.0, "w_voltage": 1.0, "w_emissions": 0.0},
-    "voltage_ref_pu": 1.0,
-    # Limite superior para normalizar f2 (desvio de tensão L1).
-    # 30 barras × desvio esperado máximo de ~0.10 pu = 3.0 pu.
-    "f2_max_pu": 3.0,
 
     # =========================
     # Penalizações (restrições duras)
