@@ -20,20 +20,37 @@ from src.opendss.opendss_interface import (
     solve_power_flow,
     get_all_bus_names,
     get_bus_voltage_pu_by_name,
+    add_wind_generators,
+    apply_wind_scenario,
 )
 
 
 def main():
     parser = argparse.ArgumentParser(description="Otimização OPF via Algoritmo Genético")
     parser.add_argument("case", choices=list(CONFIGS.keys()), help="Caso a executar")
+    parser.add_argument("--hour", type=int, choices=range(24), metavar="0-23",
+                        help="Hora do cenário eólico (sobrepõe wind_scenario_hour do config)")
     args = parser.parse_args()
 
-    CONFIG = CONFIGS[args.case]
+    CONFIG = dict(CONFIGS[args.case])
     case_name = CONFIG["case_name"]
+
+    if args.hour is not None and CONFIG.get("wind_generators"):
+        CONFIG["wind_scenario_hour"] = args.hour
 
     print(f"\nCircuito : {CONFIG['circuit_path'].name}")
     print(f"Genes    : {get_gene_names(CONFIG)}")
-    print(f"Pop={CONFIG['population_size']}  Gen={CONFIG['num_generations']}\n")
+    print(f"Pop={CONFIG['population_size']}  Gen={CONFIG['num_generations']}")
+
+    if CONFIG.get("wind_generators"):
+        hour = CONFIG.get("wind_scenario_hour", 12)
+        loadshape = CONFIG.get("wind_loadshape", [])
+        factor = loadshape[hour % len(loadshape)] if loadshape else 0.0
+        for wg in CONFIG["wind_generators"]:
+            kw = factor * wg["kw_max"]
+            print(f"Vento    : {wg['name']} @ {wg['bus']} | hora={hour} | "
+                  f"P={kw:.0f} kW ({factor*100:.0f}% de {wg['kw_max']:.0f} kW)")
+    print()
 
     logger = RunLogger(CONFIG["results_dir"], config=CONFIG)
 
@@ -69,6 +86,9 @@ def main():
     # --- Voltage profile of best solution ---
     dss = create_dss(allow_forms=CONFIG["allow_forms"])
     compile_circuit(dss, CONFIG["circuit_path"])
+    if CONFIG.get("wind_generators"):
+        add_wind_generators(dss, CONFIG)
+        apply_wind_scenario(dss, CONFIG, CONFIG.get("wind_scenario_hour", 12))
     apply_solution(dss, decoded, CONFIG)
     solve_power_flow(dss)
 

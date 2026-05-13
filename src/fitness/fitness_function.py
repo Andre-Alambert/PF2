@@ -7,7 +7,10 @@ from src.fitness.objective_functions import (
     compute_normalization_bounds,
     normalize,
 )
-from src.opendss.opendss_interface import create_dss, compile_circuit, solve_power_flow, get_all_bus_voltages_pu
+from src.opendss.opendss_interface import (
+    create_dss, compile_circuit, solve_power_flow, get_all_bus_voltages_pu,
+    add_wind_generators, apply_wind_scenario,
+)
 
 _eval_cache = {}
 _verbose = True
@@ -38,6 +41,9 @@ def make_fitness_function(config):
     """
     dss = create_dss(allow_forms=config["allow_forms"])
     compile_circuit(dss, config["circuit_path"])
+    if config.get("wind_generators"):
+        add_wind_generators(dss, config)
+        apply_wind_scenario(dss, config, config.get("wind_scenario_hour", 12))
     solve_power_flow(dss)
     v_refs_pu = get_all_bus_voltages_pu(dss)
     bounds = compute_normalization_bounds(config, v_refs_pu)
