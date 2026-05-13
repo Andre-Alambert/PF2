@@ -69,7 +69,7 @@ CONFIG = {
     #   fitness mediano = 0.000262 | std = 4.67e-6 | conv. gen = 13 | t = 1.227s
     # =========================
     "population_size": 40,
-    "num_generations": 20,
+    "num_generations": 40,
     "num_parents_mating": 20,
     "mutation_percent_genes": 20,
 
