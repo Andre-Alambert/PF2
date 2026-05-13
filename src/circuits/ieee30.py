@@ -53,7 +53,7 @@ CONFIG = {
     # =========================
     # Pesos da soma ponderada normalizada: F = w_cost·f1' + w_voltage·f2' + w_emissions·f3'
     # w_emissions=0 desativa emissões na Etapa 1; basta mudar o valor para ativá-las.
-    "objective_weights": {"w_cost": 1.0, "w_voltage": 1.0, "w_emissions": 0.0},
+    "objective_weights": {"w_cost": 0.4, "w_voltage": 0.3, "w_emissions": 0.3},
 
     # =========================
     # Penalizações (restrições duras)
