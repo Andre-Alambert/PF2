@@ -18,12 +18,26 @@ CONFIG = {
     # =========================
     # Cinco geradores PV/PQ; o slack (B1/Vsource) permanece fixo em 1.06 pu.
     # Sem chave "vsource": tensão do slack não é variável de controle.
+    # Coeficientes de custo (a [$/MW²h], b [$/MWh], c [$/h]) e emissão
+    # (alpha [ton/h], beta [ton/MWh], gamma [ton/MW²h]) por gerador.
+    # Fonte: Lee, Park & Ortiz (1985) / El-Keib (1994) — benchmark IEEE 30-bus.
+    # Conversão de unidades: genes em kW → kw/1000 → MW dentro das funções objetivo.
     "generators": [
-        {"name": "B2",  "pg_min_kw":     0.0, "pg_max_kw":  80_000.0},
-        {"name": "B5",  "pg_min_kw":     0.0, "pg_max_kw":  50_000.0},
-        {"name": "B8",  "pg_min_kw":     0.0, "pg_max_kw":  35_000.0},
-        {"name": "B11", "pg_min_kw":     0.0, "pg_max_kw":  30_000.0},
-        {"name": "B13", "pg_min_kw":     0.0, "pg_max_kw":  40_000.0},
+        {"name": "B2",  "pg_min_kw": 0.0, "pg_max_kw": 80_000.0,
+         "cost_a": 0.00375, "cost_b": 2.00, "cost_c": 0.0,
+         "emit_alpha": 0.04091, "emit_beta": -0.05554, "emit_gamma": 0.06490},
+        {"name": "B5",  "pg_min_kw": 0.0, "pg_max_kw": 50_000.0,
+         "cost_a": 0.01750, "cost_b": 1.75, "cost_c": 0.0,
+         "emit_alpha": 0.02543, "emit_beta": -0.06047, "emit_gamma": 0.05638},
+        {"name": "B8",  "pg_min_kw": 0.0, "pg_max_kw": 35_000.0,
+         "cost_a": 0.06250, "cost_b": 1.00, "cost_c": 0.0,
+         "emit_alpha": 0.04258, "emit_beta": -0.05094, "emit_gamma": 0.04586},
+        {"name": "B11", "pg_min_kw": 0.0, "pg_max_kw": 30_000.0,
+         "cost_a": 0.00834, "cost_b": 3.25, "cost_c": 0.0,
+         "emit_alpha": 0.05326, "emit_beta": -0.03550, "emit_gamma": 0.03970},
+        {"name": "B13", "pg_min_kw": 0.0, "pg_max_kw": 40_000.0,
+         "cost_a": 0.02500, "cost_b": 3.00, "cost_c": 0.0,
+         "emit_alpha": 0.04716, "emit_beta": -0.05940, "emit_gamma": 0.05660},
     ],
 
     # =========================
@@ -35,12 +49,18 @@ CONFIG = {
     "voltage_upper_limit": 1.10,
 
     # =========================
-    # Penalizações
+    # Função objetivo agregada
     # =========================
-    # As perdas neste circuito são da ordem de 10–30 MW (10.000–30.000 kW).
-    # O peso de penalidade é mantido em 10.000 como ponto de partida;
-    # pode ser calibrado via experimento se violações forem sistematicamente ignoradas.
-    "voltage_penalty_weight": 10_000.0,
+    # Pesos da soma ponderada normalizada: F = w_cost·f1' + w_voltage·f2' + w_emissions·f3'
+    # w_emissions=0 desativa emissões na Etapa 1; basta mudar o valor para ativá-las.
+    "objective_weights": {"w_cost": 0.4, "w_voltage": 0.3, "w_emissions": 0.3},
+
+    # =========================
+    # Penalizações (restrições duras)
+    # =========================
+    # F normalizado fica em [0, 2]; voltage_penalty_weight recalibrado para essa escala.
+    # Violação de 0.03 pu em 5 barras → pen_v ≈ 0.0009 × 5 × 100 = 0.45 >> F típico.
+    "voltage_penalty_weight": 100.0,
     "convergence_penalty": 1e6,
 
     # =========================
@@ -49,7 +69,7 @@ CONFIG = {
     #   fitness mediano = 0.000262 | std = 4.67e-6 | conv. gen = 13 | t = 1.227s
     # =========================
     "population_size": 40,
-    "num_generations": 20,
+    "num_generations": 40,
     "num_parents_mating": 20,
     "mutation_percent_genes": 20,
 
@@ -57,4 +77,22 @@ CONFIG = {
     # OpenDSS
     # =========================
     "allow_forms": False,
+
+    # =========================
+    # Geração eólica (Etapa 2)
+    # =========================
+    # Gerador eólico em B30 (33 kV, barra de carga no extremo da rede).
+    # Tratado como não-despachável: kW fixo por cenário, GA otimiza só os térmicos.
+    "wind_generators": [
+        {"name": "Wind_B30", "bus": "B30", "kv": 33.0, "kw_max": 20_000.0},
+    ],
+    # Perfil de fator de capacidade horário (24h). Vento mais forte à noite/madrugada.
+    "wind_loadshape": [
+        0.35, 0.40, 0.45, 0.50, 0.48, 0.42,  # 00-05h
+        0.30, 0.22, 0.18, 0.20, 0.28, 0.35,  # 06-11h
+        0.45, 0.52, 0.58, 0.55, 0.48, 0.55,  # 12-17h
+        0.68, 0.72, 0.65, 0.58, 0.50, 0.42,  # 18-23h
+    ],
+    # Hora do cenário a simular (0-23). Override via --hour na CLI.
+    "wind_scenario_hour": 12,
 }

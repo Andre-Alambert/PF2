@@ -128,6 +128,31 @@ def get_max_voltage_pu(dss: DSS) -> float:
     return max(voltages)
 
 
+def add_wind_generators(dss: DSS, config: Dict) -> None:
+    """
+    Adiciona geradores eólicos ao circuito via comandos DSS.
+    Chamado uma vez após compile_circuit; kW inicial = kw_max (ajustado em seguida).
+    """
+    for wg in config.get("wind_generators", []):
+        dss.text(
+            f"New Generator.{wg['name']} Bus1={wg['bus']} "
+            f"kV={wg['kv']} kW={wg['kw_max']:.1f} Model=1"
+        )
+
+
+def apply_wind_scenario(dss: DSS, config: Dict, hour: int) -> None:
+    """
+    Ajusta kW dos geradores eólicos para o fator de capacidade do horário dado.
+    """
+    loadshape = config.get("wind_loadshape", [])
+    if not loadshape:
+        return
+    factor = loadshape[hour % len(loadshape)]
+    for wg in config.get("wind_generators", []):
+        kw = factor * wg["kw_max"]
+        dss.text(f"Edit Generator.{wg['name']} kW={kw:.1f}")
+
+
 def reset_and_recompile(dss: DSS, circuit_path: str | Path) -> None:
     """
     Recompila o circuito (opcional para evitar efeitos acumulados).

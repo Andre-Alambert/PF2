@@ -25,6 +25,7 @@ def evaluate_solution(dss, solution, config):
             "voltages_pu": [],
             "v_min": None,
             "v_max": None,
+            "generators_dispatched": [],
         }
 
     voltages_pu = get_all_bus_voltages_pu(dss)
@@ -35,4 +36,5 @@ def evaluate_solution(dss, solution, config):
         "voltages_pu": voltages_pu,
         "v_min": min(voltages_pu) if voltages_pu else None,
         "v_max": max(voltages_pu) if voltages_pu else None,
+        "generators_dispatched": decoded_solution["generators"],
     }
