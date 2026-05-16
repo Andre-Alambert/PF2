@@ -34,7 +34,7 @@ Todas as etapas planejadas no Relatório Parcial I foram implementadas:
 | Formulação multiobjetivo (3 objetivos) | ✅ Concluído | NSGA-II com frente de Pareto completa |
 | Integração de geração renovável | ✅ Concluído | Gerador eólico Wind_B30 com LoadShape por hora |
 | PyGAD → NSGA-II | ✅ Concluído | Substituição integral; pymoo 0.6.1.6 |
-| Calibração de hiperparâmetros (NSGA-II) | 🔲 Pendente | Métrica: hipervolume da frente de Pareto |
+| Calibração de hiperparâmetros (NSGA-II) | ✅ Concluído | Varredura 24 configs × 3 seeds; métrica: hipervolume |
 | Comparação de cenários eólicos | 🔲 Pendente | Sobreposição das frentes hora 8 / 12 / 18 |
 
 ---
@@ -110,34 +110,6 @@ O NSGA-II otimiza apenas os 5 térmicos; cada cenário eólico produz uma frente
 
 ---
 
-## Estrutura do Projeto
-
-```
-src/
-  nsga2.py                      # Entrypoint principal
-  configs.py                    # Registry de circuitos disponíveis
-  circuits/
-    ieee30.py                   # Configuração IEEE 30-Bus (caso principal)
-    4bus.py                     # Configuração 4-Bus (secundário)
-  fitness/
-    evaluation.py               # Executa o fluxo e decodifica a solução
-    objective_functions.py      # f1, f2, f3 + normalização + bounds analíticos
-    penalties.py                # Penalidade de violação de tensão (restrição dura)
-  genetic_algorithm/
-    encoding.py                 # Gene space e decodificação da solução
-    nsga2_runner.py             # OPFProblem (pymoo) + run_nsga2
-  opendss/
-    opendss_interface.py        # Interface com OpenDSS + funções de vento
-  results/
-    plotting.py                 # Convergência e perfil de tensão
-    pareto.py                   # plot_pareto_nsga2: frente de Pareto 2D
-data/IEEETestCases/             # Arquivos .dss dos circuitos
-results/30bus/                  # CSVs e gráficos das rodadas IEEE 30-Bus
-reports/                        # Relatórios parciais (PF1 e PF2)
-```
-
----
-
 ## Como Usar
 
 ### 1. Instalar dependências
@@ -194,10 +166,69 @@ Configurados em `src/circuits/ieee30.py`:
 
 ---
 
+## Calibração de Hiperparâmetros (NSGA-II)
+
+Implementada em `src/run_experiment_nsga2.py`. A varredura cobre 24 configurações (3 pop × 2 gen × 2 sbx_η × 2 pm_η) com 3 seeds cada, totalizando 72 rodadas. A métrica é o **hipervolume** da frente de Pareto (`pymoo.indicators.hv.HV`), que mede o volume do espaço dominado — quanto maior, melhor.
+
+**Grade de parâmetros:**
+
+| Parâmetro | Valores testados |
+|-----------|-----------------|
+| `pop_size` | 20, 40, 80 |
+| `num_gen` | 20, 40 |
+| `sbx_eta` (η crossover SBX) | 10, 20 |
+| `pm_eta` (η mutação PM) | 10, 20 |
+
+**Ponto de referência HV:** `[f1_max × 1,05, f2_max × 1,05, f3_max × 1,05]` a partir dos bounds analíticos.
+
+Para cada configuração o experimento reporta hipervolume mediano ± desvio padrão e tempo mediano de execução, e ao final salva um CSV e um gráfico de barras ranqueado.
+
+### Como rodar o experimento
+
+```bash
+python -m src.run_experiment_nsga2 ieee30 --hour 18
+```
+
+Saída em `results/30bus/`:
+
+```
+experiment_nsga2_ieee30_<timestamp>.csv   # HV mediano/std por configuração
+experiment_nsga2_ieee30_<timestamp>.png   # Ranking visual por hipervolume
+```
+
+---
+
+## Estrutura do Projeto
+
+```
+src/
+  nsga2.py                      # Entrypoint principal
+  run_experiment_nsga2.py       # Varredura de hiperparâmetros (HV como métrica)
+  configs.py                    # Registry de circuitos disponíveis
+  circuits/
+    ieee30.py                   # Configuração IEEE 30-Bus (caso principal)
+    4bus.py                     # Configuração 4-Bus (secundário)
+  fitness/
+    evaluation.py               # Executa o fluxo e decodifica a solução
+    objective_functions.py      # f1, f2, f3 + normalização + bounds analíticos
+    penalties.py                # Penalidade de violação de tensão (restrição dura)
+  genetic_algorithm/
+    encoding.py                 # Gene space e decodificação da solução
+    nsga2_runner.py             # OPFProblem (pymoo) + run_nsga2 (aceita overrides)
+  opendss/
+    opendss_interface.py        # Interface com OpenDSS + funções de vento
+  results/
+    plotting.py                 # Convergência e perfil de tensão
+    pareto.py                   # plot_pareto_nsga2 + plot_hypervolume_pareto
+data/IEEETestCases/             # Arquivos .dss dos circuitos
+results/30bus/                  # CSVs e gráficos das rodadas IEEE 30-Bus
+reports/                        # Relatórios parciais (PF1 e PF2)
+```
+
+---
+
 ## Próximos Passos
 
-1. **Calibração de hiperparâmetros do NSGA-II:** reimplementar varredura usando **hipervolume** como métrica (`pymoo.indicators.hv.HV`). O hipervolume mede o volume do espaço dominado pela frente de Pareto — quanto maior, melhor. Ponto de referência: bounds analíticos de f1, f2, f3.
+1. **Comparação de cenários eólicos:** sobrepor as frentes de Pareto das horas 8, 12 e 18 num único gráfico para quantificar o impacto da geração eólica nos três objetivos.
 
-2. **Comparação de cenários eólicos:** sobrepor as frentes de Pareto das horas 8, 12 e 18 num único gráfico para quantificar o impacto da geração eólica nos três objetivos.
-
-3. **Escalabilidade:** avaliar performance em redes maiores (mais barras e variáveis de controle).
+2. **Escalabilidade:** avaliar performance em redes maiores (mais barras e variáveis de controle).

@@ -55,6 +55,11 @@ class OPFProblem(Problem):
         out["G"] = np.array(G, dtype=float)
 
 
+class _SilentCallback(Callback):
+    def notify(self, algorithm):
+        pass
+
+
 class _ProgressCallback(Callback):
     def notify(self, algorithm):
         gen = algorithm.n_gen
@@ -73,20 +78,28 @@ class _ProgressCallback(Callback):
             print(f"  Gen {gen:>3} | nenhuma solução factível")
 
 
-def run_nsga2(config, dss, v_refs):
+def run_nsga2(config, dss, v_refs, overrides=None, verbose=True):
+    ov = overrides or {}
+    pop_size = ov.get("pop_size", config["population_size"])
+    num_gen  = ov.get("num_gen",  config["num_generations"])
+    sbx_eta  = ov.get("sbx_eta", 15)
+    pm_eta   = ov.get("pm_eta",  20)
+    seed     = ov.get("seed",    None)
+
     problem = OPFProblem(config, dss, v_refs)
     algorithm = NSGA2(
-        pop_size=config["population_size"],
+        pop_size=pop_size,
         sampling=FloatRandomSampling(),
-        crossover=SBX(prob=0.9, eta=15),
-        mutation=PM(prob=1.0 / problem.n_var, eta=20),
+        crossover=SBX(prob=0.9, eta=sbx_eta),
+        mutation=PM(prob=1.0 / problem.n_var, eta=pm_eta),
         eliminate_duplicates=True,
     )
     res = minimize(
         problem,
         algorithm,
-        termination=("n_gen", config["num_generations"]),
-        callback=_ProgressCallback(),
+        termination=("n_gen", num_gen),
+        callback=_ProgressCallback() if verbose else _SilentCallback(),
         verbose=False,
+        seed=seed,
     )
     return res
