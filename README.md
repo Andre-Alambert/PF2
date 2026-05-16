@@ -36,6 +36,7 @@ Todas as etapas planejadas no Relatório Parcial I foram implementadas:
 | PyGAD → NSGA-II | ✅ Concluído | Substituição integral; pymoo 0.6.1.6 |
 | Calibração de hiperparâmetros (NSGA-II) | ✅ Concluído | Varredura 24 configs × 3 seeds; métrica: hipervolume |
 | Comparação de cenários eólicos | ✅ Concluído | Sobreposição das frentes hora 8 / 12 / 18 num único gráfico |
+| Escalabilidade — IEEE 118-Bus | ✅ Concluído | Config adicionada; NSGA-II com 18 variáveis; frente de Pareto obtida |
 
 ---
 
@@ -91,7 +92,7 @@ O NSGA-II otimiza apenas os 5 térmicos; cada cenário eólico produz uma frente
 
 ## Resultados
 
-### Frente de Pareto — hora 18 (13,6 MW eólico)
+### Frente de Pareto — IEEE 30-Bus, hora 18 (13,6 MW eólico)
 
 40 soluções não-dominadas. Extremos da frente:
 
@@ -107,6 +108,36 @@ O NSGA-II otimiza apenas os 5 térmicos; cada cenário eólico produz uma frente
 |------------|-------------|-----------|------------------|
 | PyGAD escalar (Relatório I) | 178,6 | 0,372 | 58,9 |
 | NSGA-II (melhor de cada objetivo) | **103,8** | **0,073** | **19,7** |
+
+### Comparação de cenários eólicos — IEEE 30-Bus
+
+Tendências medianas confirmadas com 4 rodadas independentes:
+
+| Cenário | f1_min ($/h) | f3_min (ton/h) | Interpretação |
+|---------|-------------|----------------|---------------|
+| Hora 8 — 3,6 MW | ~119,7 | ~26,9 | Maior dependência térmica |
+| Hora 12 — 9,0 MW | ~106,8 | ~23,8 | ↓ |
+| Hora 18 — 13,6 MW | ~99,6 | ~20,7 | Mais vento → menor custo e emissões mínimos |
+
+A tendência de f2 mínimo é menos monotônica entre cenários, pois depende de como a injeção eólica em B30 interage com o perfil de tensão da rede.
+
+### Escalabilidade — IEEE 118-Bus (sem eólica)
+
+Primeira execução do NSGA-II no IEEE 118-Bus com 18 geradores controláveis (pop=80, gen=80).
+
+| Métrica | IEEE 30-Bus | IEEE 118-Bus | Observação |
+|---------|-------------|--------------|------------|
+| Variáveis de controle | 5 | 18 | 3,6× mais dimensões |
+| Soluções Pareto | 40 | 80 | `population_size` configurado |
+| f1 mínimo ($/h) | 147 | 12.788 | ~87× maior — escala da carga |
+| f1 máximo ($/h) | 234 | 19.228 | |
+| f2 mínimo (pu) | 0,092 | **0,066** | 118-Bus tem 36 condensadores síncronos em modo PV — melhor suporte reativo |
+| f2 máximo (pu) | 3,16 | 3,04 | Magnitudes similares apesar de 4× mais barras |
+| f3 mínimo (ton/h) | 36,7 | 39.848 | ~1.000× maior — quadrático em P, geradores ~20× maiores |
+
+O fronte do 118-Bus é mais espalhado que o do 30-Bus: com 18 variáveis e pop=80 o NSGA-II está no limite inferior da regra pop ≥ 4–5×n_var. Aumentar pop e gen deve melhorar a qualidade da frente.
+
+> **Nota:** os coeficientes de custo e emissão do 118-Bus são aproximações por porte de unidade — adequados para teste de escalabilidade, mas não validados contra literatura específica.
 
 ---
 
@@ -124,9 +155,10 @@ pip install -r requirements.txt
 
 ```bash
 python -m src.nsga2 ieee30
+python -m src.nsga2 ieee118
 ```
 
-Com cenário eólico por hora (0–23):
+Com cenário eólico por hora (0–23, apenas ieee30):
 
 ```bash
 python -m src.nsga2 ieee30 --hour 18
@@ -208,6 +240,7 @@ src/
   configs.py                    # Registry de circuitos disponíveis
   circuits/
     ieee30.py                   # Configuração IEEE 30-Bus (caso principal)
+    ieee118.py                  # Configuração IEEE 118-Bus (escalabilidade)
     4bus.py                     # Configuração 4-Bus (secundário)
   fitness/
     evaluation.py               # Executa o fluxo e decodifica a solução
@@ -223,6 +256,7 @@ src/
     pareto.py                   # plot_pareto_nsga2 + plot_hypervolume_pareto + plot_wind_scenario_comparison
 data/IEEETestCases/             # Arquivos .dss dos circuitos
 results/30bus/                  # CSVs e gráficos das rodadas IEEE 30-Bus
+results/118bus/                 # CSVs e gráficos das rodadas IEEE 118-Bus
 reports/                        # Relatórios parciais (PF1 e PF2)
 ```
 
@@ -253,4 +287,6 @@ wind_comparison_ieee30_<timestamp>.png   # Gráfico com sobreposição (f1×f3 e
 
 ## Próximos Passos
 
-1. **Escalabilidade:** avaliar performance em redes maiores (mais barras e variáveis de controle).
+1. **Coeficientes do 118-Bus:** substituir os coeficientes aproximados de custo e emissão por valores validados contra literatura (e.g., MATPOWER case118 / Alsac & Stott 1974).
+2. **Tuning do 118-Bus:** aumentar `population_size` e `num_generations` para melhorar a qualidade da frente de Pareto com 18 variáveis.
+3. **Geração eólica no 118-Bus:** adicionar cenários eólicos e reproduzir a análise de comparação feita no 30-Bus.
