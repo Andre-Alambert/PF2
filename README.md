@@ -35,7 +35,7 @@ Todas as etapas planejadas no Relatório Parcial I foram implementadas:
 | Integração de geração renovável | ✅ Concluído | Gerador eólico Wind_B30 com LoadShape por hora |
 | PyGAD → NSGA-II | ✅ Concluído | Substituição integral; pymoo 0.6.1.6 |
 | Calibração de hiperparâmetros (NSGA-II) | ✅ Concluído | Varredura 24 configs × 3 seeds; métrica: hipervolume |
-| Comparação de cenários eólicos | 🔲 Pendente | Sobreposição das frentes hora 8 / 12 / 18 |
+| Comparação de cenários eólicos | ✅ Concluído | Sobreposição das frentes hora 8 / 12 / 18 num único gráfico |
 
 ---
 
@@ -204,6 +204,7 @@ experiment_nsga2_ieee30_<timestamp>.png   # Ranking visual por hipervolume
 src/
   nsga2.py                      # Entrypoint principal
   run_experiment_nsga2.py       # Varredura de hiperparâmetros (HV como métrica)
+  compare_wind_scenarios.py     # Comparação de cenários eólicos (hora 8 / 12 / 18)
   configs.py                    # Registry de circuitos disponíveis
   circuits/
     ieee30.py                   # Configuração IEEE 30-Bus (caso principal)
@@ -219,7 +220,7 @@ src/
     opendss_interface.py        # Interface com OpenDSS + funções de vento
   results/
     plotting.py                 # Convergência e perfil de tensão
-    pareto.py                   # plot_pareto_nsga2 + plot_hypervolume_pareto
+    pareto.py                   # plot_pareto_nsga2 + plot_hypervolume_pareto + plot_wind_scenario_comparison
 data/IEEETestCases/             # Arquivos .dss dos circuitos
 results/30bus/                  # CSVs e gráficos das rodadas IEEE 30-Bus
 reports/                        # Relatórios parciais (PF1 e PF2)
@@ -227,8 +228,29 @@ reports/                        # Relatórios parciais (PF1 e PF2)
 
 ---
 
+## Comparação de Cenários Eólicos
+
+Implementada em `src/compare_wind_scenarios.py`. Roda o NSGA-II de forma independente para cada hora especificada (padrão: 8, 12 e 18), com v_refs recalculados por cenário, e sobrepõe as frentes de Pareto num único gráfico para visualizar o impacto da geração eólica nos três objetivos.
+
+```bash
+python -m src.compare_wind_scenarios ieee30
+```
+
+Com horas customizadas:
+
+```bash
+python -m src.compare_wind_scenarios ieee30 --hours 8 12 18
+```
+
+Saída em `results/30bus/`:
+
+```
+wind_comparison_ieee30_<timestamp>.csv   # Frentes de todos os cenários combinadas
+wind_comparison_ieee30_<timestamp>.png   # Gráfico com sobreposição (f1×f3 e f1×f2)
+```
+
+---
+
 ## Próximos Passos
 
-1. **Comparação de cenários eólicos:** sobrepor as frentes de Pareto das horas 8, 12 e 18 num único gráfico para quantificar o impacto da geração eólica nos três objetivos.
-
-2. **Escalabilidade:** avaliar performance em redes maiores (mais barras e variáveis de controle).
+1. **Escalabilidade:** avaliar performance em redes maiores (mais barras e variáveis de controle).
