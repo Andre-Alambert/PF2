@@ -10,7 +10,7 @@ if __package__ is None or __package__ == "":
         sys.path.insert(0, str(project_root))
 
 from src.configs import CONFIGS
-from src.genetic_algorithm.nsga2_runner import run_nsga2
+from src.genetic_algorithm.nsga3_runner import run_nsga3
 from src.opendss.opendss_interface import (
     create_dss, compile_circuit, solve_power_flow, get_all_bus_voltages_pu,
     add_wind_generators, apply_wind_scenario,
@@ -37,12 +37,12 @@ def _run_scenario(base_config, hour):
     solve_power_flow(dss)
     v_refs = get_all_bus_voltages_pu(dss)
 
-    res = run_nsga2(CONFIG, dss, v_refs, verbose=False)
+    res = run_nsga3(CONFIG, dss, v_refs, verbose=False)
     return res, kw, factor
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Comparação de cenários eólicos — NSGA-II")
+    parser = argparse.ArgumentParser(description="Comparação de cenários eólicos — NSGA-III")
     parser.add_argument("case", choices=list(CONFIGS.keys()), help="Caso a executar")
     parser.add_argument("--hours", type=int, nargs="+", default=DEFAULT_HOURS, metavar="H",
                         help=f"Horas dos cenários (padrão: {DEFAULT_HOURS})")

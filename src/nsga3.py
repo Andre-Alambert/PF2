@@ -11,16 +11,16 @@ if __package__ is None or __package__ == "":
 
 from src.configs import CONFIGS
 from src.genetic_algorithm.encoding import get_gene_names
-from src.genetic_algorithm.nsga2_runner import run_nsga2
+from src.genetic_algorithm.nsga3_runner import run_nsga3
 from src.opendss.opendss_interface import (
     create_dss, compile_circuit, solve_power_flow, get_all_bus_voltages_pu,
     add_wind_generators, apply_wind_scenario,
 )
-from src.results.pareto import plot_pareto_nsga2
+from src.results.pareto import plot_pareto_nsga3
 
 
 def main():
-    parser = argparse.ArgumentParser(description="OPF multiobjetivo — NSGA-II")
+    parser = argparse.ArgumentParser(description="OPF multiobjetivo — NSGA-III")
     parser.add_argument("case", choices=list(CONFIGS.keys()), help="Caso a executar")
     parser.add_argument("--hour", type=int, choices=range(24), metavar="0-23",
                         help="Hora do cenário eólico (sobrepõe wind_scenario_hour do config)")
@@ -31,8 +31,8 @@ def main():
     if args.hour is not None and CONFIG.get("wind_generators"):
         CONFIG["wind_scenario_hour"] = args.hour
 
-    print(f"\nNSGA-II | Circuito: {CONFIG['circuit_path'].name}")
-    print(f"Pop={CONFIG['population_size']}  Gen={CONFIG['num_generations']}  Objetivos=3 (custo, tensão, emissões)")
+    print(f"\nNSGA-III | Circuito: {CONFIG['circuit_path'].name}")
+    print(f"n_partitions={CONFIG.get('n_partitions', 8)}  Gen={CONFIG['num_generations']}  Objetivos=3 (custo, tensão, emissões)")
 
     if CONFIG.get("wind_generators"):
         hour = CONFIG.get("wind_scenario_hour", 12)
@@ -52,8 +52,8 @@ def main():
     solve_power_flow(dss)
     v_refs = get_all_bus_voltages_pu(dss)
 
-    print("Iniciando NSGA-II...\n")
-    res = run_nsga2(CONFIG, dss, v_refs)
+    print("Iniciando NSGA-III...\n")
+    res = run_nsga3(CONFIG, dss, v_refs)
 
     if res.X is None:
         print("\nNenhuma solução factível encontrada.")
@@ -62,7 +62,8 @@ def main():
     F = res.F  # (n_pareto, 3): [custo, vdev, emissões]
     X = res.X  # (n_pareto, n_var)
 
-    print(f"\n=== FRENTE DE PARETO — {len(F)} soluções ===")
+    n_partitions = CONFIG.get("n_partitions", 8)
+    print(f"\n=== FRENTE DE PARETO NSGA-III — {len(F)} soluções (n_partitions={n_partitions}) ===")
     print(f"{'#':>3}  {'Custo ($/h)':>12}  {'Vdev (pu)':>10}  {'Emissões (ton/h)':>16}")
     for i, f in enumerate(F):
         print(f"{i+1:>3}  {f[0]:>12.1f}  {f[1]:>10.4f}  {f[2]:>16.3f}")
@@ -72,7 +73,7 @@ def main():
     results_dir.mkdir(parents=True, exist_ok=True)
 
     gene_names = get_gene_names(CONFIG)
-    csv_path = results_dir / f"pareto_nsga2_{case_name}_{timestamp}.csv"
+    csv_path = results_dir / f"pareto_nsga3_{case_name}_{timestamp}.csv"
     with open(csv_path, "w", newline="") as fh:
         writer = csv.writer(fh)
         writer.writerow(["sol"] + gene_names + ["cost_dh", "voltage_deviation_pu", "emissions_ton_h"])
@@ -80,8 +81,8 @@ def main():
             writer.writerow([i + 1] + list(x) + list(f))
     print(f"\nCSV salvo: {csv_path}")
 
-    plot_path = results_dir / f"pareto_nsga2_{case_name}_{timestamp}.png"
-    plot_pareto_nsga2(F, plot_path, case_name=case_name)
+    plot_path = results_dir / f"pareto_nsga3_{case_name}_{timestamp}.png"
+    plot_pareto_nsga3(F, plot_path, case_name=case_name)
     print(f"Gráfico salvo: {plot_path}")
 
 

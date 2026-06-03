@@ -1,11 +1,12 @@
 import numpy as np
-from pymoo.algorithms.moo.nsga2 import NSGA2
+from pymoo.algorithms.moo.nsga3 import NSGA3
 from pymoo.core.problem import Problem
 from pymoo.core.callback import Callback
 from pymoo.operators.sampling.rnd import FloatRandomSampling
 from pymoo.operators.crossover.sbx import SBX
 from pymoo.operators.mutation.pm import PM
 from pymoo.optimize import minimize
+from pymoo.util.ref_dirs import get_reference_directions
 
 from src.genetic_algorithm.encoding import get_gene_space
 from src.fitness.evaluation import evaluate_solution
@@ -78,17 +79,22 @@ class _ProgressCallback(Callback):
             print(f"  Gen {gen:>3} | nenhuma solução factível")
 
 
-def run_nsga2(config, dss, v_refs, overrides=None, verbose=True):
+def run_nsga3(config, dss, v_refs, overrides=None, verbose=True):
     ov = overrides or {}
-    pop_size = ov.get("pop_size", config["population_size"])
-    num_gen  = ov.get("num_gen",  config["num_generations"])
-    sbx_eta  = ov.get("sbx_eta", 15)
-    pm_eta   = ov.get("pm_eta",  20)
-    seed     = ov.get("seed",    None)
+    # n_partitions=8 → 45 reference points para n_obj=3 (Das-Dennis)
+    n_partitions = ov.get("n_partitions", config.get("n_partitions", 8))
+    num_gen      = ov.get("num_gen",      config["num_generations"])
+    sbx_eta      = ov.get("sbx_eta",      15)
+    pm_eta       = ov.get("pm_eta",       20)
+    seed         = ov.get("seed",         None)
+
+    ref_dirs = get_reference_directions("das-dennis", 3, n_partitions=n_partitions)
+    pop_size = len(ref_dirs)  # pop_size deriva de n_partitions para garantir cobertura uniforme
 
     problem = OPFProblem(config, dss, v_refs)
-    algorithm = NSGA2(
+    algorithm = NSGA3(
         pop_size=pop_size,
+        ref_dirs=ref_dirs,
         sampling=FloatRandomSampling(),
         crossover=SBX(prob=0.9, eta=sbx_eta),
         mutation=PM(prob=1.0 / problem.n_var, eta=pm_eta),
