@@ -1,0 +1,3109 @@
+
+CIRCUIT ELEMENT POWER FLOW
+
+(Power Flow into element from indicated Bus)
+
+Power Delivery Elements
+
+  Bus        Phase     MW     +j   Mvar         MVA         PF
+
+ELEMENT = "Vsource.SOURCE"
+89_CLINCHRV      1      -202.4 +j      3.9      202.4      -0.9998
+89_CLINCHRV      2      -202.4 +j      3.9      202.4      -0.9998
+89_CLINCHRV      3      -202.4 +j      3.9      202.4      -0.9998
+   TERMINAL TOTAL ....  -607.1 +j     11.8      607.3      -0.9998
+89_CLINCHRV      0         0.0 +j      0.0        0.0       1.0000
+89_CLINCHRV      0         0.0 +j      0.0        0.0       1.0000
+89_CLINCHRV      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Line.1_2_1_1"
+1_RIVERSDE       1        -4.1 +j     -4.3        6.0       0.6878
+1_RIVERSDE       2        -4.1 +j     -4.3        6.0       0.6878
+1_RIVERSDE       3        -4.1 +j     -4.3        6.0       0.6878
+   TERMINAL TOTAL ....   -12.4 +j    -13.0       18.0       0.6878
+2_POKAGON        1         4.2 +j      3.7        5.5       0.7493
+2_POKAGON        2         4.2 +j      3.7        5.5       0.7493
+2_POKAGON        3         4.2 +j      3.7        5.5       0.7493
+   TERMINAL TOTAL ....    12.5 +j     11.0       16.6       0.7493
+
+ELEMENT = "Line.1_3_1_1"
+1_RIVERSDE       1       -12.9 +j     -5.7       14.1       0.9148
+1_RIVERSDE       2       -12.9 +j     -5.7       14.1       0.9148
+1_RIVERSDE       3       -12.9 +j     -5.7       14.1       0.9148
+   TERMINAL TOTAL ....   -38.6 +j    -17.1       42.2       0.9148
+3_HICKRYCK       1        13.0 +j      5.6       14.1       0.9173
+3_HICKRYCK       2        13.0 +j      5.6       14.1       0.9173
+3_HICKRYCK       3        13.0 +j      5.6       14.1       0.9173
+   TERMINAL TOTAL ....    38.9 +j     16.9       42.4       0.9173
+
+ELEMENT = "Line.2_12_1_1"
+2_POKAGON        1       -10.8 +j     -6.7       12.7       0.8513
+2_POKAGON        2       -10.8 +j     -6.7       12.7       0.8513
+2_POKAGON        3       -10.8 +j     -6.7       12.7       0.8513
+   TERMINAL TOTAL ....   -32.5 +j    -20.0       38.1       0.8513
+12_TWINBRCH      1        10.9 +j      6.5       12.7       0.8600
+12_TWINBRCH      2        10.9 +j      6.5       12.7       0.8600
+12_TWINBRCH      3        10.9 +j      6.5       12.7       0.8600
+   TERMINAL TOTAL ....    32.7 +j     19.4       38.1       0.8600
+
+ELEMENT = "Line.3_5_1_1"
+3_HICKRYCK       1       -22.7 +j     -4.8       23.2       0.9781
+3_HICKRYCK       2       -22.7 +j     -4.8       23.2       0.9781
+3_HICKRYCK       3       -22.7 +j     -4.8       23.2       0.9781
+   TERMINAL TOTAL ....   -68.1 +j    -14.5       69.6       0.9781
+5_OLIVE          1        23.1 +j      5.8       23.8       0.9703
+5_OLIVE          2        23.1 +j      5.8       23.8       0.9703
+5_OLIVE          3        23.1 +j      5.8       23.8       0.9703
+   TERMINAL TOTAL ....    69.3 +j     17.3       71.5       0.9703
+
+ELEMENT = "Line.3_12_1_1"
+3_HICKRYCK       1        -3.3 +j     -4.1        5.3       0.6199
+3_HICKRYCK       2        -3.3 +j     -4.1        5.3       0.6199
+3_HICKRYCK       3        -3.3 +j     -4.1        5.3       0.6199
+   TERMINAL TOTAL ....    -9.8 +j    -12.4       15.8       0.6199
+12_TWINBRCH      1         3.3 +j      3.0        4.4       0.7452
+12_TWINBRCH      2         3.3 +j      3.0        4.4       0.7452
+12_TWINBRCH      3         3.3 +j      3.0        4.4       0.7452
+   TERMINAL TOTAL ....     9.9 +j      8.9       13.3       0.7452
+
+ELEMENT = "Line.4_5_1_1"
+4_NWCARLSL       1       -34.4 +j     -8.9       35.5       0.9681
+4_NWCARLSL       2       -34.4 +j     -8.9       35.5       0.9681
+4_NWCARLSL       3       -34.4 +j     -8.9       35.5       0.9681
+   TERMINAL TOTAL ....  -103.2 +j    -26.7      106.6       0.9681
+5_OLIVE          1        34.5 +j      9.1       35.7       0.9666
+5_OLIVE          2        34.5 +j      9.1       35.7       0.9666
+5_OLIVE          3        34.5 +j      9.1       35.7       0.9666
+   TERMINAL TOTAL ....   103.4 +j     27.4      107.0       0.9666
+
+ELEMENT = "Line.4_11_1_1"
+4_NWCARLSL       1        21.4 +j     -0.1       21.4      -1.0000
+4_NWCARLSL       2        21.4 +j     -0.1       21.4      -1.0000
+4_NWCARLSL       3        21.4 +j     -0.1       21.4      -1.0000
+   TERMINAL TOTAL ....    64.2 +j     -0.2       64.2      -1.0000
+11_SOUTHBND      1       -21.1 +j      0.4       21.1      -0.9998
+11_SOUTHBND      2       -21.1 +j      0.4       21.1      -0.9998
+11_SOUTHBND      3       -21.1 +j      0.4       21.1      -0.9998
+   TERMINAL TOTAL ....   -63.3 +j      1.3       63.4      -0.9998
+
+ELEMENT = "Line.5_6_1_1"
+5_OLIVE          1        29.5 +j      1.4       29.5       0.9989
+5_OLIVE          2        29.5 +j      1.4       29.5       0.9989
+5_OLIVE          3        29.5 +j      1.4       29.5       0.9989
+   TERMINAL TOTAL ....    88.5 +j      4.1       88.6       0.9989
+6_KANKAKEE       1       -29.2 +j     -0.4       29.2       0.9999
+6_KANKAKEE       2       -29.2 +j     -0.4       29.2       0.9999
+6_KANKAKEE       3       -29.2 +j     -0.4       29.2       0.9999
+   TERMINAL TOTAL ....   -87.5 +j     -1.3       87.5       0.9999
+
+ELEMENT = "Line.5_11_1_1"
+5_OLIVE          1        25.7 +j      1.0       25.8       0.9993
+5_OLIVE          2        25.7 +j      1.0       25.8       0.9993
+5_OLIVE          3        25.7 +j      1.0       25.8       0.9993
+   TERMINAL TOTAL ....    77.2 +j      3.0       77.3       0.9993
+11_SOUTHBND      1       -25.3 +j     -0.2       25.3       1.0000
+11_SOUTHBND      2       -25.3 +j     -0.2       25.3       1.0000
+11_SOUTHBND      3       -25.3 +j     -0.2       25.3       1.0000
+   TERMINAL TOTAL ....   -76.0 +j     -0.6       76.0       1.0000
+
+ELEMENT = "Line.6_7_1_1"
+6_KANKAKEE       1        11.8 +j     -1.6       11.9      -0.9911
+6_KANKAKEE       2        11.8 +j     -1.6       11.9      -0.9911
+6_KANKAKEE       3        11.8 +j     -1.6       11.9      -0.9911
+   TERMINAL TOTAL ....    35.5 +j     -4.8       35.8      -0.9911
+7_JACKSNRD       1       -11.8 +j      1.5       11.9      -0.9920
+7_JACKSNRD       2       -11.8 +j      1.5       11.9      -0.9920
+7_JACKSNRD       3       -11.8 +j      1.5       11.9      -0.9920
+   TERMINAL TOTAL ....   -35.5 +j      4.5       35.7      -0.9920
+
+ELEMENT = "Line.7_12_1_1"
+7_JACKSNRD       1         5.5 +j     -2.2        5.9      -0.9301
+7_JACKSNRD       2         5.5 +j     -2.2        5.9      -0.9301
+7_JACKSNRD       3         5.5 +j     -2.2        5.9      -0.9301
+   TERMINAL TOTAL ....    16.5 +j     -6.5       17.7      -0.9301
+12_TWINBRCH      1        -5.5 +j      1.9        5.8      -0.9439
+12_TWINBRCH      2        -5.5 +j      1.9        5.8      -0.9439
+12_TWINBRCH      3        -5.5 +j      1.9        5.8      -0.9439
+   TERMINAL TOTAL ....   -16.4 +j      5.8       17.4      -0.9439
+
+ELEMENT = "Line.8_9_1_1"
+8_OLIVE          1      -146.9 +j    -29.9      149.9       0.9799
+8_OLIVE          2      -146.9 +j    -29.9      149.9       0.9799
+8_OLIVE          3      -146.9 +j    -29.9      149.9       0.9799
+   TERMINAL TOTAL ....  -440.6 +j    -89.7      449.7       0.9799
+9_BEQUINE        1       148.4 +j      8.1      148.6       0.9985
+9_BEQUINE        2       148.4 +j      8.1      148.6       0.9985
+9_BEQUINE        3       148.4 +j      8.1      148.6       0.9985
+   TERMINAL TOTAL ....   445.3 +j     24.4      445.9       0.9985
+
+ELEMENT = "Line.8_30_1_1"
+8_OLIVE          1        24.7 +j      9.2       26.4       0.9367
+8_OLIVE          2        24.7 +j      9.2       26.4       0.9367
+8_OLIVE          3        24.7 +j      9.2       26.4       0.9367
+   TERMINAL TOTAL ....    74.2 +j     27.7       79.2       0.9367
+30_SORENSON      1       -24.6 +j    -25.0       35.1       0.7014
+30_SORENSON      2       -24.6 +j    -25.0       35.1       0.7014
+30_SORENSON      3       -24.6 +j    -25.0       35.1       0.7014
+   TERMINAL TOTAL ....   -73.9 +j    -75.1      105.3       0.7014
+
+ELEMENT = "Line.9_10_1_1"
+9_BEQUINE        1      -148.4 +j     -8.1      148.6       0.9985
+9_BEQUINE        2      -148.4 +j     -8.1      148.6       0.9985
+9_BEQUINE        3      -148.4 +j     -8.1      148.6       0.9985
+   TERMINAL TOTAL ....  -445.3 +j    -24.4      445.9       0.9985
+10_BREED         1       150.0 +j    -17.0      151.0      -0.9936
+10_BREED         2       150.0 +j    -17.0      151.0      -0.9936
+10_BREED         3       150.0 +j    -17.0      151.0      -0.9936
+   TERMINAL TOTAL ....   450.0 +j    -51.0      452.9      -0.9936
+
+ELEMENT = "Line.11_12_1_1"
+11_SOUTHBND      1        11.4 +j    -11.7       16.4      -0.6984
+11_SOUTHBND      2        11.4 +j    -11.7       16.4      -0.6984
+11_SOUTHBND      3        11.4 +j    -11.7       16.4      -0.6984
+   TERMINAL TOTAL ....    34.3 +j    -35.1       49.1      -0.6984
+12_TWINBRCH      1       -11.4 +j     11.7       16.3      -0.6969
+12_TWINBRCH      2       -11.4 +j     11.7       16.3      -0.6969
+12_TWINBRCH      3       -11.4 +j     11.7       16.3      -0.6969
+   TERMINAL TOTAL ....   -34.1 +j     35.1       49.0      -0.6969
+
+ELEMENT = "Line.11_13_1_1"
+11_SOUTHBND      1        11.7 +j      3.8       12.3       0.9509
+11_SOUTHBND      2        11.7 +j      3.8       12.3       0.9509
+11_SOUTHBND      3        11.7 +j      3.8       12.3       0.9509
+   TERMINAL TOTAL ....    35.1 +j     11.4       36.9       0.9509
+13_CONCORD       1       -11.6 +j     -4.1       12.3       0.9438
+13_CONCORD       2       -11.6 +j     -4.1       12.3       0.9438
+13_CONCORD       3       -11.6 +j     -4.1       12.3       0.9438
+   TERMINAL TOTAL ....   -34.7 +j    -12.2       36.8       0.9438
+
+ELEMENT = "Line.12_14_1_1"
+12_TWINBRCH      1         6.1 +j      0.9        6.2       0.9898
+12_TWINBRCH      2         6.1 +j      0.9        6.2       0.9898
+12_TWINBRCH      3         6.1 +j      0.9        6.2       0.9898
+   TERMINAL TOTAL ....    18.3 +j      2.6       18.5       0.9898
+14_GOSHENJT      1        -6.1 +j     -1.4        6.2       0.9750
+14_GOSHENJT      2        -6.1 +j     -1.4        6.2       0.9750
+14_GOSHENJT      3        -6.1 +j     -1.4        6.2       0.9750
+   TERMINAL TOTAL ....   -18.2 +j     -4.1       18.7       0.9750
+
+ELEMENT = "Line.12_16_1_1"
+12_TWINBRCH      1         2.5 +j      1.4        2.9       0.8681
+12_TWINBRCH      2         2.5 +j      1.4        2.9       0.8681
+12_TWINBRCH      3         2.5 +j      1.4        2.9       0.8681
+   TERMINAL TOTAL ....     7.5 +j      4.3        8.6       0.8681
+16_NE            1        -2.5 +j     -2.1        3.3       0.7649
+16_NE            2        -2.5 +j     -2.1        3.3       0.7649
+16_NE            3        -2.5 +j     -2.1        3.3       0.7649
+   TERMINAL TOTAL ....    -7.5 +j     -6.3        9.8       0.7649
+
+ELEMENT = "Line.12_117_1_1"
+12_TWINBRCH      1         6.7 +j      1.7        6.9       0.9683
+12_TWINBRCH      2         6.7 +j      1.7        6.9       0.9683
+12_TWINBRCH      3         6.7 +j      1.7        6.9       0.9683
+   TERMINAL TOTAL ....    20.2 +j      5.2       20.8       0.9683
+117_COREY        1        -6.7 +j     -2.7        7.2       0.9285
+117_COREY        2        -6.7 +j     -2.7        7.2       0.9285
+117_COREY        3        -6.7 +j     -2.7        7.2       0.9285
+   TERMINAL TOTAL ....   -20.0 +j     -8.0       21.5       0.9285
+
+ELEMENT = "Line.13_15_1_1"
+13_CONCORD       1         0.2 +j     -1.3        1.3      -0.1903
+13_CONCORD       2         0.2 +j     -1.3        1.3      -0.1903
+13_CONCORD       3         0.2 +j     -1.3        1.3      -0.1903
+   TERMINAL TOTAL ....     0.7 +j     -3.8        3.9      -0.1903
+15_FTWAYNE       1        -0.2 +j     -0.7        0.7       0.3409
+15_FTWAYNE       2        -0.2 +j     -0.7        0.7       0.3409
+15_FTWAYNE       3        -0.2 +j     -0.7        0.7       0.3409
+   TERMINAL TOTAL ....    -0.7 +j     -2.0        2.2       0.3409
+
+ELEMENT = "Line.14_15_1_1"
+14_GOSHENJT      1         1.4 +j      1.0        1.8       0.8007
+14_GOSHENJT      2         1.4 +j      1.0        1.8       0.8007
+14_GOSHENJT      3         1.4 +j      1.0        1.8       0.8007
+   TERMINAL TOTAL ....     4.2 +j      3.1        5.3       0.8007
+15_FTWAYNE       1        -1.4 +j     -2.6        3.0       0.4703
+15_FTWAYNE       2        -1.4 +j     -2.6        3.0       0.4703
+15_FTWAYNE       3        -1.4 +j     -2.6        3.0       0.4703
+   TERMINAL TOTAL ....    -4.2 +j     -7.8        8.9       0.4703
+
+ELEMENT = "Line.15_17_1_1"
+15_FTWAYNE       1       -34.6 +j     -8.1       35.5       0.9734
+15_FTWAYNE       2       -34.6 +j     -8.1       35.5       0.9734
+15_FTWAYNE       3       -34.6 +j     -8.1       35.5       0.9734
+   TERMINAL TOTAL ....  -103.7 +j    -24.4      106.5       0.9734
+17_SORENSON      1        35.1 +j      8.4       36.1       0.9722
+17_SORENSON      2        35.1 +j      8.4       36.1       0.9722
+17_SORENSON      3        35.1 +j      8.4       36.1       0.9722
+   TERMINAL TOTAL ....   105.3 +j     25.3      108.3       0.9722
+
+ELEMENT = "Line.15_19_1_1"
+15_FTWAYNE       1         3.8 +j      4.1        5.6       0.6819
+15_FTWAYNE       2         3.8 +j      4.1        5.6       0.6819
+15_FTWAYNE       3         3.8 +j      4.1        5.6       0.6819
+   TERMINAL TOTAL ....    11.4 +j     12.2       16.7       0.6819
+19_LINCOLN       1        -3.8 +j     -4.4        5.8       0.6567
+19_LINCOLN       2        -3.8 +j     -4.4        5.8       0.6567
+19_LINCOLN       3        -3.8 +j     -4.4        5.8       0.6567
+   TERMINAL TOTAL ....   -11.4 +j    -13.1       17.3       0.6567
+
+ELEMENT = "Line.15_33_1_1"
+15_FTWAYNE       1         2.4 +j     -1.6        2.9      -0.8287
+15_FTWAYNE       2         2.4 +j     -1.6        2.9      -0.8287
+15_FTWAYNE       3         2.4 +j     -1.6        2.9      -0.8287
+   TERMINAL TOTAL ....     7.2 +j     -4.9        8.7      -0.8287
+33_HAVILAND      1        -2.4 +j      0.7        2.5      -0.9651
+33_HAVILAND      2        -2.4 +j      0.7        2.5      -0.9651
+33_HAVILAND      3        -2.4 +j      0.7        2.5      -0.9651
+   TERMINAL TOTAL ....    -7.2 +j      2.0        7.5      -0.9651
+
+ELEMENT = "Line.16_17_1_1"
+16_NE            1        -5.8 +j     -1.2        6.0       0.9784
+16_NE            2        -5.8 +j     -1.2        6.0       0.9784
+16_NE            3        -5.8 +j     -1.2        6.0       0.9784
+   TERMINAL TOTAL ....   -17.5 +j     -3.7       17.9       0.9784
+17_SORENSON      1         5.9 +j     -0.1        5.9      -0.9999
+17_SORENSON      2         5.9 +j     -0.1        5.9      -0.9999
+17_SORENSON      3         5.9 +j     -0.1        5.9      -0.9999
+   TERMINAL TOTAL ....    17.7 +j     -0.3       17.7      -0.9999
+
+ELEMENT = "Line.17_18_1_1"
+17_SORENSON      1        26.8 +j      8.3       28.0       0.9553
+17_SORENSON      2        26.8 +j      8.3       28.0       0.9553
+17_SORENSON      3        26.8 +j      8.3       28.0       0.9553
+   TERMINAL TOTAL ....    80.3 +j     24.8       84.0       0.9553
+18_MCKINLEY      1       -26.5 +j     -7.5       27.5       0.9622
+18_MCKINLEY      2       -26.5 +j     -7.5       27.5       0.9622
+18_MCKINLEY      3       -26.5 +j     -7.5       27.5       0.9622
+   TERMINAL TOTAL ....   -79.4 +j    -22.5       82.5       0.9622
+
+ELEMENT = "Line.17_31_1_1"
+17_SORENSON      1         4.9 +j      3.8        6.2       0.7879
+17_SORENSON      2         4.9 +j      3.8        6.2       0.7879
+17_SORENSON      3         4.9 +j      3.8        6.2       0.7879
+   TERMINAL TOTAL ....    14.8 +j     11.5       18.7       0.7879
+31_DEERCRK       1        -4.9 +j     -4.9        6.9       0.7029
+31_DEERCRK       2        -4.9 +j     -4.9        6.9       0.7029
+31_DEERCRK       3        -4.9 +j     -4.9        6.9       0.7029
+   TERMINAL TOTAL ....   -14.6 +j    -14.8       20.7       0.7029
+
+ELEMENT = "Line.17_113_1_1"
+17_SORENSON      1         0.7 +j      2.0        2.1       0.3230
+17_SORENSON      2         0.7 +j      2.0        2.1       0.3230
+17_SORENSON      3         0.7 +j      2.0        2.1       0.3230
+   TERMINAL TOTAL ....     2.1 +j      6.0        6.4       0.3230
+113_DEERCRK      1        -0.7 +j     -2.3        2.4       0.2901
+113_DEERCRK      2        -0.7 +j     -2.3        2.4       0.2901
+113_DEERCRK      3        -0.7 +j     -2.3        2.4       0.2901
+   TERMINAL TOTAL ....    -2.1 +j     -6.8        7.1       0.2901
+
+ELEMENT = "Line.18_19_1_1"
+18_MCKINLEY      1         6.5 +j      4.7        8.0       0.8104
+18_MCKINLEY      2         6.5 +j      4.7        8.0       0.8104
+18_MCKINLEY      3         6.5 +j      4.7        8.0       0.8104
+   TERMINAL TOTAL ....    19.4 +j     14.0       23.9       0.8104
+19_LINCOLN       1        -6.4 +j     -4.9        8.1       0.7942
+19_LINCOLN       2        -6.4 +j     -4.9        8.1       0.7942
+19_LINCOLN       3        -6.4 +j     -4.9        8.1       0.7942
+   TERMINAL TOTAL ....   -19.3 +j    -14.8       24.3       0.7942
+
+ELEMENT = "Line.19_20_1_1"
+19_LINCOLN       1        -3.5 +j      1.8        4.0      -0.8911
+19_LINCOLN       2        -3.5 +j      1.8        4.0      -0.8911
+19_LINCOLN       3        -3.5 +j      1.8        4.0      -0.8911
+   TERMINAL TOTAL ....   -10.6 +j      5.4       12.0      -0.8911
+20_ADAMS         1         3.6 +j     -2.7        4.4      -0.8017
+20_ADAMS         2         3.6 +j     -2.7        4.4      -0.8017
+20_ADAMS         3         3.6 +j     -2.7        4.4      -0.8017
+   TERMINAL TOTAL ....    10.7 +j     -8.0       13.3      -0.8017
+
+ELEMENT = "Line.19_34_1_1"
+19_LINCOLN       1        -1.2 +j     -3.5        3.7       0.3276
+19_LINCOLN       2        -1.2 +j     -3.5        3.7       0.3276
+19_LINCOLN       3        -1.2 +j     -3.5        3.7       0.3276
+   TERMINAL TOTAL ....    -3.7 +j    -10.6       11.2       0.3276
+34_ROCKHILL      1         1.2 +j      1.6        2.0       0.6166
+34_ROCKHILL      2         1.2 +j      1.6        2.0       0.6166
+34_ROCKHILL      3         1.2 +j      1.6        2.0       0.6166
+   TERMINAL TOTAL ....     3.7 +j      4.8        6.0       0.6166
+
+ELEMENT = "Line.20_21_1_1"
+20_ADAMS         1        -9.6 +j      1.7        9.7      -0.9853
+20_ADAMS         2        -9.6 +j      1.7        9.7      -0.9853
+20_ADAMS         3        -9.6 +j      1.7        9.7      -0.9853
+   TERMINAL TOTAL ....   -28.7 +j      5.0       29.1      -0.9853
+21_JAY           1         9.6 +j     -2.1        9.8      -0.9780
+21_JAY           2         9.6 +j     -2.1        9.8      -0.9780
+21_JAY           3         9.6 +j     -2.1        9.8      -0.9780
+   TERMINAL TOTAL ....    28.9 +j     -6.2       29.5      -0.9780
+
+ELEMENT = "Line.21_22_1_1"
+21_JAY           1       -14.3 +j     -0.6       14.3       0.9991
+21_JAY           2       -14.3 +j     -0.6       14.3       0.9991
+21_JAY           3       -14.3 +j     -0.6       14.3       0.9991
+   TERMINAL TOTAL ....   -42.9 +j     -1.8       42.9       0.9991
+22_RANDOLPH      1        14.4 +j      0.5       14.4       0.9994
+22_RANDOLPH      2        14.4 +j      0.5       14.4       0.9994
+22_RANDOLPH      3        14.4 +j      0.5       14.4       0.9994
+   TERMINAL TOTAL ....    43.3 +j      1.5       43.3       0.9994
+
+ELEMENT = "Line.22_23_1_1"
+22_RANDOLPH      1       -17.8 +j     -2.2       17.9       0.9927
+22_RANDOLPH      2       -17.8 +j     -2.2       17.9       0.9927
+22_RANDOLPH      3       -17.8 +j     -2.2       17.9       0.9927
+   TERMINAL TOTAL ....   -53.3 +j     -6.5       53.7       0.9927
+23_COLLCRNR      1        18.1 +j      2.5       18.3       0.9908
+23_COLLCRNR      2        18.1 +j      2.5       18.3       0.9908
+23_COLLCRNR      3        18.1 +j      2.5       18.3       0.9908
+   TERMINAL TOTAL ....    54.3 +j      7.4       54.8       0.9908
+
+ELEMENT = "Line.23_24_1_1"
+23_COLLCRNR      1         2.8 +j      3.6        4.5       0.6090
+23_COLLCRNR      2         2.8 +j      3.6        4.5       0.6090
+23_COLLCRNR      3         2.8 +j      3.6        4.5       0.6090
+   TERMINAL TOTAL ....     8.3 +j     10.8       13.6       0.6090
+24_TRENTON       1        -2.8 +j     -5.2        5.9       0.4675
+24_TRENTON       2        -2.8 +j     -5.2        5.9       0.4675
+24_TRENTON       3        -2.8 +j     -5.2        5.9       0.4675
+   TERMINAL TOTAL ....    -8.3 +j    -15.6       17.7       0.4675
+
+ELEMENT = "Line.23_25_1_1"
+23_COLLCRNR      1       -54.2 +j     -8.6       54.9       0.9875
+23_COLLCRNR      2       -54.2 +j     -8.6       54.9       0.9875
+23_COLLCRNR      3       -54.2 +j     -8.6       54.9       0.9875
+   TERMINAL TOTAL ....  -162.6 +j    -25.9      164.7       0.9875
+25_TANNRSCK      1        55.6 +j     12.8       57.1       0.9745
+25_TANNRSCK      2        55.6 +j     12.8       57.1       0.9745
+25_TANNRSCK      3        55.6 +j     12.8       57.1       0.9745
+   TERMINAL TOTAL ....   166.8 +j     38.4      171.2       0.9745
+
+ELEMENT = "Line.23_32_1_1"
+23_COLLCRNR      1        31.0 +j      1.6       31.0       0.9987
+23_COLLCRNR      2        31.0 +j      1.6       31.0       0.9987
+23_COLLCRNR      3        31.0 +j      1.6       31.0       0.9987
+   TERMINAL TOTAL ....    93.0 +j      4.7       93.1       0.9987
+32_DELAWARE      1       -30.1 +j     -2.0       30.1       0.9979
+32_DELAWARE      2       -30.1 +j     -2.0       30.1       0.9979
+32_DELAWARE      3       -30.1 +j     -2.0       30.1       0.9979
+   TERMINAL TOTAL ....   -90.2 +j     -5.9       90.4       0.9979
+
+ELEMENT = "Line.24_70_1_1"
+24_TRENTON       1        -2.1 +j     -1.0        2.3       0.9019
+24_TRENTON       2        -2.1 +j     -1.0        2.3       0.9019
+24_TRENTON       3        -2.1 +j     -1.0        2.3       0.9019
+   TERMINAL TOTAL ....    -6.2 +j     -3.0        6.9       0.9019
+70_PORTSMTH      1         2.1 +j     -2.3        3.1      -0.6744
+70_PORTSMTH      2         2.1 +j     -2.3        3.1      -0.6744
+70_PORTSMTH      3         2.1 +j     -2.3        3.1      -0.6744
+   TERMINAL TOTAL ....     6.2 +j     -6.8        9.2      -0.6744
+
+ELEMENT = "Line.24_72_1_1"
+24_TRENTON       1         0.5 +j      1.1        1.2       0.4064
+24_TRENTON       2         0.5 +j      1.1        1.2       0.4064
+24_TRENTON       3         0.5 +j      1.1        1.2       0.4064
+   TERMINAL TOTAL ....     1.5 +j      3.3        3.6       0.4064
+72_HILLSBRO      1        -0.5 +j     -2.7        2.7       0.1791
+72_HILLSBRO      2        -0.5 +j     -2.7        2.7       0.1791
+72_HILLSBRO      3        -0.5 +j     -2.7        2.7       0.1791
+   TERMINAL TOTAL ....    -1.5 +j     -8.0        8.1       0.1791
+
+ELEMENT = "Line.25_27_1_1"
+25_TANNRSCK      1        47.8 +j     10.0       48.9       0.9788
+25_TANNRSCK      2        47.8 +j     10.0       48.9       0.9788
+25_TANNRSCK      3        47.8 +j     10.0       48.9       0.9788
+   TERMINAL TOTAL ....   143.5 +j     30.1      146.6       0.9788
+27_MADISON       1       -45.7 +j     -5.1       46.0       0.9939
+27_MADISON       2       -45.7 +j     -5.1       46.0       0.9939
+27_MADISON       3       -45.7 +j     -5.1       46.0       0.9939
+   TERMINAL TOTAL ....  -137.1 +j    -15.3      137.9       0.9939
+
+ELEMENT = "Line.26_30_1_1"
+26_TANNRSCK      1        74.6 +j     -3.9       74.7      -0.9986
+26_TANNRSCK      2        74.6 +j     -3.9       74.7      -0.9986
+26_TANNRSCK      3        74.6 +j     -3.9       74.7      -0.9986
+   TERMINAL TOTAL ....   223.7 +j    -11.7      224.0      -0.9986
+30_SORENSON      1       -73.2 +j    -12.1       74.2       0.9866
+30_SORENSON      2       -73.2 +j    -12.1       74.2       0.9866
+30_SORENSON      3       -73.2 +j    -12.1       74.2       0.9866
+   TERMINAL TOTAL ....  -219.7 +j    -36.4      222.7       0.9866
+
+ELEMENT = "Line.27_28_1_1"
+27_MADISON       1        11.0 +j     -0.2       11.0      -0.9998
+27_MADISON       2        11.0 +j     -0.2       11.0      -0.9998
+27_MADISON       3        11.0 +j     -0.2       11.0      -0.9998
+   TERMINAL TOTAL ....    32.9 +j     -0.6       32.9      -0.9998
+28_MULLIN        1       -10.9 +j     -0.1       10.9       0.9999
+28_MULLIN        2       -10.9 +j     -0.1       10.9       0.9999
+28_MULLIN        3       -10.9 +j     -0.1       10.9       0.9999
+   TERMINAL TOTAL ....   -32.6 +j     -0.4       32.6       0.9999
+
+ELEMENT = "Line.27_32_1_1"
+27_MADISON       1         4.2 +j      0.3        4.2       0.9967
+27_MADISON       2         4.2 +j      0.3        4.2       0.9967
+27_MADISON       3         4.2 +j      0.3        4.2       0.9967
+   TERMINAL TOTAL ....    12.5 +j      1.0       12.5       0.9967
+32_DELAWARE      1        -4.2 +j     -0.9        4.2       0.9775
+32_DELAWARE      2        -4.2 +j     -0.9        4.2       0.9775
+32_DELAWARE      3        -4.2 +j     -0.9        4.2       0.9775
+   TERMINAL TOTAL ....   -12.5 +j     -2.7       12.7       0.9775
+
+ELEMENT = "Line.27_115_1_1"
+27_MADISON       1         6.9 +j      1.6        7.1       0.9756
+27_MADISON       2         6.9 +j      1.6        7.1       0.9756
+27_MADISON       3         6.9 +j      1.6        7.1       0.9756
+   TERMINAL TOTAL ....    20.7 +j      4.7       21.3       0.9756
+115_MEDFORD      1        -6.9 +j     -2.0        7.2       0.9586
+115_MEDFORD      2        -6.9 +j     -2.0        7.2       0.9586
+115_MEDFORD      3        -6.9 +j     -2.0        7.2       0.9586
+   TERMINAL TOTAL ....   -20.7 +j     -6.1       21.5       0.9586
+
+ELEMENT = "Line.28_29_1_1"
+28_MULLIN        1         5.2 +j     -2.2        5.7      -0.9221
+28_MULLIN        2         5.2 +j     -2.2        5.7      -0.9221
+28_MULLIN        3         5.2 +j     -2.2        5.7      -0.9221
+   TERMINAL TOTAL ....    15.6 +j     -6.6       17.0      -0.9221
+29_GRANT         1        -5.2 +j      1.5        5.4      -0.9584
+29_GRANT         2        -5.2 +j      1.5        5.4      -0.9584
+29_GRANT         3        -5.2 +j      1.5        5.4      -0.9584
+   TERMINAL TOTAL ....   -15.6 +j      4.6       16.2      -0.9584
+
+ELEMENT = "Line.29_31_1_1"
+29_GRANT         1        -2.8 +j     -2.9        4.0       0.6985
+29_GRANT         2        -2.8 +j     -2.9        4.0       0.6985
+29_GRANT         3        -2.8 +j     -2.9        4.0       0.6985
+   TERMINAL TOTAL ....    -8.4 +j     -8.6       12.1       0.6985
+31_DEERCRK       1         2.8 +j      2.6        3.9       0.7298
+31_DEERCRK       2         2.8 +j      2.6        3.9       0.7298
+31_DEERCRK       3         2.8 +j      2.6        3.9       0.7298
+   TERMINAL TOTAL ....     8.4 +j      7.9       11.6       0.7298
+
+ELEMENT = "Line.30_38_1_1"
+30_SORENSON      1        20.8 +j      6.0       21.7       0.9606
+30_SORENSON      2        20.8 +j      6.0       21.7       0.9606
+30_SORENSON      3        20.8 +j      6.0       21.7       0.9606
+   TERMINAL TOTAL ....    62.5 +j     18.1       65.1       0.9606
+38_EASTLIMA      1       -20.8 +j    -18.4       27.7       0.7489
+38_EASTLIMA      2       -20.8 +j    -18.4       27.7       0.7489
+38_EASTLIMA      3       -20.8 +j    -18.4       27.7       0.7489
+   TERMINAL TOTAL ....   -62.3 +j    -55.1       83.1       0.7489
+
+ELEMENT = "Line.31_32_1_1"
+31_DEERCRK       1       -10.0 +j      3.9       10.7      -0.9299
+31_DEERCRK       2       -10.0 +j      3.9       10.7      -0.9299
+31_DEERCRK       3       -10.0 +j      3.9       10.7      -0.9299
+   TERMINAL TOTAL ....   -29.9 +j     11.8       32.1      -0.9299
+32_DELAWARE      1        10.1 +j     -4.3       11.0      -0.9182
+32_DELAWARE      2        10.1 +j     -4.3       11.0      -0.9182
+32_DELAWARE      3        10.1 +j     -4.3       11.0      -0.9182
+   TERMINAL TOTAL ....    30.2 +j    -13.0       32.9      -0.9182
+
+ELEMENT = "Line.32_113_1_1"
+32_DELAWARE      1         1.4 +j     -5.8        6.0      -0.2282
+32_DELAWARE      2         1.4 +j     -5.8        6.0      -0.2282
+32_DELAWARE      3         1.4 +j     -5.8        6.0      -0.2282
+   TERMINAL TOTAL ....     4.1 +j    -17.5       18.0      -0.2282
+113_DEERCRK      1        -1.3 +j      4.4        4.6      -0.2882
+113_DEERCRK      2        -1.3 +j      4.4        4.6      -0.2882
+113_DEERCRK      3        -1.3 +j      4.4        4.6      -0.2882
+   TERMINAL TOTAL ....    -3.9 +j     13.1       13.7      -0.2882
+
+ELEMENT = "Line.32_114_1_1"
+32_DELAWARE      1         3.1 +j      0.7        3.2       0.9742
+32_DELAWARE      2         3.1 +j      0.7        3.2       0.9742
+32_DELAWARE      3         3.1 +j      0.7        3.2       0.9742
+   TERMINAL TOTAL ....     9.4 +j      2.2        9.6       0.9742
+114_WMEDFORD     1        -3.1 +j     -1.2        3.3       0.9328
+114_WMEDFORD     2        -3.1 +j     -1.2        3.3       0.9328
+114_WMEDFORD     3        -3.1 +j     -1.2        3.3       0.9328
+   TERMINAL TOTAL ....    -9.3 +j     -3.6       10.0       0.9328
+
+ELEMENT = "Line.33_37_1_1"
+33_HAVILAND      1        -5.3 +j     -3.7        6.4       0.8217
+33_HAVILAND      2        -5.3 +j     -3.7        6.4       0.8217
+33_HAVILAND      3        -5.3 +j     -3.7        6.4       0.8217
+   TERMINAL TOTAL ....   -15.8 +j    -11.0       19.2       0.8217
+37_EASTLIMA      1         5.3 +j      2.6        5.9       0.8954
+37_EASTLIMA      2         5.3 +j      2.6        5.9       0.8954
+37_EASTLIMA      3         5.3 +j      2.6        5.9       0.8954
+   TERMINAL TOTAL ....    15.9 +j      7.9       17.8       0.8954
+
+ELEMENT = "Line.34_36_1_1"
+34_ROCKHILL      1        10.1 +j      3.8       10.8       0.9355
+34_ROCKHILL      2        10.1 +j      3.8       10.8       0.9355
+34_ROCKHILL      3        10.1 +j      3.8       10.8       0.9355
+   TERMINAL TOTAL ....    30.4 +j     11.5       32.5       0.9355
+36_STERLING      1       -10.1 +j     -3.9       10.8       0.9325
+36_STERLING      2       -10.1 +j     -3.9       10.8       0.9325
+36_STERLING      3       -10.1 +j     -3.9       10.8       0.9325
+   TERMINAL TOTAL ....   -30.3 +j    -11.7       32.5       0.9325
+
+ELEMENT = "Line.34_37_1_1"
+34_ROCKHILL      1       -31.5 +j    -12.9       34.0       0.9260
+34_ROCKHILL      2       -31.5 +j    -12.9       34.0       0.9260
+34_ROCKHILL      3       -31.5 +j    -12.9       34.0       0.9260
+   TERMINAL TOTAL ....   -94.6 +j    -38.6      102.1       0.9260
+37_EASTLIMA      1        31.6 +j     12.9       34.1       0.9262
+37_EASTLIMA      2        31.6 +j     12.9       34.1       0.9262
+37_EASTLIMA      3        31.6 +j     12.9       34.1       0.9262
+   TERMINAL TOTAL ....    94.9 +j     38.6      102.4       0.9262
+
+ELEMENT = "Line.34_43_1_1"
+34_ROCKHILL      1         0.5 +j      0.6        0.8       0.5989
+34_ROCKHILL      2         0.5 +j      0.6        0.8       0.5989
+34_ROCKHILL      3         0.5 +j      0.6        0.8       0.5989
+   TERMINAL TOTAL ....     1.4 +j      1.9        2.4       0.5989
+43_SKENTON       1        -0.5 +j     -2.0        2.0       0.2329
+43_SKENTON       2        -0.5 +j     -2.0        2.0       0.2329
+43_SKENTON       3        -0.5 +j     -2.0        2.0       0.2329
+   TERMINAL TOTAL ....    -1.4 +j     -6.0        6.1       0.2329
+
+ELEMENT = "Line.35_36_1_1"
+35_WESTLIMA      1         0.2 +j      2.1        2.1       0.1069
+35_WESTLIMA      2         0.2 +j      2.1        2.1       0.1069
+35_WESTLIMA      3         0.2 +j      2.1        2.1       0.1069
+   TERMINAL TOTAL ....     0.7 +j      6.2        6.3       0.1069
+36_STERLING      1        -0.2 +j     -2.2        2.2       0.1026
+36_STERLING      2        -0.2 +j     -2.2        2.2       0.1026
+36_STERLING      3        -0.2 +j     -2.2        2.2       0.1026
+   TERMINAL TOTAL ....    -0.7 +j     -6.5        6.5       0.1026
+
+ELEMENT = "Line.35_37_1_1"
+35_WESTLIMA      1       -11.2 +j     -5.1       12.3       0.9110
+35_WESTLIMA      2       -11.2 +j     -5.1       12.3       0.9110
+35_WESTLIMA      3       -11.2 +j     -5.1       12.3       0.9110
+   TERMINAL TOTAL ....   -33.7 +j    -15.2       37.0       0.9110
+37_EASTLIMA      1        11.3 +j      4.9       12.3       0.9176
+37_EASTLIMA      2        11.3 +j      4.9       12.3       0.9176
+37_EASTLIMA      3        11.3 +j      4.9       12.3       0.9176
+   TERMINAL TOTAL ....    33.8 +j     14.7       36.9       0.9176
+
+ELEMENT = "Line.37_39_1_1"
+37_EASTLIMA      1        18.3 +j      1.2       18.4       0.9977
+37_EASTLIMA      2        18.3 +j      1.2       18.4       0.9977
+37_EASTLIMA      3        18.3 +j      1.2       18.4       0.9977
+   TERMINAL TOTAL ....    55.0 +j      3.7       55.1       0.9977
+39_NWLIBRTY      1       -18.0 +j     -1.0       18.0       0.9984
+39_NWLIBRTY      2       -18.0 +j     -1.0       18.0       0.9984
+39_NWLIBRTY      3       -18.0 +j     -1.0       18.0       0.9984
+   TERMINAL TOTAL ....   -54.0 +j     -3.1       54.1       0.9984
+
+ELEMENT = "Line.37_40_1_1"
+37_EASTLIMA      1        14.7 +j     -1.0       14.7      -0.9978
+37_EASTLIMA      2        14.7 +j     -1.0       14.7      -0.9978
+37_EASTLIMA      3        14.7 +j     -1.0       14.7      -0.9978
+   TERMINAL TOTAL ....    44.1 +j     -2.9       44.2      -0.9978
+40_WESTEND       1       -14.3 +j      0.7       14.3      -0.9987
+40_WESTEND       2       -14.3 +j      0.7       14.3      -0.9987
+40_WESTEND       3       -14.3 +j      0.7       14.3      -0.9987
+   TERMINAL TOTAL ....   -42.9 +j      2.2       43.0      -0.9987
+
+ELEMENT = "Line.38_65_1_1"
+38_EASTLIMA      1       -60.5 +j    -19.0       63.4       0.9540
+38_EASTLIMA      2       -60.5 +j    -19.0       63.4       0.9540
+38_EASTLIMA      3       -60.5 +j    -19.0       63.4       0.9540
+   TERMINAL TOTAL ....  -181.4 +j    -57.0      190.2       0.9540
+65_MUSKNGUM      1        61.5 +j     -3.0       61.6      -0.9988
+65_MUSKNGUM      2        61.5 +j     -3.0       61.6      -0.9988
+65_MUSKNGUM      3        61.5 +j     -3.0       61.6      -0.9988
+   TERMINAL TOTAL ....   184.6 +j     -9.1      184.9      -0.9988
+
+ELEMENT = "Line.39_40_1_1"
+39_NWLIBRTY      1         9.0 +j     -2.6        9.4      -0.9593
+39_NWLIBRTY      2         9.0 +j     -2.6        9.4      -0.9593
+39_NWLIBRTY      3         9.0 +j     -2.6        9.4      -0.9593
+   TERMINAL TOTAL ....    27.0 +j     -7.9       28.1      -0.9593
+40_WESTEND       1        -8.9 +j      2.3        9.2      -0.9678
+40_WESTEND       2        -8.9 +j      2.3        9.2      -0.9678
+40_WESTEND       3        -8.9 +j      2.3        9.2      -0.9678
+   TERMINAL TOTAL ....   -26.8 +j      7.0       27.7      -0.9678
+
+ELEMENT = "Line.40_41_1_1"
+40_WESTEND       1         5.2 +j      0.4        5.2       0.9972
+40_WESTEND       2         5.2 +j      0.4        5.2       0.9972
+40_WESTEND       3         5.2 +j      0.4        5.2       0.9972
+   TERMINAL TOTAL ....    15.5 +j      1.2       15.6       0.9972
+41_STIFFIN       1        -5.2 +j     -0.7        5.2       0.9901
+41_STIFFIN       2        -5.2 +j     -0.7        5.2       0.9901
+41_STIFFIN       3        -5.2 +j     -0.7        5.2       0.9901
+   TERMINAL TOTAL ....   -15.5 +j     -2.2       15.6       0.9901
+
+ELEMENT = "Line.40_42_1_1"
+40_WESTEND       1        -3.9 +j     -2.2        4.5       0.8764
+40_WESTEND       2        -3.9 +j     -2.2        4.5       0.8764
+40_WESTEND       3        -3.9 +j     -2.2        4.5       0.8764
+   TERMINAL TOTAL ....   -11.8 +j     -6.5       13.4       0.8764
+42_HOWARD        1         4.0 +j      0.8        4.0       0.9814
+42_HOWARD        2         4.0 +j      0.8        4.0       0.9814
+42_HOWARD        3         4.0 +j      0.8        4.0       0.9814
+   TERMINAL TOTAL ....    11.9 +j      2.3       12.1       0.9814
+
+ELEMENT = "Line.41_42_1_1"
+41_STIFFIN       1        -7.2 +j     -2.6        7.6       0.9401
+41_STIFFIN       2        -7.2 +j     -2.6        7.6       0.9401
+41_STIFFIN       3        -7.2 +j     -2.6        7.6       0.9401
+   TERMINAL TOTAL ....   -21.5 +j     -7.8       22.9       0.9401
+42_HOWARD        1         7.2 +j      1.8        7.5       0.9720
+42_HOWARD        2         7.2 +j      1.8        7.5       0.9720
+42_HOWARD        3         7.2 +j      1.8        7.5       0.9720
+   TERMINAL TOTAL ....    21.7 +j      5.3       22.4       0.9720
+
+ELEMENT = "Line.42_49_1_1"
+42_HOWARD        1       -21.6 +j      1.7       21.7      -0.9968
+42_HOWARD        2       -21.6 +j      1.7       21.7      -0.9968
+42_HOWARD        3       -21.6 +j      1.7       21.7      -0.9968
+   TERMINAL TOTAL ....   -64.8 +j      5.2       65.0      -0.9968
+49_PHILO         1        22.7 +j      0.1       22.7       1.0000
+49_PHILO         2        22.7 +j      0.1       22.7       1.0000
+49_PHILO         3        22.7 +j      0.1       22.7       1.0000
+   TERMINAL TOTAL ....    68.0 +j      0.4       68.0       1.0000
+
+ELEMENT = "Line.42_49_1_2"
+42_HOWARD        1       -21.6 +j      1.7       21.7      -0.9968
+42_HOWARD        2       -21.6 +j      1.7       21.7      -0.9968
+42_HOWARD        3       -21.6 +j      1.7       21.7      -0.9968
+   TERMINAL TOTAL ....   -64.8 +j      5.2       65.0      -0.9968
+49_PHILO         1        22.7 +j      0.1       22.7       1.0000
+49_PHILO         2        22.7 +j      0.1       22.7       1.0000
+49_PHILO         3        22.7 +j      0.1       22.7       1.0000
+   TERMINAL TOTAL ....    68.0 +j      0.4       68.0       1.0000
+
+ELEMENT = "Line.43_44_1_1"
+43_SKENTON       1        -5.5 +j     -0.3        5.5       0.9981
+43_SKENTON       2        -5.5 +j     -0.3        5.5       0.9981
+43_SKENTON       3        -5.5 +j     -0.3        5.5       0.9981
+   TERMINAL TOTAL ....   -16.6 +j     -1.0       16.6       0.9981
+44_WMVERNON      1         5.6 +j     -1.4        5.7      -0.9713
+44_WMVERNON      2         5.6 +j     -1.4        5.7      -0.9713
+44_WMVERNON      3         5.6 +j     -1.4        5.7      -0.9713
+   TERMINAL TOTAL ....    16.7 +j     -4.1       17.2      -0.9713
+
+ELEMENT = "Line.44_45_1_1"
+44_WMVERNON      1       -10.9 +j      1.9       11.1      -0.9846
+44_WMVERNON      2       -10.9 +j      1.9       11.1      -0.9846
+44_WMVERNON      3       -10.9 +j      1.9       11.1      -0.9846
+   TERMINAL TOTAL ....   -32.7 +j      5.8       33.3      -0.9846
+45_NNEWARK       1        11.0 +j     -2.3       11.2      -0.9786
+45_NNEWARK       2        11.0 +j     -2.3       11.2      -0.9786
+45_NNEWARK       3        11.0 +j     -2.3       11.2      -0.9786
+   TERMINAL TOTAL ....    33.0 +j     -6.9       33.7      -0.9786
+
+ELEMENT = "Line.45_46_1_1"
+45_NNEWARK       1       -12.1 +j     -1.1       12.2       0.9957
+45_NNEWARK       2       -12.1 +j     -1.1       12.2       0.9957
+45_NNEWARK       3       -12.1 +j     -1.1       12.2       0.9957
+   TERMINAL TOTAL ....   -36.3 +j     -3.4       36.5       0.9957
+46_WLANCST       1        12.3 +j      0.6       12.3       0.9986
+46_WLANCST       2        12.3 +j      0.6       12.3       0.9986
+46_WLANCST       3        12.3 +j      0.6       12.3       0.9986
+   TERMINAL TOTAL ....    36.9 +j      1.9       36.9       0.9986
+
+ELEMENT = "Line.45_49_1_1"
+45_NNEWARK       1       -16.6 +j     -0.6       16.6       0.9992
+45_NNEWARK       2       -16.6 +j     -0.6       16.6       0.9992
+45_NNEWARK       3       -16.6 +j     -0.6       16.6       0.9992
+   TERMINAL TOTAL ....   -49.7 +j     -1.9       49.7       0.9992
+49_PHILO         1        17.1 +j      0.7       17.2       0.9991
+49_PHILO         2        17.1 +j      0.7       17.2       0.9991
+49_PHILO         3        17.1 +j      0.7       17.2       0.9991
+   TERMINAL TOTAL ....    51.4 +j      2.2       51.5       0.9991
+
+ELEMENT = "Line.46_47_1_1"
+46_WLANCST       1       -10.4 +j     -0.4       10.4       0.9992
+46_WLANCST       2       -10.4 +j     -0.4       10.4       0.9992
+46_WLANCST       3       -10.4 +j     -0.4       10.4       0.9992
+   TERMINAL TOTAL ....   -31.1 +j     -1.2       31.1       0.9992
+47_CROOKSVL      1        10.5 +j     -0.3       10.5      -0.9997
+47_CROOKSVL      2        10.5 +j     -0.3       10.5      -0.9997
+47_CROOKSVL      3        10.5 +j     -0.3       10.5      -0.9997
+   TERMINAL TOTAL ....    31.5 +j     -0.8       31.5      -0.9997
+
+ELEMENT = "Line.46_48_1_1"
+46_WLANCST       1        -4.9 +j     -1.9        5.3       0.9301
+46_WLANCST       2        -4.9 +j     -1.9        5.3       0.9301
+46_WLANCST       3        -4.9 +j     -1.9        5.3       0.9301
+   TERMINAL TOTAL ....   -14.8 +j     -5.8       15.9       0.9301
+48_ZANESVLL      1         5.0 +j      0.5        5.0       0.9955
+48_ZANESVLL      2         5.0 +j      0.5        5.0       0.9955
+48_ZANESVLL      3         5.0 +j      0.5        5.0       0.9955
+   TERMINAL TOTAL ....    14.9 +j      1.4       15.0       0.9955
+
+ELEMENT = "Line.47_49_1_1"
+47_CROOKSVL      1        -3.2 +j     -3.6        4.8       0.6617
+47_CROOKSVL      2        -3.2 +j     -3.6        4.8       0.6617
+47_CROOKSVL      3        -3.2 +j     -3.6        4.8       0.6617
+   TERMINAL TOTAL ....    -9.6 +j    -10.8       14.4       0.6617
+49_PHILO         1         3.2 +j      3.1        4.4       0.7190
+49_PHILO         2         3.2 +j      3.1        4.4       0.7190
+49_PHILO         3         3.2 +j      3.1        4.4       0.7190
+   TERMINAL TOTAL ....     9.6 +j      9.3       13.3       0.7190
+
+ELEMENT = "Line.47_69_1_1"
+47_CROOKSVL      1       -18.6 +j      3.9       19.0      -0.9791
+47_CROOKSVL      2       -18.6 +j      3.9       19.0      -0.9791
+47_CROOKSVL      3       -18.6 +j      3.9       19.0      -0.9791
+   TERMINAL TOTAL ....   -55.9 +j     11.6       57.1      -0.9791
+69_SPORN         1        19.5 +j     -3.4       19.8      -0.9856
+69_SPORN         2        19.5 +j     -3.4       19.8      -0.9856
+69_SPORN         3        19.5 +j     -3.4       19.8      -0.9856
+   TERMINAL TOTAL ....    58.6 +j    -10.1       59.5      -0.9856
+
+ELEMENT = "Line.48_49_1_1"
+48_ZANESVLL      1       -11.6 +j      1.1       11.7      -0.9958
+48_ZANESVLL      2       -11.6 +j      1.1       11.7      -0.9958
+48_ZANESVLL      3       -11.6 +j      1.1       11.7      -0.9958
+   TERMINAL TOTAL ....   -34.9 +j      3.2       35.0      -0.9958
+49_PHILO         1        11.7 +j     -1.3       11.8      -0.9938
+49_PHILO         2        11.7 +j     -1.3       11.8      -0.9938
+49_PHILO         3        11.7 +j     -1.3       11.8      -0.9938
+   TERMINAL TOTAL ....    35.1 +j     -3.9       35.3      -0.9938
+
+ELEMENT = "Line.49_50_1_1"
+49_PHILO         1        17.9 +j      4.5       18.4       0.9701
+49_PHILO         2        17.9 +j      4.5       18.4       0.9701
+49_PHILO         3        17.9 +j      4.5       18.4       0.9701
+   TERMINAL TOTAL ....    53.7 +j     13.4       55.3       0.9701
+50_WCAMBRDG      1       -17.6 +j     -4.4       18.2       0.9705
+50_WCAMBRDG      2       -17.6 +j     -4.4       18.2       0.9705
+50_WCAMBRDG      3       -17.6 +j     -4.4       18.2       0.9705
+   TERMINAL TOTAL ....   -52.9 +j    -13.1       54.5       0.9705
+
+ELEMENT = "Line.49_51_1_1"
+49_PHILO         1        22.2 +j      6.8       23.2       0.9560
+49_PHILO         2        22.2 +j      6.8       23.2       0.9560
+49_PHILO         3        22.2 +j      6.8       23.2       0.9560
+   TERMINAL TOTAL ....    66.6 +j     20.4       69.7       0.9560
+51_NEWCMRST      1       -21.5 +j     -5.8       22.2       0.9653
+51_NEWCMRST      2       -21.5 +j     -5.8       22.2       0.9653
+51_NEWCMRST      3       -21.5 +j     -5.8       22.2       0.9653
+   TERMINAL TOTAL ....   -64.4 +j    -17.4       66.7       0.9653
+
+ELEMENT = "Line.49_54_1_1"
+49_PHILO         1        12.6 +j      4.4       13.3       0.9450
+49_PHILO         2        12.6 +j      4.4       13.3       0.9450
+49_PHILO         3        12.6 +j      4.4       13.3       0.9450
+   TERMINAL TOTAL ....    37.8 +j     13.1       40.0       0.9450
+54_TORREY        1       -12.2 +j     -5.2       13.3       0.9199
+54_TORREY        2       -12.2 +j     -5.2       13.3       0.9199
+54_TORREY        3       -12.2 +j     -5.2       13.3       0.9199
+   TERMINAL TOTAL ....   -36.6 +j    -15.6       39.8       0.9199
+
+ELEMENT = "Line.49_54_1_2"
+49_PHILO         1        12.6 +j      3.7       13.1       0.9587
+49_PHILO         2        12.6 +j      3.7       13.1       0.9587
+49_PHILO         3        12.6 +j      3.7       13.1       0.9587
+   TERMINAL TOTAL ....    37.8 +j     11.2       39.4       0.9587
+54_TORREY        1       -12.1 +j     -4.6       13.0       0.9351
+54_TORREY        2       -12.1 +j     -4.6       13.0       0.9351
+54_TORREY        3       -12.1 +j     -4.6       13.0       0.9351
+   TERMINAL TOTAL ....   -36.4 +j    -13.8       38.9       0.9351
+
+ELEMENT = "Line.49_66_1_1"
+49_PHILO         1       -44.1 +j      1.4       44.1      -0.9995
+49_PHILO         2       -44.1 +j      1.4       44.1      -0.9995
+49_PHILO         3       -44.1 +j      1.4       44.1      -0.9995
+   TERMINAL TOTAL ....  -132.2 +j      4.3      132.3      -0.9995
+66_MUSKNGUM      1        45.1 +j      2.8       45.1       0.9981
+66_MUSKNGUM      2        45.1 +j      2.8       45.1       0.9981
+66_MUSKNGUM      3        45.1 +j      2.8       45.1       0.9981
+   TERMINAL TOTAL ....   135.2 +j      8.3      135.4       0.9981
+
+ELEMENT = "Line.49_66_1_2"
+49_PHILO         1       -44.1 +j      1.4       44.1      -0.9995
+49_PHILO         2       -44.1 +j      1.4       44.1      -0.9995
+49_PHILO         3       -44.1 +j      1.4       44.1      -0.9995
+   TERMINAL TOTAL ....  -132.2 +j      4.3      132.3      -0.9995
+66_MUSKNGUM      1        45.1 +j      2.8       45.1       0.9981
+66_MUSKNGUM      2        45.1 +j      2.8       45.1       0.9981
+66_MUSKNGUM      3        45.1 +j      2.8       45.1       0.9981
+   TERMINAL TOTAL ....   135.2 +j      8.3      135.4       0.9981
+
+ELEMENT = "Line.49_69_1_1"
+49_PHILO         1       -15.5 +j      3.5       15.9      -0.9749
+49_PHILO         2       -15.5 +j      3.5       15.9      -0.9749
+49_PHILO         3       -15.5 +j      3.5       15.9      -0.9749
+   TERMINAL TOTAL ....   -46.5 +j     10.6       47.7      -0.9749
+69_SPORN         1        16.2 +j     -4.0       16.7      -0.9708
+69_SPORN         2        16.2 +j     -4.0       16.7      -0.9708
+69_SPORN         3        16.2 +j     -4.0       16.7      -0.9708
+   TERMINAL TOTAL ....    48.7 +j    -12.1       50.2      -0.9708
+
+ELEMENT = "Line.50_57_1_1"
+50_WCAMBRDG      1        12.0 +j      3.0       12.3       0.9691
+50_WCAMBRDG      2        12.0 +j      3.0       12.3       0.9691
+50_WCAMBRDG      3        12.0 +j      3.0       12.3       0.9691
+   TERMINAL TOTAL ....    35.9 +j      9.1       37.0       0.9691
+57_WNWPHIL1      1       -11.7 +j     -3.5       12.2       0.9584
+57_WNWPHIL1      2       -11.7 +j     -3.5       12.2       0.9584
+57_WNWPHIL1      3       -11.7 +j     -3.5       12.2       0.9584
+   TERMINAL TOTAL ....   -35.2 +j    -10.5       36.7       0.9584
+
+ELEMENT = "Line.51_52_1_1"
+51_NEWCMRST      1         9.5 +j      2.1        9.7       0.9769
+51_NEWCMRST      2         9.5 +j      2.1        9.7       0.9769
+51_NEWCMRST      3         9.5 +j      2.1        9.7       0.9769
+   TERMINAL TOTAL ....    28.6 +j      6.2       29.2       0.9769
+52_SCOSHOCT      1        -9.5 +j     -2.3        9.7       0.9709
+52_SCOSHOCT      2        -9.5 +j     -2.3        9.7       0.9709
+52_SCOSHOCT      3        -9.5 +j     -2.3        9.7       0.9709
+   TERMINAL TOTAL ....   -28.4 +j     -7.0       29.2       0.9709
+
+ELEMENT = "Line.51_58_1_1"
+51_NEWCMRST      1         6.3 +j      1.1        6.4       0.9862
+51_NEWCMRST      2         6.3 +j      1.1        6.4       0.9862
+51_NEWCMRST      3         6.3 +j      1.1        6.4       0.9862
+   TERMINAL TOTAL ....    18.8 +j      3.2       19.1       0.9862
+58_WNWPHIL2      1        -6.2 +j     -1.5        6.4       0.9719
+58_WNWPHIL2      2        -6.2 +j     -1.5        6.4       0.9719
+58_WNWPHIL2      3        -6.2 +j     -1.5        6.4       0.9719
+   TERMINAL TOTAL ....   -18.7 +j     -4.5       19.2       0.9719
+
+ELEMENT = "Line.52_53_1_1"
+52_SCOSHOCT      1         3.5 +j      0.7        3.5       0.9820
+52_SCOSHOCT      2         3.5 +j      0.7        3.5       0.9820
+52_SCOSHOCT      3         3.5 +j      0.7        3.5       0.9820
+   TERMINAL TOTAL ....    10.4 +j      2.0       10.6       0.9820
+53_WOOSTER       1        -3.4 +j     -1.8        3.9       0.8843
+53_WOOSTER       2        -3.4 +j     -1.8        3.9       0.8843
+53_WOOSTER       3        -3.4 +j     -1.8        3.9       0.8843
+   TERMINAL TOTAL ....   -10.3 +j     -5.4       11.7       0.8843
+
+ELEMENT = "Line.53_54_1_1"
+53_WOOSTER       1        -4.2 +j     -1.9        4.6       0.9160
+53_WOOSTER       2        -4.2 +j     -1.9        4.6       0.9160
+53_WOOSTER       3        -4.2 +j     -1.9        4.6       0.9160
+   TERMINAL TOTAL ....   -12.7 +j     -5.6       13.8       0.9160
+54_TORREY        1         4.2 +j      1.0        4.4       0.9734
+54_TORREY        2         4.2 +j      1.0        4.4       0.9734
+54_TORREY        3         4.2 +j      1.0        4.4       0.9734
+   TERMINAL TOTAL ....    12.7 +j      3.0       13.1       0.9734
+
+ELEMENT = "Line.54_55_1_1"
+54_TORREY        1         2.4 +j      0.5        2.4       0.9795
+54_TORREY        2         2.4 +j      0.5        2.4       0.9795
+54_TORREY        3         2.4 +j      0.5        2.4       0.9795
+   TERMINAL TOTAL ....     7.1 +j      1.5        7.2       0.9795
+55_WAGENHLS      1        -2.4 +j     -1.1        2.6       0.9085
+55_WAGENHLS      2        -2.4 +j     -1.1        2.6       0.9085
+55_WAGENHLS      3        -2.4 +j     -1.1        2.6       0.9085
+   TERMINAL TOTAL ....    -7.1 +j     -3.2        7.8       0.9085
+
+ELEMENT = "Line.54_56_1_1"
+54_TORREY        1         6.2 +j      1.4        6.3       0.9736
+54_TORREY        2         6.2 +j      1.4        6.3       0.9736
+54_TORREY        3         6.2 +j      1.4        6.3       0.9736
+   TERMINAL TOTAL ....    18.5 +j      4.3       19.0       0.9736
+56_SUNNYSDE      1        -6.2 +j     -1.7        6.4       0.9658
+56_SUNNYSDE      2        -6.2 +j     -1.7        6.4       0.9658
+56_SUNNYSDE      3        -6.2 +j     -1.7        6.4       0.9658
+   TERMINAL TOTAL ....   -18.5 +j     -5.0       19.2       0.9658
+
+ELEMENT = "Line.54_59_1_1"
+54_TORREY        1       -10.1 +j     -2.5       10.4       0.9708
+54_TORREY        2       -10.1 +j     -2.5       10.4       0.9708
+54_TORREY        3       -10.1 +j     -2.5       10.4       0.9708
+   TERMINAL TOTAL ....   -30.4 +j     -7.5       31.3       0.9708
+59_TIDD          1        10.3 +j      1.4       10.4       0.9906
+59_TIDD          2        10.3 +j      1.4       10.4       0.9906
+59_TIDD          3        10.3 +j      1.4       10.4       0.9906
+   TERMINAL TOTAL ....    30.9 +j      4.3       31.2       0.9906
+
+ELEMENT = "Line.55_56_1_1"
+55_WAGENHLS      1        -7.1 +j     -1.9        7.4       0.9650
+55_WAGENHLS      2        -7.1 +j     -1.9        7.4       0.9650
+55_WAGENHLS      3        -7.1 +j     -1.9        7.4       0.9650
+   TERMINAL TOTAL ....   -21.4 +j     -5.8       22.2       0.9650
+56_SUNNYSDE      1         7.2 +j      1.9        7.4       0.9680
+56_SUNNYSDE      2         7.2 +j      1.9        7.4       0.9680
+56_SUNNYSDE      3         7.2 +j      1.9        7.4       0.9680
+   TERMINAL TOTAL ....    21.5 +j      5.6       22.2       0.9680
+
+ELEMENT = "Line.55_59_1_1"
+55_WAGENHLS      1       -11.5 +j     -2.8       11.8       0.9725
+55_WAGENHLS      2       -11.5 +j     -2.8       11.8       0.9725
+55_WAGENHLS      3       -11.5 +j     -2.8       11.8       0.9725
+   TERMINAL TOTAL ....   -34.5 +j     -8.3       35.5       0.9725
+59_TIDD          1        11.7 +j      2.0       11.9       0.9863
+59_TIDD          2        11.7 +j      2.0       11.9       0.9863
+59_TIDD          3        11.7 +j      2.0       11.9       0.9863
+   TERMINAL TOTAL ....    35.1 +j      5.9       35.6       0.9863
+
+ELEMENT = "Line.56_57_1_1"
+56_SUNNYSDE      1        -7.7 +j     -3.0        8.2       0.9298
+56_SUNNYSDE      2        -7.7 +j     -3.0        8.2       0.9298
+56_SUNNYSDE      3        -7.7 +j     -3.0        8.2       0.9298
+   TERMINAL TOTAL ....   -23.0 +j     -9.1       24.7       0.9298
+57_WNWPHIL1      1         7.7 +j      2.5        8.1       0.9517
+57_WNWPHIL1      2         7.7 +j      2.5        8.1       0.9517
+57_WNWPHIL1      3         7.7 +j      2.5        8.1       0.9517
+   TERMINAL TOTAL ....    23.2 +j      7.5       24.4       0.9517
+
+ELEMENT = "Line.56_58_1_1"
+56_SUNNYSDE      1        -2.2 +j     -1.2        2.5       0.8750
+56_SUNNYSDE      2        -2.2 +j     -1.2        2.5       0.8750
+56_SUNNYSDE      3        -2.2 +j     -1.2        2.5       0.8750
+   TERMINAL TOTAL ....    -6.7 +j     -3.7        7.6       0.8750
+58_WNWPHIL2      1         2.2 +j      0.5        2.3       0.9748
+58_WNWPHIL2      2         2.2 +j      0.5        2.3       0.9748
+58_WNWPHIL2      3         2.2 +j      0.5        2.3       0.9748
+   TERMINAL TOTAL ....     6.7 +j      1.5        6.9       0.9748
+
+ELEMENT = "Line.56_59_1_1"
+56_SUNNYSDE      1        -9.3 +j     -1.4        9.4       0.9890
+56_SUNNYSDE      2        -9.3 +j     -1.4        9.4       0.9890
+56_SUNNYSDE      3        -9.3 +j     -1.4        9.4       0.9890
+   TERMINAL TOTAL ....   -28.0 +j     -4.2       28.3       0.9890
+59_TIDD          1         9.6 +j      0.3        9.6       0.9994
+59_TIDD          2         9.6 +j      0.3        9.6       0.9994
+59_TIDD          3         9.6 +j      0.3        9.6       0.9994
+   TERMINAL TOTAL ....    28.7 +j      1.0       28.7       0.9994
+
+ELEMENT = "Line.56_59_1_2"
+56_SUNNYSDE      1        -9.8 +j     -1.3        9.9       0.9912
+56_SUNNYSDE      2        -9.8 +j     -1.3        9.9       0.9912
+56_SUNNYSDE      3        -9.8 +j     -1.3        9.9       0.9912
+   TERMINAL TOTAL ....   -29.3 +j     -3.9       29.6       0.9912
+59_TIDD          1        10.0 +j      0.4       10.0       0.9993
+59_TIDD          2        10.0 +j      0.4       10.0       0.9993
+59_TIDD          3        10.0 +j      0.4       10.0       0.9993
+   TERMINAL TOTAL ....    30.1 +j      1.1       30.1       0.9993
+
+ELEMENT = "Line.59_60_1_1"
+59_TIDD          1       -14.4 +j      1.2       14.5      -0.9966
+59_TIDD          2       -14.4 +j      1.2       14.5      -0.9966
+59_TIDD          3       -14.4 +j      1.2       14.5      -0.9966
+   TERMINAL TOTAL ....   -43.3 +j      3.6       43.5      -0.9966
+60_SWKAMMER      1        14.6 +j     -1.5       14.7      -0.9950
+60_SWKAMMER      2        14.6 +j     -1.5       14.7      -0.9950
+60_SWKAMMER      3        14.6 +j     -1.5       14.7      -0.9950
+   TERMINAL TOTAL ....    43.9 +j     -4.4       44.2      -0.9950
+
+ELEMENT = "Line.59_61_1_1"
+59_TIDD          1       -17.2 +j      1.7       17.3      -0.9953
+59_TIDD          2       -17.2 +j      1.7       17.3      -0.9953
+59_TIDD          3       -17.2 +j      1.7       17.3      -0.9953
+   TERMINAL TOTAL ....   -51.7 +j      5.0       52.0      -0.9953
+61_WKAMMER       1        17.5 +j     -1.5       17.6      -0.9962
+61_WKAMMER       2        17.5 +j     -1.5       17.6      -0.9962
+61_WKAMMER       3        17.5 +j     -1.5       17.6      -0.9962
+   TERMINAL TOTAL ....    52.6 +j     -4.6       52.8      -0.9962
+
+ELEMENT = "Line.60_61_1_1"
+60_SWKAMMER      1       -37.4 +j      2.8       37.5      -0.9971
+60_SWKAMMER      2       -37.4 +j      2.8       37.5      -0.9971
+60_SWKAMMER      3       -37.4 +j      2.8       37.5      -0.9971
+   TERMINAL TOTAL ....  -112.1 +j      8.5      112.4      -0.9971
+61_WKAMMER       1        37.5 +j     -2.7       37.6      -0.9973
+61_WKAMMER       2        37.5 +j     -2.7       37.6      -0.9973
+61_WKAMMER       3        37.5 +j     -2.7       37.6      -0.9973
+   TERMINAL TOTAL ....   112.4 +j     -8.2      112.7      -0.9973
+
+ELEMENT = "Line.60_62_1_1"
+60_SWKAMMER      1        -3.3 +j     -2.4        4.1       0.8114
+60_SWKAMMER      2        -3.3 +j     -2.4        4.1       0.8114
+60_SWKAMMER      3        -3.3 +j     -2.4        4.1       0.8114
+   TERMINAL TOTAL ....    -9.9 +j     -7.1       12.2       0.8114
+62_NATRIUM       1         3.3 +j      1.9        3.8       0.8650
+62_NATRIUM       2         3.3 +j      1.9        3.8       0.8650
+62_NATRIUM       3         3.3 +j      1.9        3.8       0.8650
+   TERMINAL TOTAL ....     9.9 +j      5.7       11.4       0.8650
+
+ELEMENT = "Line.61_62_1_1"
+61_WKAMMER       1         8.5 +j     -4.6        9.7      -0.8785
+61_WKAMMER       2         8.5 +j     -4.6        9.7      -0.8785
+61_WKAMMER       3         8.5 +j     -4.6        9.7      -0.8785
+   TERMINAL TOTAL ....    25.5 +j    -13.9       29.0      -0.8785
+62_NATRIUM       1        -8.5 +j      4.4        9.5      -0.8875
+62_NATRIUM       2        -8.5 +j      4.4        9.5      -0.8875
+62_NATRIUM       3        -8.5 +j      4.4        9.5      -0.8875
+   TERMINAL TOTAL ....   -25.4 +j     13.2       28.6      -0.8875
+
+ELEMENT = "Line.62_66_1_1"
+62_NATRIUM       1       -12.4 +j     -5.8       13.7       0.9069
+62_NATRIUM       2       -12.4 +j     -5.8       13.7       0.9069
+62_NATRIUM       3       -12.4 +j     -5.8       13.7       0.9069
+   TERMINAL TOTAL ....   -37.2 +j    -17.3       41.0       0.9069
+66_MUSKNGUM      1        12.6 +j      4.9       13.6       0.9326
+66_MUSKNGUM      2        12.6 +j      4.9       13.6       0.9326
+66_MUSKNGUM      3        12.6 +j      4.9       13.6       0.9326
+   TERMINAL TOTAL ....    37.9 +j     14.7       40.7       0.9326
+
+ELEMENT = "Line.62_67_1_1"
+62_NATRIUM       1        -8.1 +j     -4.8        9.4       0.8602
+62_NATRIUM       2        -8.1 +j     -4.8        9.4       0.8602
+62_NATRIUM       3        -8.1 +j     -4.8        9.4       0.8602
+   TERMINAL TOTAL ....   -24.3 +j    -14.4       28.3       0.8602
+67_SUMMERFL      1         8.2 +j      4.0        9.1       0.8960
+67_SUMMERFL      2         8.2 +j      4.0        9.1       0.8960
+67_SUMMERFL      3         8.2 +j      4.0        9.1       0.8960
+   TERMINAL TOTAL ....    24.5 +j     12.1       27.3       0.8960
+
+ELEMENT = "Line.63_64_1_1"
+63_TIDD          1       -50.6 +j    -22.5       55.4       0.9138
+63_TIDD          2       -50.6 +j    -22.5       55.4       0.9138
+63_TIDD          3       -50.6 +j    -22.5       55.4       0.9138
+   TERMINAL TOTAL ....  -151.8 +j    -67.5      166.1       0.9138
+64_KAMMER        1        50.7 +j     17.5       53.7       0.9454
+64_KAMMER        2        50.7 +j     17.5       53.7       0.9454
+64_KAMMER        3        50.7 +j     17.5       53.7       0.9454
+   TERMINAL TOTAL ....   152.2 +j     52.5      161.0       0.9454
+
+ELEMENT = "Line.64_65_1_1"
+64_KAMMER        1       -60.9 +j    -22.2       64.8       0.9398
+64_KAMMER        2       -60.9 +j    -22.2       64.8       0.9398
+64_KAMMER        3       -60.9 +j    -22.2       64.8       0.9398
+   TERMINAL TOTAL ....  -182.8 +j    -66.5      194.5       0.9398
+65_MUSKNGUM      1        61.3 +j     13.3       62.7       0.9771
+65_MUSKNGUM      2        61.3 +j     13.3       62.7       0.9771
+65_MUSKNGUM      3        61.3 +j     13.3       62.7       0.9771
+   TERMINAL TOTAL ....   183.8 +j     40.0      188.1       0.9771
+
+ELEMENT = "Line.65_68_1_1"
+65_MUSKNGUM      1         4.7 +j     -7.5        8.8      -0.5335
+65_MUSKNGUM      2         4.7 +j     -7.5        8.8      -0.5335
+65_MUSKNGUM      3         4.7 +j     -7.5        8.8      -0.5335
+   TERMINAL TOTAL ....    14.1 +j    -22.4       26.5      -0.5335
+68_SPORN         1        -4.7 +j    -14.0       14.7       0.3201
+68_SPORN         2        -4.7 +j    -14.0       14.7       0.3201
+68_SPORN         3        -4.7 +j    -14.0       14.7       0.3201
+   TERMINAL TOTAL ....   -14.1 +j    -41.9       44.2       0.3201
+
+ELEMENT = "Line.66_67_1_1"
+66_MUSKNGUM      1        17.7 +j      6.4       18.9       0.9401
+66_MUSKNGUM      2        17.7 +j      6.4       18.9       0.9401
+66_MUSKNGUM      3        17.7 +j      6.4       18.9       0.9401
+   TERMINAL TOTAL ....    53.2 +j     19.3       56.6       0.9401
+67_SUMMERFL      1       -17.5 +j     -6.4       18.6       0.9395
+67_SUMMERFL      2       -17.5 +j     -6.4       18.6       0.9395
+67_SUMMERFL      3       -17.5 +j     -6.4       18.6       0.9395
+   TERMINAL TOTAL ....   -52.5 +j    -19.1       55.9       0.9395
+
+ELEMENT = "Line.68_81_1_1"
+68_SPORN         1       -14.8 +j     -1.5       14.9       0.9947
+68_SPORN         2       -14.8 +j     -1.5       14.9       0.9947
+68_SPORN         3       -14.8 +j     -1.5       14.9       0.9947
+   TERMINAL TOTAL ....   -44.4 +j     -4.6       44.6       0.9947
+81_KANAWHA       1        14.8 +j    -25.2       29.2      -0.5069
+81_KANAWHA       2        14.8 +j    -25.2       29.2      -0.5069
+81_KANAWHA       3        14.8 +j    -25.2       29.2      -0.5069
+   TERMINAL TOTAL ....    44.4 +j    -75.6       87.6      -0.5069
+
+ELEMENT = "Line.68_116_1_1"
+68_SPORN         1        61.4 +j    -22.1       65.2      -0.9407
+68_SPORN         2        61.4 +j    -22.1       65.2      -0.9407
+68_SPORN         3        61.4 +j    -22.1       65.2      -0.9407
+   TERMINAL TOTAL ....   184.1 +j    -66.4      195.7      -0.9407
+116_KYGERCRK     1       -61.3 +j     17.1       63.7      -0.9632
+116_KYGERCRK     2       -61.3 +j     17.1       63.7      -0.9632
+116_KYGERCRK     3       -61.3 +j     17.1       63.7      -0.9632
+   TERMINAL TOTAL ....  -184.0 +j     51.4      191.0      -0.9632
+
+ELEMENT = "Line.69_70_1_1"
+69_SPORN         1        36.1 +j      5.4       36.5       0.9892
+69_SPORN         2        36.1 +j      5.4       36.5       0.9892
+69_SPORN         3        36.1 +j      5.4       36.5       0.9892
+   TERMINAL TOTAL ....   108.3 +j     16.1      109.5       0.9892
+70_PORTSMTH      1       -35.0 +j     -4.7       35.3       0.9912
+70_PORTSMTH      2       -35.0 +j     -4.7       35.3       0.9912
+70_PORTSMTH      3       -35.0 +j     -4.7       35.3       0.9912
+   TERMINAL TOTAL ....  -104.9 +j    -14.0      105.8       0.9912
+
+ELEMENT = "Line.69_75_1_1"
+69_SPORN         1        36.7 +j      6.8       37.3       0.9831
+69_SPORN         2        36.7 +j      6.8       37.3       0.9831
+69_SPORN         3        36.7 +j      6.8       37.3       0.9831
+   TERMINAL TOTAL ....   110.0 +j     20.5      111.9       0.9831
+75_STHPOINT      1       -35.0 +j     -6.1       35.6       0.9851
+75_STHPOINT      2       -35.0 +j     -6.1       35.6       0.9851
+75_STHPOINT      3       -35.0 +j     -6.1       35.6       0.9851
+   TERMINAL TOTAL ....  -105.1 +j    -18.3      106.7       0.9851
+
+ELEMENT = "Line.69_77_1_1"
+69_SPORN         1        20.7 +j      2.3       20.8       0.9940
+69_SPORN         2        20.7 +j      2.3       20.8       0.9940
+69_SPORN         3        20.7 +j      2.3       20.8       0.9940
+   TERMINAL TOTAL ....    62.1 +j      6.8       62.4       0.9940
+77_TURNER        1       -20.3 +j     -4.6       20.8       0.9751
+77_TURNER        2       -20.3 +j     -4.6       20.8       0.9751
+77_TURNER        3       -20.3 +j     -4.6       20.8       0.9751
+   TERMINAL TOTAL ....   -60.9 +j    -13.9       62.5       0.9751
+
+ELEMENT = "Line.70_71_1_1"
+70_PORTSMTH      1         5.5 +j     -4.1        6.9      -0.8026
+70_PORTSMTH      2         5.5 +j     -4.1        6.9      -0.8026
+70_PORTSMTH      3         5.5 +j     -4.1        6.9      -0.8026
+   TERMINAL TOTAL ....    16.6 +j    -12.4       20.7      -0.8026
+71_NPORTSMT      1        -5.5 +j      3.9        6.8      -0.8181
+71_NPORTSMT      2        -5.5 +j      3.9        6.8      -0.8181
+71_NPORTSMT      3        -5.5 +j      3.9        6.8      -0.8181
+   TERMINAL TOTAL ....   -16.6 +j     11.7       20.3      -0.8181
+
+ELEMENT = "Line.70_74_1_1"
+70_PORTSMTH      1         5.4 +j      4.3        6.9       0.7823
+70_PORTSMTH      2         5.4 +j      4.3        6.9       0.7823
+70_PORTSMTH      3         5.4 +j      4.3        6.9       0.7823
+   TERMINAL TOTAL ....    16.2 +j     12.9       20.7       0.7823
+74_BELLEFNT      1        -5.3 +j     -5.1        7.4       0.7199
+74_BELLEFNT      2        -5.3 +j     -5.1        7.4       0.7199
+74_BELLEFNT      3        -5.3 +j     -5.1        7.4       0.7199
+   TERMINAL TOTAL ....   -16.0 +j    -15.4       22.2       0.7199
+
+ELEMENT = "Line.70_75_1_1"
+70_PORTSMTH      1        -0.0 +j      3.3        3.3      -0.0147
+70_PORTSMTH      2        -0.0 +j      3.3        3.3      -0.0147
+70_PORTSMTH      3        -0.0 +j      3.3        3.3      -0.0147
+   TERMINAL TOTAL ....    -0.1 +j      9.9        9.9      -0.0147
+75_STHPOINT      1         0.1 +j     -4.4        4.4      -0.0157
+75_STHPOINT      2         0.1 +j     -4.4        4.4      -0.0157
+75_STHPOINT      3         0.1 +j     -4.4        4.4      -0.0157
+   TERMINAL TOTAL ....     0.2 +j    -13.2       13.2      -0.0157
+
+ELEMENT = "Line.71_72_1_1"
+71_NPORTSMT      1         3.5 +j     -0.3        3.5      -0.9961
+71_NPORTSMT      2         3.5 +j     -0.3        3.5      -0.9961
+71_NPORTSMT      3         3.5 +j     -0.3        3.5      -0.9961
+   TERMINAL TOTAL ....    10.6 +j     -0.9       10.6      -0.9961
+72_HILLSBRO      1        -3.5 +j     -1.0        3.7       0.9582
+72_HILLSBRO      2        -3.5 +j     -1.0        3.7       0.9582
+72_HILLSBRO      3        -3.5 +j     -1.0        3.7       0.9582
+   TERMINAL TOTAL ....   -10.5 +j     -3.1       11.0       0.9582
+
+ELEMENT = "Line.71_73_1_1"
+71_NPORTSMT      1         2.0 +j     -3.6        4.1      -0.4885
+71_NPORTSMT      2         2.0 +j     -3.6        4.1      -0.4885
+71_NPORTSMT      3         2.0 +j     -3.6        4.1      -0.4885
+   TERMINAL TOTAL ....     6.0 +j    -10.7       12.3      -0.4885
+73_SARGENTS      1        -2.0 +j      3.2        3.8      -0.5280
+73_SARGENTS      2        -2.0 +j      3.2        3.8      -0.5280
+73_SARGENTS      3        -2.0 +j      3.2        3.8      -0.5280
+   TERMINAL TOTAL ....    -6.0 +j      9.7       11.4      -0.5280
+
+ELEMENT = "Line.74_75_1_1"
+74_BELLEFNT      1       -17.3 +j     -2.1       17.5       0.9930
+74_BELLEFNT      2       -17.3 +j     -2.1       17.5       0.9930
+74_BELLEFNT      3       -17.3 +j     -2.1       17.5       0.9930
+   TERMINAL TOTAL ....   -52.0 +j     -6.2       52.4       0.9930
+75_STHPOINT      1        17.5 +j      2.1       17.6       0.9925
+75_STHPOINT      2        17.5 +j      2.1       17.6       0.9925
+75_STHPOINT      3        17.5 +j      2.1       17.6       0.9925
+   TERMINAL TOTAL ....    52.4 +j      6.4       52.8       0.9925
+
+ELEMENT = "Line.75_77_1_1"
+75_STHPOINT      1       -11.5 +j     -3.2       12.0       0.9641
+75_STHPOINT      2       -11.5 +j     -3.2       12.0       0.9641
+75_STHPOINT      3       -11.5 +j     -3.2       12.0       0.9641
+   TERMINAL TOTAL ....   -34.6 +j     -9.5       35.9       0.9641
+77_TURNER        1        11.8 +j      2.5       12.1       0.9791
+77_TURNER        2        11.8 +j      2.5       12.1       0.9791
+77_TURNER        3        11.8 +j      2.5       12.1       0.9791
+   TERMINAL TOTAL ....    35.5 +j      7.4       36.2       0.9791
+
+ELEMENT = "Line.75_118_1_1"
+75_STHPOINT      1        13.4 +j      7.9       15.5       0.8623
+75_STHPOINT      2        13.4 +j      7.9       15.5       0.8623
+75_STHPOINT      3        13.4 +j      7.9       15.5       0.8623
+   TERMINAL TOTAL ....    40.2 +j     23.6       46.6       0.8623
+118_WHUNTNGD     1       -13.3 +j     -7.9       15.4       0.8607
+118_WHUNTNGD     2       -13.3 +j     -7.9       15.4       0.8607
+118_WHUNTNGD     3       -13.3 +j     -7.9       15.4       0.8607
+   TERMINAL TOTAL ....   -39.8 +j    -23.6       46.3       0.8607
+
+ELEMENT = "Line.76_77_1_1"
+76_DARRAH        1       -20.4 +j     -7.0       21.6       0.9457
+76_DARRAH        2       -20.4 +j     -7.0       21.6       0.9457
+76_DARRAH        3       -20.4 +j     -7.0       21.6       0.9457
+   TERMINAL TOTAL ....   -61.2 +j    -21.0       64.7       0.9457
+77_TURNER        1        21.1 +j      8.1       22.6       0.9330
+77_TURNER        2        21.1 +j      8.1       22.6       0.9330
+77_TURNER        3        21.1 +j      8.1       22.6       0.9330
+   TERMINAL TOTAL ....    63.2 +j     24.4       67.8       0.9330
+
+ELEMENT = "Line.76_118_1_1"
+76_DARRAH        1        -2.3 +j     -3.2        4.0       0.5751
+76_DARRAH        2        -2.3 +j     -3.2        4.0       0.5751
+76_DARRAH        3        -2.3 +j     -3.2        4.0       0.5751
+   TERMINAL TOTAL ....    -6.8 +j     -9.7       11.9       0.5751
+118_WHUNTNGD     1         2.3 +j      2.9        3.7       0.6242
+118_WHUNTNGD     2         2.3 +j      2.9        3.7       0.6242
+118_WHUNTNGD     3         2.3 +j      2.9        3.7       0.6242
+   TERMINAL TOTAL ....     6.8 +j      8.6       11.0       0.6242
+
+ELEMENT = "Line.77_78_1_1"
+77_TURNER        1        15.1 +j      2.2       15.3       0.9895
+77_TURNER        2        15.1 +j      2.2       15.3       0.9895
+77_TURNER        3        15.1 +j      2.2       15.3       0.9895
+   TERMINAL TOTAL ....    45.4 +j      6.6       45.8       0.9895
+78_CHEMICAL      1       -15.1 +j     -2.5       15.3       0.9861
+78_CHEMICAL      2       -15.1 +j     -2.5       15.3       0.9861
+78_CHEMICAL      3       -15.1 +j     -2.5       15.3       0.9861
+   TERMINAL TOTAL ....   -45.3 +j     -7.6       45.9       0.9861
+
+ELEMENT = "Line.77_80_1_1"
+77_TURNER        1       -32.2 +j    -12.5       34.5       0.9326
+77_TURNER        2       -32.2 +j    -12.5       34.5       0.9326
+77_TURNER        3       -32.2 +j    -12.5       34.5       0.9326
+   TERMINAL TOTAL ....   -96.6 +j    -37.4      103.6       0.9326
+80_CABINCRK      1        32.8 +j     12.5       35.1       0.9344
+80_CABINCRK      2        32.8 +j     12.5       35.1       0.9344
+80_CABINCRK      3        32.8 +j     12.5       35.1       0.9344
+   TERMINAL TOTAL ....    98.4 +j     37.5      105.3       0.9344
+
+ELEMENT = "Line.77_80_1_2"
+77_TURNER        1       -14.8 +j     -6.8       16.3       0.9076
+77_TURNER        2       -14.8 +j     -6.8       16.3       0.9076
+77_TURNER        3       -14.8 +j     -6.8       16.3       0.9076
+   TERMINAL TOTAL ....   -44.4 +j    -20.5       48.9       0.9076
+80_CABINCRK      1        15.0 +j      6.9       16.5       0.9096
+80_CABINCRK      2        15.0 +j      6.9       16.5       0.9096
+80_CABINCRK      3        15.0 +j      6.9       16.5       0.9096
+   TERMINAL TOTAL ....    45.1 +j     20.6       49.6       0.9096
+
+ELEMENT = "Line.77_82_1_1"
+77_TURNER        1        -1.0 +j      5.8        5.9      -0.1774
+77_TURNER        2        -1.0 +j      5.8        5.9      -0.1774
+77_TURNER        3        -1.0 +j      5.8        5.9      -0.1774
+   TERMINAL TOTAL ....    -3.1 +j     17.4       17.6      -0.1774
+82_LOGAN         1         1.1 +j     -8.4        8.4      -0.1292
+82_LOGAN         2         1.1 +j     -8.4        8.4      -0.1292
+82_LOGAN         3         1.1 +j     -8.4        8.4      -0.1292
+   TERMINAL TOTAL ....     3.3 +j    -25.1       25.3      -0.1292
+
+ELEMENT = "Line.78_79_1_1"
+78_CHEMICAL      1        -8.6 +j     -6.1       10.5       0.8137
+78_CHEMICAL      2        -8.6 +j     -6.1       10.5       0.8137
+78_CHEMICAL      3        -8.6 +j     -6.1       10.5       0.8137
+   TERMINAL TOTAL ....   -25.7 +j    -18.4       31.6       0.8137
+79_CAPITLHL      1         8.6 +j      6.0       10.5       0.8205
+79_CAPITLHL      2         8.6 +j      6.0       10.5       0.8205
+79_CAPITLHL      3         8.6 +j      6.0       10.5       0.8205
+   TERMINAL TOTAL ....    25.8 +j     17.9       31.4       0.8205
+
+ELEMENT = "Line.79_80_1_1"
+79_CAPITLHL      1       -21.6 +j     -9.9       23.7       0.9096
+79_CAPITLHL      2       -21.6 +j     -9.9       23.7       0.9096
+79_CAPITLHL      3       -21.6 +j     -9.9       23.7       0.9096
+   TERMINAL TOTAL ....   -64.8 +j    -29.6       71.2       0.9096
+80_CABINCRK      1        21.8 +j     10.4       24.2       0.9035
+80_CABINCRK      2        21.8 +j     10.4       24.2       0.9035
+80_CABINCRK      3        21.8 +j     10.4       24.2       0.9035
+   TERMINAL TOTAL ....    65.5 +j     31.1       72.5       0.9035
+
+ELEMENT = "Line.80_96_1_1"
+80_CABINCRK      1         6.3 +j      7.0        9.4       0.6716
+80_CABINCRK      2         6.3 +j      7.0        9.4       0.6716
+80_CABINCRK      3         6.3 +j      7.0        9.4       0.6716
+   TERMINAL TOTAL ....    18.9 +j     20.9       28.2       0.6716
+96_BAILEYSV      1        -6.2 +j     -8.1       10.2       0.6059
+96_BAILEYSV      2        -6.2 +j     -8.1       10.2       0.6059
+96_BAILEYSV      3        -6.2 +j     -8.1       10.2       0.6059
+   TERMINAL TOTAL ....   -18.6 +j    -24.4       30.7       0.6059
+
+ELEMENT = "Line.80_97_1_1"
+80_CABINCRK      1         8.8 +j      8.5       12.2       0.7182
+80_CABINCRK      2         8.8 +j      8.5       12.2       0.7182
+80_CABINCRK      3         8.8 +j      8.5       12.2       0.7182
+   TERMINAL TOTAL ....    26.4 +j     25.5       36.7       0.7182
+97_SUNDIAL       1        -8.7 +j     -9.0       12.5       0.6955
+97_SUNDIAL       2        -8.7 +j     -9.0       12.5       0.6955
+97_SUNDIAL       3        -8.7 +j     -9.0       12.5       0.6955
+   TERMINAL TOTAL ....   -26.1 +j    -27.0       37.6       0.6955
+
+ELEMENT = "Line.80_98_1_1"
+80_CABINCRK      1         9.6 +j      2.8       10.0       0.9607
+80_CABINCRK      2         9.6 +j      2.8       10.0       0.9607
+80_CABINCRK      3         9.6 +j      2.8       10.0       0.9607
+   TERMINAL TOTAL ....    28.8 +j      8.3       30.0       0.9607
+98_BRADLEY       1        -9.5 +j     -3.5       10.2       0.9394
+98_BRADLEY       2        -9.5 +j     -3.5       10.2       0.9394
+98_BRADLEY       3        -9.5 +j     -3.5       10.2       0.9394
+   TERMINAL TOTAL ....   -28.6 +j    -10.5       30.5       0.9394
+
+ELEMENT = "Line.80_99_1_1"
+80_CABINCRK      1         6.5 +j      2.7        7.0       0.9217
+80_CABINCRK      2         6.5 +j      2.7        7.0       0.9217
+80_CABINCRK      3         6.5 +j      2.7        7.0       0.9217
+   TERMINAL TOTAL ....    19.5 +j      8.2       21.1       0.9217
+99_HINTON        1        -6.4 +j     -4.3        7.7       0.8293
+99_HINTON        2        -6.4 +j     -4.3        7.7       0.8293
+99_HINTON        3        -6.4 +j     -4.3        7.7       0.8293
+   TERMINAL TOTAL ....   -19.2 +j    -13.0       23.2       0.8293
+
+ELEMENT = "Line.82_83_1_1"
+82_LOGAN         1       -15.7 +j      8.2       17.7      -0.8872
+82_LOGAN         2       -15.7 +j      8.2       17.7      -0.8872
+82_LOGAN         3       -15.7 +j      8.2       17.7      -0.8872
+   TERMINAL TOTAL ....   -47.2 +j     24.5       53.1      -0.8872
+83_SPRIGG        1        15.8 +j     -9.0       18.2      -0.8683
+83_SPRIGG        2        15.8 +j     -9.0       18.2      -0.8683
+83_SPRIGG        3        15.8 +j     -9.0       18.2      -0.8683
+   TERMINAL TOTAL ....    47.5 +j    -27.1       54.7      -0.8683
+
+ELEMENT = "Line.82_96_1_1"
+82_LOGAN         1        -3.4 +j     -2.3        4.1       0.8272
+82_LOGAN         2        -3.4 +j     -2.3        4.1       0.8272
+82_LOGAN         3        -3.4 +j     -2.3        4.1       0.8272
+   TERMINAL TOTAL ....   -10.1 +j     -6.9       12.2       0.8272
+96_BAILEYSV      1         3.4 +j      0.5        3.4       0.9878
+96_BAILEYSV      2         3.4 +j      0.5        3.4       0.9878
+96_BAILEYSV      3         3.4 +j      0.5        3.4       0.9878
+   TERMINAL TOTAL ....    10.1 +j      1.6       10.3       0.9878
+
+ELEMENT = "Line.83_84_1_1"
+83_SPRIGG        1        -8.3 +j      4.9        9.6      -0.8592
+83_SPRIGG        2        -8.3 +j      4.9        9.6      -0.8592
+83_SPRIGG        3        -8.3 +j      4.9        9.6      -0.8592
+   TERMINAL TOTAL ....   -24.8 +j     14.7       28.8      -0.8592
+84_BETSYLNE      1         8.4 +j     -5.3       10.0      -0.8446
+84_BETSYLNE      2         8.4 +j     -5.3       10.0      -0.8446
+84_BETSYLNE      3         8.4 +j     -5.3       10.0      -0.8446
+   TERMINAL TOTAL ....    25.3 +j    -16.0       30.0      -0.8446
+
+ELEMENT = "Line.83_85_1_1"
+83_SPRIGG        1       -14.2 +j      4.0       14.8      -0.9623
+83_SPRIGG        2       -14.2 +j      4.0       14.8      -0.9623
+83_SPRIGG        3       -14.2 +j      4.0       14.8      -0.9623
+   TERMINAL TOTAL ....   -42.7 +j     12.1       44.4      -0.9623
+85_BEAVERCK      1        14.5 +j     -4.1       15.1      -0.9621
+85_BEAVERCK      2        14.5 +j     -4.1       15.1      -0.9621
+85_BEAVERCK      3        14.5 +j     -4.1       15.1      -0.9621
+   TERMINAL TOTAL ....    43.6 +j    -12.4       45.3      -0.9621
+
+ELEMENT = "Line.84_85_1_1"
+84_BETSYLNE      1       -12.1 +j      3.0       12.5      -0.9703
+84_BETSYLNE      2       -12.1 +j      3.0       12.5      -0.9703
+84_BETSYLNE      3       -12.1 +j      3.0       12.5      -0.9703
+   TERMINAL TOTAL ....   -36.3 +j      9.0       37.4      -0.9703
+85_BEAVERCK      1        12.3 +j     -3.1       12.6      -0.9695
+85_BEAVERCK      2        12.3 +j     -3.1       12.6      -0.9695
+85_BEAVERCK      3        12.3 +j     -3.1       12.6      -0.9695
+   TERMINAL TOTAL ....    36.8 +j     -9.3       37.9      -0.9695
+
+ELEMENT = "Line.85_86_1_1"
+85_BEAVERCK      1         5.7 +j     -2.5        6.2      -0.9193
+85_BEAVERCK      2         5.7 +j     -2.5        6.2      -0.9193
+85_BEAVERCK      3         5.7 +j     -2.5        6.2      -0.9193
+   TERMINAL TOTAL ....    17.2 +j     -7.4       18.7      -0.9193
+86_HAZARD        1        -5.7 +j      1.7        5.9      -0.9582
+86_HAZARD        2        -5.7 +j      1.7        5.9      -0.9582
+86_HAZARD        3        -5.7 +j      1.7        5.9      -0.9582
+   TERMINAL TOTAL ....   -17.1 +j      5.1       17.8      -0.9582
+
+ELEMENT = "Line.85_88_1_1"
+85_BEAVERCK      1       -16.8 +j      2.5       17.0      -0.9888
+85_BEAVERCK      2       -16.8 +j      2.5       17.0      -0.9888
+85_BEAVERCK      3       -16.8 +j      2.5       17.0      -0.9888
+   TERMINAL TOTAL ....   -50.4 +j      7.6       50.9      -0.9888
+88_FREMONT       1        17.0 +j     -2.5       17.1      -0.9893
+88_FREMONT       2        17.0 +j     -2.5       17.1      -0.9893
+88_FREMONT       3        17.0 +j     -2.5       17.1      -0.9893
+   TERMINAL TOTAL ....    50.9 +j     -7.5       51.4      -0.9893
+
+ELEMENT = "Line.85_89_1_1"
+85_BEAVERCK      1       -23.7 +j      0.2       23.7      -1.0000
+85_BEAVERCK      2       -23.7 +j      0.2       23.7      -1.0000
+85_BEAVERCK      3       -23.7 +j      0.2       23.7      -1.0000
+   TERMINAL TOTAL ....   -71.2 +j      0.7       71.2      -1.0000
+89_CLINCHRV      1        24.1 +j      1.2       24.2       0.9987
+89_CLINCHRV      2        24.1 +j      1.2       24.2       0.9987
+89_CLINCHRV      3        24.1 +j      1.2       24.2       0.9987
+   TERMINAL TOTAL ....    72.4 +j      3.7       72.5       0.9987
+
+ELEMENT = "Line.86_87_1_1"
+86_HAZARD        1        -1.3 +j     -5.0        5.2       0.2530
+86_HAZARD        2        -1.3 +j     -5.0        5.2       0.2530
+86_HAZARD        3        -1.3 +j     -5.0        5.2       0.2530
+   TERMINAL TOTAL ....    -3.9 +j    -15.1       15.6       0.2530
+87_PINEVLLE      1         1.3 +j      3.7        3.9       0.3412
+87_PINEVLLE      2         1.3 +j      3.7        3.9       0.3412
+87_PINEVLLE      3         1.3 +j      3.7        3.9       0.3412
+   TERMINAL TOTAL ....     4.0 +j     11.0       11.7       0.3412
+
+ELEMENT = "Line.88_89_1_1"
+88_FREMONT       1       -33.0 +j     -0.8       33.0       0.9997
+88_FREMONT       2       -33.0 +j     -0.8       33.0       0.9997
+88_FREMONT       3       -33.0 +j     -0.8       33.0       0.9997
+   TERMINAL TOTAL ....   -98.9 +j     -2.5       98.9       0.9997
+89_CLINCHRV      1        33.4 +j      2.6       33.5       0.9971
+89_CLINCHRV      2        33.4 +j      2.6       33.5       0.9971
+89_CLINCHRV      3        33.4 +j      2.6       33.5       0.9971
+   TERMINAL TOTAL ....   100.3 +j      7.7      100.6       0.9971
+
+ELEMENT = "Line.89_90_1_1"
+89_CLINCHRV      1        19.4 +j     -1.6       19.5      -0.9967
+89_CLINCHRV      2        19.4 +j     -1.6       19.5      -0.9967
+89_CLINCHRV      3        19.4 +j     -1.6       19.5      -0.9967
+   TERMINAL TOTAL ....    58.2 +j     -4.7       58.4      -0.9967
+90_HOLSTON       1       -18.8 +j      1.9       18.9      -0.9948
+90_HOLSTON       2       -18.8 +j      1.9       18.9      -0.9948
+90_HOLSTON       3       -18.8 +j      1.9       18.9      -0.9948
+   TERMINAL TOTAL ....   -56.4 +j      5.8       56.7      -0.9948
+
+ELEMENT = "Line.89_90_1_2"
+89_CLINCHRV      1        36.9 +j     -1.8       37.0      -0.9988
+89_CLINCHRV      2        36.9 +j     -1.8       37.0      -0.9988
+89_CLINCHRV      3        36.9 +j     -1.8       37.0      -0.9988
+   TERMINAL TOTAL ....   110.7 +j     -5.4      110.9      -0.9988
+90_HOLSTON       1       -36.0 +j      2.3       36.0      -0.9979
+90_HOLSTON       2       -36.0 +j      2.3       36.0      -0.9979
+90_HOLSTON       3       -36.0 +j      2.3       36.0      -0.9979
+   TERMINAL TOTAL ....  -107.9 +j      7.0      108.1      -0.9979
+
+ELEMENT = "Line.89_92_1_1"
+89_CLINCHRV      1        67.3 +j     -2.2       67.3      -0.9995
+89_CLINCHRV      2        67.3 +j     -2.2       67.3      -0.9995
+89_CLINCHRV      3        67.3 +j     -2.2       67.3      -0.9995
+   TERMINAL TOTAL ....   201.8 +j     -6.6      202.0      -0.9995
+92_SALTVLLE      1       -66.0 +j      7.2       66.3      -0.9941
+92_SALTVLLE      2       -66.0 +j      7.2       66.3      -0.9941
+92_SALTVLLE      3       -66.0 +j      7.2       66.3      -0.9941
+   TERMINAL TOTAL ....  -197.9 +j     21.5      199.0      -0.9941
+
+ELEMENT = "Line.89_92_1_2"
+89_CLINCHRV      1        21.2 +j     -2.2       21.3      -0.9948
+89_CLINCHRV      2        21.2 +j     -2.2       21.3      -0.9948
+89_CLINCHRV      3        21.2 +j     -2.2       21.3      -0.9948
+   TERMINAL TOTAL ....    63.6 +j     -6.5       64.0      -0.9948
+92_SALTVLLE      1       -20.7 +j      2.9       20.9      -0.9902
+92_SALTVLLE      2       -20.7 +j      2.9       20.9      -0.9902
+92_SALTVLLE      3       -20.7 +j      2.9       20.9      -0.9902
+   TERMINAL TOTAL ....   -62.0 +j      8.7       62.6      -0.9902
+
+ELEMENT = "Line.90_91_1_1"
+90_HOLSTON       1         0.4 +j      1.5        1.5       0.2797
+90_HOLSTON       2         0.4 +j      1.5        1.5       0.2797
+90_HOLSTON       3         0.4 +j      1.5        1.5       0.2797
+   TERMINAL TOTAL ....     1.3 +j      4.5        4.6       0.2797
+91_HOLSTONT      1        -0.4 +j     -2.2        2.2       0.1948
+91_HOLSTONT      2        -0.4 +j     -2.2        2.2       0.1948
+91_HOLSTONT      3        -0.4 +j     -2.2        2.2       0.1948
+   TERMINAL TOTAL ....    -1.3 +j     -6.5        6.6       0.1948
+
+ELEMENT = "Line.91_92_1_1"
+91_HOLSTONT      1        -2.9 +j     -2.8        4.0       0.7218
+91_HOLSTONT      2        -2.9 +j     -2.8        4.0       0.7218
+91_HOLSTONT      3        -2.9 +j     -2.8        4.0       0.7218
+   TERMINAL TOTAL ....    -8.7 +j     -8.4       12.1       0.7218
+92_SALTVLLE      1         2.9 +j      1.8        3.4       0.8541
+92_SALTVLLE      2         2.9 +j      1.8        3.4       0.8541
+92_SALTVLLE      3         2.9 +j      1.8        3.4       0.8541
+   TERMINAL TOTAL ....     8.8 +j      5.3       10.3       0.8541
+
+ELEMENT = "Line.92_93_1_1"
+92_SALTVLLE      1        19.2 +j     -3.6       19.6      -0.9831
+92_SALTVLLE      2        19.2 +j     -3.6       19.6      -0.9831
+92_SALTVLLE      3        19.2 +j     -3.6       19.6      -0.9831
+   TERMINAL TOTAL ....    57.7 +j    -10.8       58.7      -0.9831
+93_TAZEWELL      1       -18.9 +j      3.9       19.3      -0.9799
+93_TAZEWELL      2       -18.9 +j      3.9       19.3      -0.9799
+93_TAZEWELL      3       -18.9 +j      3.9       19.3      -0.9799
+   TERMINAL TOTAL ....   -56.8 +j     11.6       58.0      -0.9799
+
+ELEMENT = "Line.92_94_1_1"
+92_SALTVLLE      1        17.4 +j     -4.8       18.1      -0.9645
+92_SALTVLLE      2        17.4 +j     -4.8       18.1      -0.9645
+92_SALTVLLE      3        17.4 +j     -4.8       18.1      -0.9645
+   TERMINAL TOTAL ....    52.3 +j    -14.3       54.2      -0.9645
+94_SWITCHBK      1       -17.0 +j      5.0       17.7      -0.9594
+94_SWITCHBK      2       -17.0 +j      5.0       17.7      -0.9594
+94_SWITCHBK      3       -17.0 +j      5.0       17.7      -0.9594
+   TERMINAL TOTAL ....   -50.9 +j     15.0       53.0      -0.9594
+
+ELEMENT = "Line.92_100_1_1"
+92_SALTVLLE      1        10.5 +j     -5.3       11.7      -0.8935
+92_SALTVLLE      2        10.5 +j     -5.3       11.7      -0.8935
+92_SALTVLLE      3        10.5 +j     -5.3       11.7      -0.8935
+   TERMINAL TOTAL ....    31.5 +j    -15.8       35.2      -0.8935
+100_GLENLYN      1       -10.2 +j      4.9       11.3      -0.9035
+100_GLENLYN      2       -10.2 +j      4.9       11.3      -0.9035
+100_GLENLYN      3       -10.2 +j      4.9       11.3      -0.9035
+   TERMINAL TOTAL ....   -30.7 +j     14.6       34.0      -0.9035
+
+ELEMENT = "Line.92_102_1_1"
+92_SALTVLLE      1        14.9 +j     -2.6       15.1      -0.9856
+92_SALTVLLE      2        14.9 +j     -2.6       15.1      -0.9856
+92_SALTVLLE      3        14.9 +j     -2.6       15.1      -0.9856
+   TERMINAL TOTAL ....    44.6 +j     -7.7       45.3      -0.9856
+102_SMYTHE       1       -14.8 +j      2.5       15.0      -0.9864
+102_SMYTHE       2       -14.8 +j      2.5       15.0      -0.9864
+102_SMYTHE       3       -14.8 +j      2.5       15.0      -0.9864
+   TERMINAL TOTAL ....   -44.4 +j      7.4       45.0      -0.9864
+
+ELEMENT = "Line.93_94_1_1"
+93_TAZEWELL      1        14.9 +j     -6.2       16.2      -0.9239
+93_TAZEWELL      2        14.9 +j     -6.2       16.2      -0.9239
+93_TAZEWELL      3        14.9 +j     -6.2       16.2      -0.9239
+   TERMINAL TOTAL ....    44.8 +j    -18.6       48.5      -0.9239
+94_SWITCHBK      1       -14.8 +j      6.2       16.0      -0.9229
+94_SWITCHBK      2       -14.8 +j      6.2       16.0      -0.9229
+94_SWITCHBK      3       -14.8 +j      6.2       16.0      -0.9229
+   TERMINAL TOTAL ....   -44.3 +j     18.5       48.0      -0.9229
+
+ELEMENT = "Line.94_95_1_1"
+94_SWITCHBK      1        13.7 +j      3.1       14.0       0.9751
+94_SWITCHBK      2        13.7 +j      3.1       14.0       0.9751
+94_SWITCHBK      3        13.7 +j      3.1       14.0       0.9751
+   TERMINAL TOTAL ....    41.0 +j      9.3       42.0       0.9751
+95_CALDWELL      1       -13.6 +j     -3.2       14.0       0.9732
+95_CALDWELL      2       -13.6 +j     -3.2       14.0       0.9732
+95_CALDWELL      3       -13.6 +j     -3.2       14.0       0.9732
+   TERMINAL TOTAL ....   -40.8 +j     -9.6       41.9       0.9732
+
+ELEMENT = "Line.94_96_1_1"
+94_SWITCHBK      1         6.6 +j     -3.2        7.4      -0.9034
+94_SWITCHBK      2         6.6 +j     -3.2        7.4      -0.9034
+94_SWITCHBK      3         6.6 +j     -3.2        7.4      -0.9034
+   TERMINAL TOTAL ....    19.9 +j     -9.5       22.1      -0.9034
+96_BAILEYSV      1        -6.6 +j      2.5        7.1      -0.9334
+96_BAILEYSV      2        -6.6 +j      2.5        7.1      -0.9334
+96_BAILEYSV      3        -6.6 +j      2.5        7.1      -0.9334
+   TERMINAL TOTAL ....   -19.8 +j      7.6       21.2      -0.9334
+
+ELEMENT = "Line.94_100_1_1"
+94_SWITCHBK      1         1.4 +j    -16.4       16.5      -0.0859
+94_SWITCHBK      2         1.4 +j    -16.4       16.5      -0.0859
+94_SWITCHBK      3         1.4 +j    -16.4       16.5      -0.0859
+   TERMINAL TOTAL ....     4.2 +j    -49.3       49.5      -0.0859
+100_GLENLYN      1        -1.3 +j     14.8       14.9      -0.0864
+100_GLENLYN      2        -1.3 +j     14.8       14.9      -0.0864
+100_GLENLYN      3        -1.3 +j     14.8       14.9      -0.0864
+   TERMINAL TOTAL ....    -3.9 +j     44.5       44.7      -0.0864
+
+ELEMENT = "Line.95_96_1_1"
+95_CALDWELL      1        -0.4 +j     -7.1        7.1       0.0580
+95_CALDWELL      2        -0.4 +j     -7.1        7.1       0.0580
+95_CALDWELL      3        -0.4 +j     -7.1        7.1       0.0580
+   TERMINAL TOTAL ....    -1.2 +j    -21.4       21.4       0.0580
+96_BAILEYSV      1         0.4 +j      6.7        6.7       0.0652
+96_BAILEYSV      2         0.4 +j      6.7        6.7       0.0652
+96_BAILEYSV      3         0.4 +j      6.7        6.7       0.0652
+   TERMINAL TOTAL ....     1.3 +j     20.2       20.2       0.0652
+
+ELEMENT = "Line.96_97_1_1"
+96_BAILEYSV      1        -3.7 +j     -6.7        7.6       0.4837
+96_BAILEYSV      2        -3.7 +j     -6.7        7.6       0.4837
+96_BAILEYSV      3        -3.7 +j     -6.7        7.6       0.4837
+   TERMINAL TOTAL ....   -11.0 +j    -20.0       22.8       0.4837
+97_SUNDIAL       1         3.7 +j      6.0        7.1       0.5259
+97_SUNDIAL       2         3.7 +j      6.0        7.1       0.5259
+97_SUNDIAL       3         3.7 +j      6.0        7.1       0.5259
+   TERMINAL TOTAL ....    11.1 +j     18.0       21.2       0.5259
+
+ELEMENT = "Line.98_100_1_1"
+98_BRADLEY       1        -1.8 +j      0.8        2.0      -0.9093
+98_BRADLEY       2        -1.8 +j      0.8        2.0      -0.9093
+98_BRADLEY       3        -1.8 +j      0.8        2.0      -0.9093
+   TERMINAL TOTAL ....    -5.4 +j      2.5        5.9      -0.9093
+100_GLENLYN      1         1.8 +j     -2.4        3.0      -0.5924
+100_GLENLYN      2         1.8 +j     -2.4        3.0      -0.5924
+100_GLENLYN      3         1.8 +j     -2.4        3.0      -0.5924
+   TERMINAL TOTAL ....     5.4 +j     -7.3        9.1      -0.5924
+
+ELEMENT = "Line.99_100_1_1"
+99_HINTON        1        -7.6 +j     -1.5        7.7       0.9804
+99_HINTON        2        -7.6 +j     -1.5        7.7       0.9804
+99_HINTON        3        -7.6 +j     -1.5        7.7       0.9804
+   TERMINAL TOTAL ....   -22.8 +j     -4.6       23.2       0.9804
+100_GLENLYN      1         7.6 +j      0.9        7.7       0.9927
+100_GLENLYN      2         7.6 +j      0.9        7.7       0.9927
+100_GLENLYN      3         7.6 +j      0.9        7.7       0.9927
+   TERMINAL TOTAL ....    22.8 +j      2.8       23.0       0.9927
+
+ELEMENT = "Line.100_101_1_1"
+100_GLENLYN      1        -5.6 +j      7.4        9.2      -0.6044
+100_GLENLYN      2        -5.6 +j      7.4        9.2      -0.6044
+100_GLENLYN      3        -5.6 +j      7.4        9.2      -0.6044
+   TERMINAL TOTAL ....   -16.8 +j     22.1       27.7      -0.6044
+101_WYTHE        1         5.7 +j     -8.1        9.9      -0.5718
+101_WYTHE        2         5.7 +j     -8.1        9.9      -0.5718
+101_WYTHE        3         5.7 +j     -8.1        9.9      -0.5718
+   TERMINAL TOTAL ....    17.0 +j    -24.4       29.7      -0.5718
+
+ELEMENT = "Line.100_103_1_1"
+100_GLENLYN      1        40.4 +j     -1.4       40.4      -0.9994
+100_GLENLYN      2        40.4 +j     -1.4       40.4      -0.9994
+100_GLENLYN      3        40.4 +j     -1.4       40.4      -0.9994
+   TERMINAL TOTAL ....   121.1 +j     -4.3      121.2      -0.9994
+103_CLAYTOR      1       -39.6 +j      2.1       39.7      -0.9986
+103_CLAYTOR      2       -39.6 +j      2.1       39.7      -0.9986
+103_CLAYTOR      3       -39.6 +j      2.1       39.7      -0.9986
+   TERMINAL TOTAL ....  -118.8 +j      6.3      119.0      -0.9986
+
+ELEMENT = "Line.100_104_1_1"
+100_GLENLYN      1        18.8 +j      3.5       19.1       0.9827
+100_GLENLYN      2        18.8 +j      3.5       19.1       0.9827
+100_GLENLYN      3        18.8 +j      3.5       19.1       0.9827
+   TERMINAL TOTAL ....    56.4 +j     10.6       57.4       0.9827
+104_HANCOCK      1       -18.3 +j     -3.1       18.6       0.9859
+104_HANCOCK      2       -18.3 +j     -3.1       18.6       0.9859
+104_HANCOCK      3       -18.3 +j     -3.1       18.6       0.9859
+   TERMINAL TOTAL ....   -55.0 +j     -9.3       55.7       0.9859
+
+ELEMENT = "Line.100_106_1_1"
+100_GLENLYN      1        20.2 +j      3.1       20.4       0.9887
+100_GLENLYN      2        20.2 +j      3.1       20.4       0.9887
+100_GLENLYN      3        20.2 +j      3.1       20.4       0.9887
+   TERMINAL TOTAL ....    60.6 +j      9.2       61.3       0.9887
+106_CLOVERDL     1       -19.4 +j     -2.3       19.6       0.9933
+106_CLOVERDL     2       -19.4 +j     -2.3       19.6       0.9933
+106_CLOVERDL     3       -19.4 +j     -2.3       19.6       0.9933
+   TERMINAL TOTAL ....   -58.3 +j     -6.8       58.7       0.9933
+
+ELEMENT = "Line.101_102_1_1"
+101_WYTHE        1       -13.0 +j      3.1       13.4      -0.9724
+101_WYTHE        2       -13.0 +j      3.1       13.4      -0.9724
+101_WYTHE        3       -13.0 +j      3.1       13.4      -0.9724
+   TERMINAL TOTAL ....   -39.0 +j      9.4       40.1      -0.9724
+102_SMYTHE       1        13.1 +j     -3.5       13.6      -0.9669
+102_SMYTHE       2        13.1 +j     -3.5       13.6      -0.9669
+102_SMYTHE       3        13.1 +j     -3.5       13.6      -0.9669
+   TERMINAL TOTAL ....    39.4 +j    -10.4       40.7      -0.9669
+
+ELEMENT = "Line.103_104_1_1"
+103_CLAYTOR      1        10.8 +j      2.6       11.1       0.9712
+103_CLAYTOR      2        10.8 +j      2.6       11.1       0.9712
+103_CLAYTOR      3        10.8 +j      2.6       11.1       0.9712
+   TERMINAL TOTAL ....    32.3 +j      7.9       33.3       0.9712
+104_HANCOCK      1       -10.6 +j     -3.4       11.1       0.9532
+104_HANCOCK      2       -10.6 +j     -3.4       11.1       0.9532
+104_HANCOCK      3       -10.6 +j     -3.4       11.1       0.9532
+   TERMINAL TOTAL ....   -31.8 +j    -10.1       33.3       0.9532
+
+ELEMENT = "Line.103_105_1_1"
+103_CLAYTOR      1        14.3 +j      2.2       14.5       0.9886
+103_CLAYTOR      2        14.3 +j      2.2       14.5       0.9886
+103_CLAYTOR      3        14.3 +j      2.2       14.5       0.9886
+   TERMINAL TOTAL ....    42.9 +j      6.6       43.4       0.9886
+105_ROANOKE      1       -14.0 +j     -2.5       14.2       0.9848
+105_ROANOKE      2       -14.0 +j     -2.5       14.2       0.9848
+105_ROANOKE      3       -14.0 +j     -2.5       14.2       0.9848
+   TERMINAL TOTAL ....   -41.9 +j     -7.4       42.6       0.9848
+
+ELEMENT = "Line.103_110_1_1"
+103_CLAYTOR      1        20.2 +j      1.1       20.2       0.9986
+103_CLAYTOR      2        20.2 +j      1.1       20.2       0.9986
+103_CLAYTOR      3        20.2 +j      1.1       20.2       0.9986
+   TERMINAL TOTAL ....    60.6 +j      3.2       60.6       0.9986
+110_FIELDALE     1       -19.7 +j     -0.3       19.7       0.9998
+110_FIELDALE     2       -19.7 +j     -0.3       19.7       0.9998
+110_FIELDALE     3       -19.7 +j     -0.3       19.7       0.9998
+   TERMINAL TOTAL ....   -59.1 +j     -1.0       59.1       0.9998
+
+ELEMENT = "Line.104_105_1_1"
+104_HANCOCK      1        16.2 +j      0.0       16.2       1.0000
+104_HANCOCK      2        16.2 +j      0.0       16.2       1.0000
+104_HANCOCK      3        16.2 +j      0.0       16.2       1.0000
+   TERMINAL TOTAL ....    48.7 +j      0.1       48.7       1.0000
+105_ROANOKE      1       -16.2 +j     -0.0       16.2       1.0000
+105_ROANOKE      2       -16.2 +j     -0.0       16.2       1.0000
+105_ROANOKE      3       -16.2 +j     -0.0       16.2       1.0000
+   TERMINAL TOTAL ....   -48.5 +j     -0.0       48.5       1.0000
+
+ELEMENT = "Line.105_106_1_1"
+105_ROANOKE      1         2.9 +j      1.5        3.3       0.8859
+105_ROANOKE      2         2.9 +j      1.5        3.3       0.8859
+105_ROANOKE      3         2.9 +j      1.5        3.3       0.8859
+   TERMINAL TOTAL ....     8.7 +j      4.5        9.8       0.8859
+106_CLOVERDL     1        -2.9 +j     -1.9        3.5       0.8302
+106_CLOVERDL     2        -2.9 +j     -1.9        3.5       0.8302
+106_CLOVERDL     3        -2.9 +j     -1.9        3.5       0.8302
+   TERMINAL TOTAL ....    -8.7 +j     -5.8       10.4       0.8302
+
+ELEMENT = "Line.105_107_1_1"
+105_ROANOKE      1         8.9 +j     -0.6        8.9      -0.9976
+105_ROANOKE      2         8.9 +j     -0.6        8.9      -0.9976
+105_ROANOKE      3         8.9 +j     -0.6        8.9      -0.9976
+   TERMINAL TOTAL ....    26.7 +j     -1.9       26.8      -0.9976
+107_REUSENS      1        -8.8 +j     -0.4        8.8       0.9992
+107_REUSENS      2        -8.8 +j     -0.4        8.8       0.9992
+107_REUSENS      3        -8.8 +j     -0.4        8.8       0.9992
+   TERMINAL TOTAL ....   -26.3 +j     -1.1       26.3       0.9992
+
+ELEMENT = "Line.105_108_1_1"
+105_ROANOKE      1         8.0 +j     -3.5        8.7      -0.9146
+105_ROANOKE      2         8.0 +j     -3.5        8.7      -0.9146
+105_ROANOKE      3         8.0 +j     -3.5        8.7      -0.9146
+   TERMINAL TOTAL ....    24.0 +j    -10.6       26.2      -0.9146
+108_BLAINE       1        -7.9 +j      3.1        8.5      -0.9302
+108_BLAINE       2        -7.9 +j      3.1        8.5      -0.9302
+108_BLAINE       3        -7.9 +j      3.1        8.5      -0.9302
+   TERMINAL TOTAL ....   -23.8 +j      9.4       25.6      -0.9302
+
+ELEMENT = "Line.106_107_1_1"
+106_CLOVERDL     1         8.0 +j     -1.1        8.1      -0.9901
+106_CLOVERDL     2         8.0 +j     -1.1        8.1      -0.9901
+106_CLOVERDL     3         8.0 +j     -1.1        8.1      -0.9901
+   TERMINAL TOTAL ....    24.0 +j     -3.4       24.2      -0.9901
+107_REUSENS      1        -7.9 +j      0.1        7.9      -1.0000
+107_REUSENS      2        -7.9 +j      0.1        7.9      -1.0000
+107_REUSENS      3        -7.9 +j      0.1        7.9      -1.0000
+   TERMINAL TOTAL ....   -23.7 +j      0.2       23.7      -1.0000
+
+ELEMENT = "Line.108_109_1_1"
+108_BLAINE       1         7.3 +j     -3.5        8.1      -0.9027
+108_BLAINE       2         7.3 +j     -3.5        8.1      -0.9027
+108_BLAINE       3         7.3 +j     -3.5        8.1      -0.9027
+   TERMINAL TOTAL ....    21.8 +j    -10.4       24.2      -0.9027
+109_FRANKLIN     1        -7.2 +j      3.3        8.0      -0.9107
+109_FRANKLIN     2        -7.2 +j      3.3        8.0      -0.9107
+109_FRANKLIN     3        -7.2 +j      3.3        8.0      -0.9107
+   TERMINAL TOTAL ....   -21.7 +j      9.9       23.9      -0.9107
+
+ELEMENT = "Line.109_110_1_1"
+109_FRANKLIN     1         4.6 +j     -4.3        6.3      -0.7302
+109_FRANKLIN     2         4.6 +j     -4.3        6.3      -0.7302
+109_FRANKLIN     3         4.6 +j     -4.3        6.3      -0.7302
+   TERMINAL TOTAL ....    13.7 +j    -12.9       18.8      -0.7302
+110_FIELDALE     1        -4.5 +j      3.7        5.9      -0.7722
+110_FIELDALE     2        -4.5 +j      3.7        5.9      -0.7722
+110_FIELDALE     3        -4.5 +j      3.7        5.9      -0.7722
+   TERMINAL TOTAL ....   -13.6 +j     11.2       17.7      -0.7722
+
+ELEMENT = "Line.110_111_1_1"
+110_FIELDALE     1       -11.9 +j      0.3       11.9      -0.9996
+110_FIELDALE     2       -11.9 +j      0.3       11.9      -0.9996
+110_FIELDALE     3       -11.9 +j      0.3       11.9      -0.9996
+   TERMINAL TOTAL ....   -35.7 +j      1.0       35.7      -0.9996
+111_DANRIVER     1        12.0 +j     -0.6       12.0      -0.9987
+111_DANRIVER     2        12.0 +j     -0.6       12.0      -0.9987
+111_DANRIVER     3        12.0 +j     -0.6       12.0      -0.9987
+   TERMINAL TOTAL ....    36.0 +j     -1.8       36.0      -0.9987
+
+ELEMENT = "Line.110_112_1_1"
+110_FIELDALE     1        23.2 +j    -10.2       25.3      -0.9151
+110_FIELDALE     2        23.2 +j    -10.2       25.3      -0.9151
+110_FIELDALE     3        23.2 +j    -10.2       25.3      -0.9151
+   TERMINAL TOTAL ....    69.5 +j    -30.6       75.9      -0.9151
+112_DANVILLE     1       -22.7 +j      9.5       24.6      -0.9222
+112_DANVILLE     2       -22.7 +j      9.5       24.6      -0.9222
+112_DANVILLE     3       -22.7 +j      9.5       24.6      -0.9222
+   TERMINAL TOTAL ....   -68.0 +j     28.5       73.7      -0.9222
+
+ELEMENT = "Line.114_115_1_1"
+114_WMEDFORD     1         0.4 +j      0.2        0.5       0.9104
+114_WMEDFORD     2         0.4 +j      0.2        0.5       0.9104
+114_WMEDFORD     3         0.4 +j      0.2        0.5       0.9104
+   TERMINAL TOTAL ....     1.3 +j      0.6        1.5       0.9104
+115_MEDFORD      1        -0.4 +j     -0.3        0.5       0.8410
+115_MEDFORD      2        -0.4 +j     -0.3        0.5       0.8410
+115_MEDFORD      3        -0.4 +j     -0.3        0.5       0.8410
+   TERMINAL TOTAL ....    -1.3 +j     -0.9        1.6       0.8410
+
+ELEMENT = "Transformer.8_5_0_1_1"
+5_OLIVE          1      -112.8 +j    -30.6      116.9       0.9650
+5_OLIVE          2      -112.8 +j    -30.6      116.9       0.9650
+5_OLIVE          3      -112.8 +j    -30.6      116.9       0.9650
+5_OLIVE          0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....  -338.4 +j    -91.9      350.7       0.9650
+8_OLIVE          1       112.8 +j     41.5      120.2       0.9384
+8_OLIVE          2       112.8 +j     41.5      120.2       0.9384
+8_OLIVE          3       112.8 +j     41.5      120.2       0.9384
+8_OLIVE          0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....   338.4 +j    124.6      360.6       0.9384
+
+ELEMENT = "Transformer.30_17_0_1_1"
+17_SORENSON      1       -77.0 +j    -23.5       80.5       0.9565
+17_SORENSON      2       -77.0 +j    -23.5       80.5       0.9565
+17_SORENSON      3       -77.0 +j    -23.5       80.5       0.9565
+17_SORENSON      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....  -231.1 +j    -70.5      241.6       0.9565
+30_SORENSON      1        77.0 +j     31.1       83.1       0.9272
+30_SORENSON      2        77.0 +j     31.1       83.1       0.9272
+30_SORENSON      3        77.0 +j     31.1       83.1       0.9272
+30_SORENSON      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....   231.1 +j     93.3      249.2       0.9272
+
+ELEMENT = "Transformer.26_25_0_1_1"
+25_TANNRSCK      1       -30.1 +j     -6.2       30.7       0.9794
+25_TANNRSCK      2       -30.1 +j     -6.2       30.7       0.9794
+25_TANNRSCK      3       -30.1 +j     -6.2       30.7       0.9794
+25_TANNRSCK      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....   -90.3 +j    -18.6       92.2       0.9794
+26_TANNRSCK      1        30.1 +j      7.2       30.9       0.9727
+26_TANNRSCK      2        30.1 +j      7.2       30.9       0.9727
+26_TANNRSCK      3        30.1 +j      7.2       30.9       0.9727
+26_TANNRSCK      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....    90.3 +j     21.6       92.8       0.9727
+
+ELEMENT = "Transformer.38_37_0_1_1"
+37_EASTLIMA      1       -81.2 +j    -28.9       86.2       0.9423
+37_EASTLIMA      2       -81.2 +j    -28.9       86.2       0.9423
+37_EASTLIMA      3       -81.2 +j    -28.9       86.2       0.9423
+37_EASTLIMA      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....  -243.7 +j    -86.6      258.6       0.9423
+38_EASTLIMA      1        81.2 +j     37.4       89.4       0.9085
+38_EASTLIMA      2        81.2 +j     37.4       89.4       0.9085
+38_EASTLIMA      3        81.2 +j     37.4       89.4       0.9085
+38_EASTLIMA      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....   243.7 +j    112.1      268.2       0.9085
+
+ELEMENT = "Transformer.63_59_0_1_1"
+59_TIDD          1       -50.6 +j    -19.0       54.0       0.9361
+59_TIDD          2       -50.6 +j    -19.0       54.0       0.9361
+59_TIDD          3       -50.6 +j    -19.0       54.0       0.9361
+59_TIDD          0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....  -151.8 +j    -57.0      162.1       0.9361
+63_TIDD          1        50.6 +j     22.5       55.4       0.9138
+63_TIDD          2        50.6 +j     22.5       55.4       0.9138
+63_TIDD          3        50.6 +j     22.5       55.4       0.9138
+63_TIDD          0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....   151.8 +j     67.5      166.1       0.9138
+
+ELEMENT = "Transformer.64_61_0_1_1"
+61_WKAMMER       1       -10.2 +j     -4.6       11.1       0.9124
+61_WKAMMER       2       -10.2 +j     -4.6       11.1       0.9124
+61_WKAMMER       3       -10.2 +j     -4.6       11.1       0.9124
+61_WKAMMER       0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....   -30.5 +j    -13.7       33.4       0.9124
+64_KAMMER        1        10.2 +j      4.7       11.2       0.9090
+64_KAMMER        2        10.2 +j      4.7       11.2       0.9090
+64_KAMMER        3        10.2 +j      4.7       11.2       0.9090
+64_KAMMER        0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....    30.5 +j     14.0       33.6       0.9090
+
+ELEMENT = "Transformer.65_66_0_1_1"
+66_MUSKNGUM      1        -2.8 +j    -23.5       23.7       0.1192
+66_MUSKNGUM      2        -2.8 +j    -23.5       23.7       0.1192
+66_MUSKNGUM      3        -2.8 +j    -23.5       23.7       0.1192
+66_MUSKNGUM      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....    -8.5 +j    -70.6       71.1       0.1192
+65_MUSKNGUM      1         2.8 +j     24.1       24.2       0.1164
+65_MUSKNGUM      2         2.8 +j     24.1       24.2       0.1164
+65_MUSKNGUM      3         2.8 +j     24.1       24.2       0.1164
+65_MUSKNGUM      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     8.5 +j     72.2       72.7       0.1164
+
+ELEMENT = "Transformer.68_69_0_1_1"
+69_SPORN         1        41.9 +j    -34.6       54.3      -0.7712
+69_SPORN         2        41.9 +j    -34.6       54.3      -0.7712
+69_SPORN         3        41.9 +j    -34.6       54.3      -0.7712
+69_SPORN         0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....   125.6 +j   -103.7      162.9      -0.7712
+68_SPORN         1       -41.9 +j     37.6       56.3      -0.7439
+68_SPORN         2       -41.9 +j     37.6       56.3      -0.7439
+68_SPORN         3       -41.9 +j     37.6       56.3      -0.7439
+68_SPORN         0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....  -125.6 +j    112.8      168.9      -0.7439
+
+ELEMENT = "Transformer.81_80_0_1_1"
+80_CABINCRK      1        14.8 +j    -24.4       28.5      -0.5196
+80_CABINCRK      2        14.8 +j    -24.4       28.5      -0.5196
+80_CABINCRK      3        14.8 +j    -24.4       28.5      -0.5196
+80_CABINCRK      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....    44.4 +j    -73.1       85.5      -0.5196
+81_KANAWHA       1       -14.8 +j     25.2       29.2      -0.5069
+81_KANAWHA       2       -14.8 +j     25.2       29.2      -0.5069
+81_KANAWHA       3       -14.8 +j     25.2       29.2      -0.5069
+81_KANAWHA       0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....   -44.4 +j     75.6       87.6      -0.5069
+
+ELEMENT = "Reactor.REAC_AT5_1"
+5_OLIVE          1         0.0 +j     13.4       13.4       0.0000
+5_OLIVE          2         0.0 +j     13.4       13.4       1.0000
+5_OLIVE          3         0.0 +j     13.4       13.4       0.0000
+   TERMINAL TOTAL ....     0.0 +j     40.2       40.2       0.0000
+5_OLIVE          0         0.0 +j      0.0        0.0       1.0000
+5_OLIVE          0         0.0 +j      0.0        0.0       1.0000
+5_OLIVE          0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT34_1"
+34_ROCKHILL      1         0.0 +j     -4.5        4.5       1.0000
+34_ROCKHILL      2         0.0 +j     -4.5        4.5       1.0000
+34_ROCKHILL      3         0.0 +j     -4.5        4.5       1.0000
+   TERMINAL TOTAL ....     0.0 +j    -13.6       13.6       1.0000
+34_ROCKHILL      0         0.0 +j      0.0        0.0       1.0000
+34_ROCKHILL      0         0.0 +j      0.0        0.0       1.0000
+34_ROCKHILL      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Reactor.REAC_AT37_1"
+37_EASTLIMA      1         0.0 +j      8.2        8.2       0.0000
+37_EASTLIMA      2         0.0 +j      8.2        8.2       1.0000
+37_EASTLIMA      3         0.0 +j      8.2        8.2       0.0000
+   TERMINAL TOTAL ....     0.0 +j     24.6       24.6       0.0000
+37_EASTLIMA      0         0.0 +j      0.0        0.0       1.0000
+37_EASTLIMA      0         0.0 +j      0.0        0.0       1.0000
+37_EASTLIMA      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT44_1"
+44_WMVERNON      1         0.0 +j     -3.2        3.2       1.0000
+44_WMVERNON      2         0.0 +j     -3.2        3.2       1.0000
+44_WMVERNON      3         0.0 +j     -3.2        3.2       1.0000
+   TERMINAL TOTAL ....     0.0 +j     -9.7        9.7       1.0000
+44_WMVERNON      0         0.0 +j      0.0        0.0       1.0000
+44_WMVERNON      0         0.0 +j      0.0        0.0       1.0000
+44_WMVERNON      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT45_1"
+45_NNEWARK       1         0.0 +j     -3.2        3.2      -0.0000
+45_NNEWARK       2         0.0 +j     -3.2        3.2       1.0000
+45_NNEWARK       3         0.0 +j     -3.2        3.2      -0.0000
+   TERMINAL TOTAL ....     0.0 +j     -9.7        9.7      -0.0000
+45_NNEWARK       0         0.0 +j      0.0        0.0       1.0000
+45_NNEWARK       0         0.0 +j      0.0        0.0       1.0000
+45_NNEWARK       0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT46_1"
+46_WLANCST       1         0.0 +j     -3.4        3.4       1.0000
+46_WLANCST       2         0.0 +j     -3.4        3.4       1.0000
+46_WLANCST       3         0.0 +j     -3.4        3.4       1.0000
+   TERMINAL TOTAL ....     0.0 +j    -10.1       10.1       1.0000
+46_WLANCST       0         0.0 +j      0.0        0.0       1.0000
+46_WLANCST       0         0.0 +j      0.0        0.0       1.0000
+46_WLANCST       0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT48_1"
+48_ZANESVLL      1         0.0 +j     -5.2        5.2       1.0000
+48_ZANESVLL      2         0.0 +j     -5.2        5.2       1.0000
+48_ZANESVLL      3         0.0 +j     -5.2        5.2       1.0000
+   TERMINAL TOTAL ....     0.0 +j    -15.6       15.6       1.0000
+48_ZANESVLL      0         0.0 +j      0.0        0.0       1.0000
+48_ZANESVLL      0         0.0 +j      0.0        0.0       1.0000
+48_ZANESVLL      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT74_1"
+74_BELLEFNT      1         0.0 +j     -3.7        3.7       1.0000
+74_BELLEFNT      2         0.0 +j     -3.7        3.7       1.0000
+74_BELLEFNT      3         0.0 +j     -3.7        3.7       1.0000
+   TERMINAL TOTAL ....     0.0 +j    -11.0       11.0       1.0000
+74_BELLEFNT      0         0.0 +j      0.0        0.0       1.0000
+74_BELLEFNT      0         0.0 +j      0.0        0.0       1.0000
+74_BELLEFNT      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT79_1"
+79_CAPITLHL      1        -0.0 +j     -6.8        6.8       0.0000
+79_CAPITLHL      2        -0.0 +j     -6.8        6.8       0.0000
+79_CAPITLHL      3         0.0 +j     -6.8        6.8      -0.0000
+   TERMINAL TOTAL ....    -0.0 +j    -20.4       20.4       0.0000
+79_CAPITLHL      0         0.0 +j      0.0        0.0       1.0000
+79_CAPITLHL      0         0.0 +j      0.0        0.0       1.0000
+79_CAPITLHL      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT82_1"
+82_LOGAN         1        -0.0 +j     -6.5        6.5       0.0000
+82_LOGAN         2         0.0 +j     -6.5        6.5       1.0000
+82_LOGAN         3        -0.0 +j     -6.5        6.5       0.0000
+   TERMINAL TOTAL ....    -0.0 +j    -19.6       19.6       0.0000
+82_LOGAN         0         0.0 +j      0.0        0.0       1.0000
+82_LOGAN         0         0.0 +j      0.0        0.0       1.0000
+82_LOGAN         0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT83_1"
+83_SPRIGG        1         0.0 +j     -3.2        3.2       1.0000
+83_SPRIGG        2         0.0 +j     -3.2        3.2      -0.0000
+83_SPRIGG        3        -0.0 +j     -3.2        3.2       0.0000
+   TERMINAL TOTAL ....    -0.0 +j     -9.7        9.7       0.0000
+83_SPRIGG        0         0.0 +j      0.0        0.0       1.0000
+83_SPRIGG        0         0.0 +j      0.0        0.0       1.0000
+83_SPRIGG        0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT105_1"
+105_ROANOKE      1         0.0 +j     -6.2        6.2       1.0000
+105_ROANOKE      2         0.0 +j     -6.2        6.2       1.0000
+105_ROANOKE      3         0.0 +j     -6.2        6.2      -0.0000
+   TERMINAL TOTAL ....     0.0 +j    -18.7       18.7      -0.0000
+105_ROANOKE      0         0.0 +j      0.0        0.0       1.0000
+105_ROANOKE      0         0.0 +j      0.0        0.0       1.0000
+105_ROANOKE      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT107_1"
+107_REUSENS      1         0.0 +j     -1.8        1.8      -0.0000
+107_REUSENS      2         0.0 +j     -1.8        1.8       1.0000
+107_REUSENS      3        -0.0 +j     -1.8        1.8       0.0000
+   TERMINAL TOTAL ....    -0.0 +j     -5.4        5.4       0.0000
+107_REUSENS      0         0.0 +j      0.0        0.0       1.0000
+107_REUSENS      0         0.0 +j      0.0        0.0       1.0000
+107_REUSENS      0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+ELEMENT = "Capacitor.CAPA_AT110_1"
+110_FIELDALE     1         0.0 +j     -1.9        1.9       1.0000
+110_FIELDALE     2         0.0 +j     -1.9        1.9      -0.0000
+110_FIELDALE     3         0.0 +j     -1.9        1.9      -0.0000
+   TERMINAL TOTAL ....     0.0 +j     -5.7        5.7      -0.0000
+110_FIELDALE     0         0.0 +j      0.0        0.0       1.0000
+110_FIELDALE     0         0.0 +j      0.0        0.0       1.0000
+110_FIELDALE     0         0.0 +j      0.0        0.0       1.0000
+   TERMINAL TOTAL ....     0.0 +j      0.0        0.0       1.0000
+
+= = = = = = = = = = = = = = = = = = =  = = = = = = = = = = =  = =
+
+Power Conversion Elements
+
+  Bus        Phase     MW   +j  Mvar         MVA         PF
+
+ELEMENT = "Generator.GEN_AT_1_1"
+1_RIVERSDE       1      -0.0 +j    1.0        1.0      -0.0000
+1_RIVERSDE       2      -0.0 +j    1.0        1.0      -0.0000
+1_RIVERSDE       3      -0.0 +j    1.0        1.0      -0.0000
+1_RIVERSDE       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j      3.1        3.1      -0.0000
+
+ELEMENT = "Generator.GEN_AT_4_1"
+4_NWCARLSL       1      -0.0 +j    5.0        5.0      -0.0000
+4_NWCARLSL       2      -0.0 +j    5.0        5.0      -0.0000
+4_NWCARLSL       3      -0.0 +j    5.0        5.0      -0.0000
+4_NWCARLSL       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     14.9       14.9      -0.0000
+
+ELEMENT = "Generator.GEN_AT_6_1"
+6_KANKAKEE       1      -0.0 +j   -5.3        5.3       0.0000
+6_KANKAKEE       2      -0.0 +j   -5.3        5.3       0.0000
+6_KANKAKEE       3      -0.0 +j   -5.3        5.3       0.0000
+6_KANKAKEE       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j    -15.9       15.9       0.0000
+
+ELEMENT = "Generator.GEN_AT_8_1"
+8_OLIVE          1      -0.0 +j  -20.9       20.9       0.0000
+8_OLIVE          2      -0.0 +j  -20.9       20.9       0.0000
+8_OLIVE          3      -0.0 +j  -20.9       20.9       0.0000
+8_OLIVE          0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j    -62.6       62.6       0.0000
+
+ELEMENT = "Generator.GEN_AT_10_1"
+10_BREED         1    -150.0 +j   17.0      151.0      -0.9936
+10_BREED         2    -150.0 +j   17.0      151.0      -0.9936
+10_BREED         3    -150.0 +j   17.0      151.0      -0.9936
+10_BREED         0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -450.0 +j     51.0      452.9      -0.9936
+
+ELEMENT = "Generator.GEN_AT_12_1"
+12_TWINBRCH      1     -28.3 +j  -30.4       41.6       0.6815
+12_TWINBRCH      2     -28.3 +j  -30.4       41.6       0.6815
+12_TWINBRCH      3     -28.3 +j  -30.4       41.6       0.6815
+12_TWINBRCH      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....   -85.0 +j    -91.3      124.7       0.6815
+
+ELEMENT = "Generator.GEN_AT_15_1"
+15_FTWAYNE       1      -0.0 +j   -1.0        1.0       0.0000
+15_FTWAYNE       2      -0.0 +j   -1.0        1.0       0.0000
+15_FTWAYNE       3      -0.0 +j   -1.0        1.0       0.0000
+15_FTWAYNE       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -3.1        3.1       0.0000
+
+ELEMENT = "Generator.GEN_AT_18_1"
+18_MCKINLEY      1      -0.0 +j   -8.5        8.5       0.0000
+18_MCKINLEY      2      -0.0 +j   -8.5        8.5       0.0000
+18_MCKINLEY      3      -0.0 +j   -8.5        8.5       0.0000
+18_MCKINLEY      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j    -25.5       25.5       0.0000
+
+ELEMENT = "Generator.GEN_AT_19_1"
+19_LINCOLN       1      -0.0 +j    2.7        2.7      -0.0000
+19_LINCOLN       2      -0.0 +j    2.7        2.7      -0.0000
+19_LINCOLN       3      -0.0 +j    2.7        2.7      -0.0000
+19_LINCOLN       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j      8.0        8.0      -0.0000
+
+ELEMENT = "Generator.GEN_AT_24_1"
+24_TRENTON       1      -0.0 +j    5.1        5.1      -0.0000
+24_TRENTON       2      -0.0 +j    5.1        5.1      -0.0000
+24_TRENTON       3      -0.0 +j    5.1        5.1      -0.0000
+24_TRENTON       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     15.3       15.3      -0.0000
+
+ELEMENT = "Generator.GEN_AT_25_1"
+25_TANNRSCK      1     -73.3 +j  -16.6       75.2       0.9753
+25_TANNRSCK      2     -73.3 +j  -16.6       75.2       0.9753
+25_TANNRSCK      3     -73.3 +j  -16.6       75.2       0.9753
+25_TANNRSCK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -220.0 +j    -49.8      225.6       0.9753
+
+ELEMENT = "Generator.GEN_AT_26_1"
+26_TANNRSCK      1    -104.7 +j   -3.3      104.7       0.9995
+26_TANNRSCK      2    -104.7 +j   -3.3      104.7       0.9995
+26_TANNRSCK      3    -104.7 +j   -3.3      104.7       0.9995
+26_TANNRSCK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -314.0 +j     -9.9      314.2       0.9995
+
+ELEMENT = "Generator.GEN_AT_27_1"
+27_MADISON       1      -0.0 +j   -0.9        0.9       0.0000
+27_MADISON       2      -0.0 +j   -0.9        0.9       0.0000
+27_MADISON       3      -0.0 +j   -0.9        0.9       0.0000
+27_MADISON       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -2.8        2.8       0.0000
+
+ELEMENT = "Generator.GEN_AT_31_1"
+31_DEERCRK       1      -2.3 +j  -10.7       10.9       0.2139
+31_DEERCRK       2      -2.3 +j  -10.7       10.9       0.2139
+31_DEERCRK       3      -2.3 +j  -10.7       10.9       0.2139
+31_DEERCRK       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -7.0 +j    -32.0       32.7       0.2139
+
+ELEMENT = "Generator.GEN_AT_32_1"
+32_DELAWARE      1      -0.0 +j    4.7        4.7      -0.0000
+32_DELAWARE      2      -0.0 +j    4.7        4.7      -0.0000
+32_DELAWARE      3      -0.0 +j    4.7        4.7      -0.0000
+32_DELAWARE      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     14.0       14.0      -0.0000
+
+ELEMENT = "Generator.GEN_AT_34_1"
+34_ROCKHILL      1      -0.0 +j    2.7        2.7      -0.0000
+34_ROCKHILL      2      -0.0 +j    2.7        2.7      -0.0000
+34_ROCKHILL      3      -0.0 +j    2.7        2.7      -0.0000
+34_ROCKHILL      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j      8.0        8.0      -0.0000
+
+ELEMENT = "Generator.GEN_AT_36_1"
+36_STERLING      1      -0.0 +j    0.4        0.4      -0.0000
+36_STERLING      2      -0.0 +j    0.4        0.4      -0.0000
+36_STERLING      3      -0.0 +j    0.4        0.4      -0.0000
+36_STERLING      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j      1.2        1.2      -0.0000
+
+ELEMENT = "Generator.GEN_AT_40_1"
+40_WESTEND       1      -0.0 +j   -9.0        9.0       0.0000
+40_WESTEND       2      -0.0 +j   -9.0        9.0       0.0000
+40_WESTEND       3      -0.0 +j   -9.0        9.0       0.0000
+40_WESTEND       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j    -26.9       26.9       0.0000
+
+ELEMENT = "Generator.GEN_AT_42_1"
+42_HOWARD        1      -0.0 +j  -13.7       13.7       0.0000
+42_HOWARD        2      -0.0 +j  -13.7       13.7       0.0000
+42_HOWARD        3      -0.0 +j  -13.7       13.7       0.0000
+42_HOWARD        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j    -41.0       41.0       0.0000
+
+ELEMENT = "Generator.GEN_AT_46_1"
+46_WLANCST       1      -6.3 +j    1.7        6.6      -0.9641
+46_WLANCST       2      -6.3 +j    1.7        6.6      -0.9641
+46_WLANCST       3      -6.3 +j    1.7        6.6      -0.9641
+46_WLANCST       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....   -19.0 +j      5.2       19.7      -0.9641
+
+ELEMENT = "Generator.GEN_AT_49_1"
+49_PHILO         1     -68.0 +j  -38.5       78.2       0.8699
+49_PHILO         2     -68.0 +j  -38.5       78.2       0.8699
+49_PHILO         3     -68.0 +j  -38.5       78.2       0.8699
+49_PHILO         0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -204.0 +j   -115.6      234.5       0.8699
+
+ELEMENT = "Generator.GEN_AT_54_1"
+54_TORREY        1     -16.0 +j   -1.3       16.1       0.9967
+54_TORREY        2     -16.0 +j   -1.3       16.1       0.9967
+54_TORREY        3     -16.0 +j   -1.3       16.1       0.9967
+54_TORREY        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....   -48.0 +j     -3.9       48.2       0.9967
+
+ELEMENT = "Generator.GEN_AT_55_1"
+55_WAGENHLS      1      -0.0 +j   -1.6        1.6       0.0000
+55_WAGENHLS      2      -0.0 +j   -1.6        1.6       0.0000
+55_WAGENHLS      3      -0.0 +j   -1.6        1.6       0.0000
+55_WAGENHLS      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -4.7        4.7       0.0000
+
+ELEMENT = "Generator.GEN_AT_56_1"
+56_SUNNYSDE      1      -0.0 +j    0.8        0.8      -0.0000
+56_SUNNYSDE      2      -0.0 +j    0.8        0.8      -0.0000
+56_SUNNYSDE      3      -0.0 +j    0.8        0.8      -0.0000
+56_SUNNYSDE      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j      2.3        2.3      -0.0000
+
+ELEMENT = "Generator.GEN_AT_59_1"
+59_TIDD          1     -51.7 +j  -25.6       57.7       0.8959
+59_TIDD          2     -51.7 +j  -25.6       57.7       0.8959
+59_TIDD          3     -51.7 +j  -25.6       57.7       0.8959
+59_TIDD          0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -155.0 +j    -76.8      173.0       0.8959
+
+ELEMENT = "Generator.GEN_AT_61_1"
+61_WKAMMER       1     -53.3 +j   13.5       55.0      -0.9696
+61_WKAMMER       2     -53.3 +j   13.5       55.0      -0.9696
+61_WKAMMER       3     -53.3 +j   13.5       55.0      -0.9696
+61_WKAMMER       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -160.0 +j     40.4      165.0      -0.9696
+
+ELEMENT = "Generator.GEN_AT_62_1"
+62_NATRIUM       1      -0.0 +j   -0.4        0.4       0.0000
+62_NATRIUM       2      -0.0 +j   -0.4        0.4       0.0000
+62_NATRIUM       3      -0.0 +j   -0.4        0.4       0.0000
+62_NATRIUM       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -1.3        1.3       0.0000
+
+ELEMENT = "Generator.GEN_AT_65_1"
+65_MUSKNGUM      1    -130.3 +j  -26.9      133.1       0.9793
+65_MUSKNGUM      2    -130.3 +j  -26.9      133.1       0.9793
+65_MUSKNGUM      3    -130.3 +j  -26.9      133.1       0.9793
+65_MUSKNGUM      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -391.0 +j    -80.8      399.3       0.9793
+
+ELEMENT = "Generator.GEN_AT_66_1"
+66_MUSKNGUM      1    -130.7 +j    0.6      130.7      -1.0000
+66_MUSKNGUM      2    -130.7 +j    0.6      130.7      -1.0000
+66_MUSKNGUM      3    -130.7 +j    0.6      130.7      -1.0000
+66_MUSKNGUM      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -392.0 +j      1.9      392.0      -1.0000
+
+ELEMENT = "Generator.GEN_AT_69_1"
+69_SPORN         1    -171.1 +j   27.5      173.3      -0.9874
+69_SPORN         2    -171.1 +j   27.5      173.3      -0.9874
+69_SPORN         3    -171.1 +j   27.5      173.3      -0.9874
+69_SPORN         0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -513.4 +j     82.4      520.0      -0.9874
+
+ELEMENT = "Generator.GEN_AT_70_1"
+70_PORTSMTH      1      -0.0 +j   -3.2        3.2       0.0000
+70_PORTSMTH      2      -0.0 +j   -3.2        3.2       0.0000
+70_PORTSMTH      3      -0.0 +j   -3.2        3.2       0.0000
+70_PORTSMTH      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -9.7        9.7       0.0000
+
+ELEMENT = "Generator.GEN_AT_72_1"
+72_HILLSBRO      1      -0.0 +j    3.7        3.7      -0.0000
+72_HILLSBRO      2      -0.0 +j    3.7        3.7      -0.0000
+72_HILLSBRO      3      -0.0 +j    3.7        3.7      -0.0000
+72_HILLSBRO      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     11.1       11.1      -0.0000
+
+ELEMENT = "Generator.GEN_AT_73_1"
+73_SARGENTS      1      -0.0 +j   -3.2        3.2       0.0000
+73_SARGENTS      2      -0.0 +j   -3.2        3.2       0.0000
+73_SARGENTS      3      -0.0 +j   -3.2        3.2       0.0000
+73_SARGENTS      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -9.7        9.7       0.0000
+
+ELEMENT = "Generator.GEN_AT_74_1"
+74_BELLEFNT      1      -0.0 +j    1.9        1.9      -0.0000
+74_BELLEFNT      2      -0.0 +j    1.9        1.9      -0.0000
+74_BELLEFNT      3      -0.0 +j    1.9        1.9      -0.0000
+74_BELLEFNT      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j      5.6        5.6      -0.0000
+
+ELEMENT = "Generator.GEN_AT_76_1"
+76_DARRAH        1      -0.0 +j   -1.8        1.8       0.0000
+76_DARRAH        2      -0.0 +j   -1.8        1.8       0.0000
+76_DARRAH        3      -0.0 +j   -1.8        1.8       0.0000
+76_DARRAH        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -5.3        5.3       0.0000
+
+ELEMENT = "Generator.GEN_AT_77_1"
+77_TURNER        1      -0.0 +j   -4.0        4.0       0.0000
+77_TURNER        2      -0.0 +j   -4.0        4.0       0.0000
+77_TURNER        3      -0.0 +j   -4.0        4.0       0.0000
+77_TURNER        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j    -11.9       11.9       0.0000
+
+ELEMENT = "Generator.GEN_AT_80_1"
+80_CABINCRK      1    -159.0 +j  -35.0      162.8       0.9766
+80_CABINCRK      2    -159.0 +j  -35.0      162.8       0.9766
+80_CABINCRK      3    -159.0 +j  -35.0      162.8       0.9766
+80_CABINCRK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -477.0 +j   -105.1      488.4       0.9766
+
+ELEMENT = "Generator.GEN_AT_85_1"
+85_BEAVERCK      1      -0.0 +j    1.9        1.9      -0.0000
+85_BEAVERCK      2      -0.0 +j    1.9        1.9      -0.0000
+85_BEAVERCK      3      -0.0 +j    1.9        1.9      -0.0000
+85_BEAVERCK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j      5.8        5.8      -0.0000
+
+ELEMENT = "Generator.GEN_AT_87_1"
+87_PINEVLLE      1      -1.3 +j   -3.7        3.9       0.3412
+87_PINEVLLE      2      -1.3 +j   -3.7        3.9       0.3412
+87_PINEVLLE      3      -1.3 +j   -3.7        3.9       0.3412
+87_PINEVLLE      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -4.0 +j    -11.0       11.7       0.3412
+
+ELEMENT = "Generator.GEN_AT_90_1"
+90_HOLSTON       1      -0.0 +j  -19.8       19.8       0.0000
+90_HOLSTON       2      -0.0 +j  -19.8       19.8       0.0000
+90_HOLSTON       3      -0.0 +j  -19.8       19.8       0.0000
+90_HOLSTON       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j    -59.3       59.3       0.0000
+
+ELEMENT = "Generator.GEN_AT_91_1"
+91_HOLSTONT      1      -0.0 +j    4.9        4.9      -0.0000
+91_HOLSTONT      2      -0.0 +j    4.9        4.9      -0.0000
+91_HOLSTONT      3      -0.0 +j    4.9        4.9      -0.0000
+91_HOLSTONT      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     14.8       14.8      -0.0000
+
+ELEMENT = "Generator.GEN_AT_92_1"
+92_SALTVLLE      1      -0.0 +j    1.0        1.0      -0.0000
+92_SALTVLLE      2      -0.0 +j    1.0        1.0      -0.0000
+92_SALTVLLE      3      -0.0 +j    1.0        1.0      -0.0000
+92_SALTVLLE      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j      3.0        3.0      -0.0000
+
+ELEMENT = "Generator.GEN_AT_99_1"
+99_HINTON        1      -0.0 +j    5.8        5.8      -0.0000
+99_HINTON        2      -0.0 +j    5.8        5.8      -0.0000
+99_HINTON        3      -0.0 +j    5.8        5.8      -0.0000
+99_HINTON        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     17.5       17.5      -0.0000
+
+ELEMENT = "Generator.GEN_AT_100_1"
+100_GLENLYN      1     -84.0 +j  -36.7       91.7       0.9164
+100_GLENLYN      2     -84.0 +j  -36.7       91.7       0.9164
+100_GLENLYN      3     -84.0 +j  -36.7       91.7       0.9164
+100_GLENLYN      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....  -252.0 +j   -110.1      275.0       0.9164
+
+ELEMENT = "Generator.GEN_AT_103_1"
+103_CLAYTOR      1     -13.3 +j  -13.3       18.9       0.7071
+103_CLAYTOR      2     -13.3 +j  -13.3       18.9       0.7071
+103_CLAYTOR      3     -13.3 +j  -13.3       18.9       0.7071
+103_CLAYTOR      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....   -40.0 +j    -40.0       56.6       0.7071
+
+ELEMENT = "Generator.GEN_AT_104_1"
+104_HANCOCK      1      -0.0 +j   -1.9        1.9       0.0000
+104_HANCOCK      2      -0.0 +j   -1.9        1.9       0.0000
+104_HANCOCK      3      -0.0 +j   -1.9        1.9       0.0000
+104_HANCOCK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -5.7        5.7       0.0000
+
+ELEMENT = "Generator.GEN_AT_105_1"
+105_ROANOKE      1      -0.0 +j    2.7        2.7      -0.0000
+105_ROANOKE      2      -0.0 +j    2.7        2.7      -0.0000
+105_ROANOKE      3      -0.0 +j    2.7        2.7      -0.0000
+105_ROANOKE      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j      8.0        8.0      -0.0000
+
+ELEMENT = "Generator.GEN_AT_107_1"
+107_REUSENS      1      -0.0 +j   -1.9        1.9       0.0000
+107_REUSENS      2      -0.0 +j   -1.9        1.9       0.0000
+107_REUSENS      3      -0.0 +j   -1.9        1.9       0.0000
+107_REUSENS      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -5.7        5.7       0.0000
+
+ELEMENT = "Generator.GEN_AT_110_1"
+110_FIELDALE     1      -0.0 +j   -1.6        1.6       0.0000
+110_FIELDALE     2      -0.0 +j   -1.6        1.6       0.0000
+110_FIELDALE     3      -0.0 +j   -1.6        1.6       0.0000
+110_FIELDALE     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -4.9        4.9       0.0000
+
+ELEMENT = "Generator.GEN_AT_111_1"
+111_DANRIVER     1     -12.0 +j    0.6       12.0      -0.9987
+111_DANRIVER     2     -12.0 +j    0.6       12.0      -0.9987
+111_DANRIVER     3     -12.0 +j    0.6       12.0      -0.9987
+111_DANRIVER     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....   -36.0 +j      1.8       36.0      -0.9987
+
+ELEMENT = "Generator.GEN_AT_112_1"
+112_DANVILLE     1      -0.0 +j  -13.8       13.8       0.0000
+112_DANVILLE     2      -0.0 +j  -13.8       13.8       0.0000
+112_DANVILLE     3      -0.0 +j  -13.8       13.8       0.0000
+112_DANVILLE     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j    -41.5       41.5       0.0000
+
+ELEMENT = "Generator.GEN_AT_113_1"
+113_DEERCRK      1      -0.0 +j   -2.1        2.1       0.0000
+113_DEERCRK      2      -0.0 +j   -2.1        2.1       0.0000
+113_DEERCRK      3      -0.0 +j   -2.1        2.1       0.0000
+113_DEERCRK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j     -6.3        6.3       0.0000
+
+ELEMENT = "Generator.GEN_AT_116_1"
+116_KYGERCRK     1      -0.0 +j  -17.1       17.1       0.0000
+116_KYGERCRK     2      -0.0 +j  -17.1       17.1       0.0000
+116_KYGERCRK     3      -0.0 +j  -17.1       17.1       0.0000
+116_KYGERCRK     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    -0.0 +j    -51.4       51.4       0.0000
+
+ELEMENT = "Load.LOAD_AT_1_1"
+1_RIVERSDE       1      17.0 +j    9.0       19.2       0.8838
+1_RIVERSDE       2      17.0 +j    9.0       19.2       0.8838
+1_RIVERSDE       3      17.0 +j    9.0       19.2       0.8838
+1_RIVERSDE       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    51.0 +j     27.0       57.7       0.8838
+
+ELEMENT = "Load.LOAD_AT_2_1"
+2_POKAGON        1       6.7 +j    3.0        7.3       0.9119
+2_POKAGON        2       6.7 +j    3.0        7.3       0.9119
+2_POKAGON        3       6.7 +j    3.0        7.3       0.9119
+2_POKAGON        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    20.0 +j      9.0       21.9       0.9119
+
+ELEMENT = "Load.LOAD_AT_3_1"
+3_HICKRYCK       1      13.0 +j    3.3       13.4       0.9687
+3_HICKRYCK       2      13.0 +j    3.3       13.4       0.9687
+3_HICKRYCK       3      13.0 +j    3.3       13.4       0.9687
+3_HICKRYCK       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    39.0 +j     10.0       40.3       0.9687
+
+ELEMENT = "Load.LOAD_AT_4_1"
+4_NWCARLSL       1      13.0 +j    4.0       13.6       0.9558
+4_NWCARLSL       2      13.0 +j    4.0       13.6       0.9558
+4_NWCARLSL       3      13.0 +j    4.0       13.6       0.9558
+4_NWCARLSL       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    39.0 +j     12.0       40.8       0.9558
+
+ELEMENT = "Load.LOAD_AT_6_1"
+6_KANKAKEE       1      17.3 +j    7.3       18.8       0.9210
+6_KANKAKEE       2      17.3 +j    7.3       18.8       0.9210
+6_KANKAKEE       3      17.3 +j    7.3       18.8       0.9210
+6_KANKAKEE       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    52.0 +j     22.0       56.5       0.9210
+
+ELEMENT = "Load.LOAD_AT_7_1"
+7_JACKSNRD       1       6.3 +j    0.7        6.4       0.9945
+7_JACKSNRD       2       6.3 +j    0.7        6.4       0.9945
+7_JACKSNRD       3       6.3 +j    0.7        6.4       0.9945
+7_JACKSNRD       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    19.0 +j      2.0       19.1       0.9945
+
+ELEMENT = "Load.LOAD_AT_8_1"
+8_OLIVE          1       9.3 +j    0.0        9.3       1.0000
+8_OLIVE          2       9.3 +j    0.0        9.3       1.0000
+8_OLIVE          3       9.3 +j    0.0        9.3       1.0000
+8_OLIVE          0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    28.0 +j      0.0       28.0       1.0000
+
+ELEMENT = "Load.LOAD_AT_11_1"
+11_SOUTHBND      1      23.3 +j    7.7       24.6       0.9500
+11_SOUTHBND      2      23.3 +j    7.7       24.6       0.9500
+11_SOUTHBND      3      23.3 +j    7.7       24.6       0.9500
+11_SOUTHBND      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    70.0 +j     23.0       73.7       0.9500
+
+ELEMENT = "Load.LOAD_AT_12_1"
+12_TWINBRCH      1      15.7 +j    3.3       16.0       0.9781
+12_TWINBRCH      2      15.7 +j    3.3       16.0       0.9781
+12_TWINBRCH      3      15.7 +j    3.3       16.0       0.9781
+12_TWINBRCH      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    47.0 +j     10.0       48.1       0.9781
+
+ELEMENT = "Load.LOAD_AT_13_1"
+13_CONCORD       1      11.3 +j    5.3       12.5       0.9048
+13_CONCORD       2      11.3 +j    5.3       12.5       0.9048
+13_CONCORD       3      11.3 +j    5.3       12.5       0.9048
+13_CONCORD       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    34.0 +j     16.0       37.6       0.9048
+
+ELEMENT = "Load.LOAD_AT_14_1"
+14_GOSHENJT      1       4.7 +j    0.3        4.7       0.9975
+14_GOSHENJT      2       4.7 +j    0.3        4.7       0.9975
+14_GOSHENJT      3       4.7 +j    0.3        4.7       0.9975
+14_GOSHENJT      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    14.0 +j      1.0       14.0       0.9975
+
+ELEMENT = "Load.LOAD_AT_15_1"
+15_FTWAYNE       1      30.0 +j   10.0       31.6       0.9487
+15_FTWAYNE       2      30.0 +j   10.0       31.6       0.9487
+15_FTWAYNE       3      30.0 +j   10.0       31.6       0.9487
+15_FTWAYNE       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    90.0 +j     30.0       94.9       0.9487
+
+ELEMENT = "Load.LOAD_AT_16_1"
+16_NE            1       8.3 +j    3.3        9.0       0.9285
+16_NE            2       8.3 +j    3.3        9.0       0.9285
+16_NE            3       8.3 +j    3.3        9.0       0.9285
+16_NE            0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    25.0 +j     10.0       26.9       0.9285
+
+ELEMENT = "Load.LOAD_AT_17_1"
+17_SORENSON      1       3.7 +j    1.0        3.8       0.9648
+17_SORENSON      2       3.7 +j    1.0        3.8       0.9648
+17_SORENSON      3       3.7 +j    1.0        3.8       0.9648
+17_SORENSON      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    11.0 +j      3.0       11.4       0.9648
+
+ELEMENT = "Load.LOAD_AT_18_1"
+18_MCKINLEY      1      20.0 +j   11.3       23.0       0.8700
+18_MCKINLEY      2      20.0 +j   11.3       23.0       0.8700
+18_MCKINLEY      3      20.0 +j   11.3       23.0       0.8700
+18_MCKINLEY      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    60.0 +j     34.0       69.0       0.8700
+
+ELEMENT = "Load.LOAD_AT_19_1"
+19_LINCOLN       1      15.0 +j    8.3       17.2       0.8742
+19_LINCOLN       2      15.0 +j    8.3       17.2       0.8742
+19_LINCOLN       3      15.0 +j    8.3       17.2       0.8742
+19_LINCOLN       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    45.0 +j     25.0       51.5       0.8742
+
+ELEMENT = "Load.LOAD_AT_20_1"
+20_ADAMS         1       6.0 +j    1.0        6.1       0.9864
+20_ADAMS         2       6.0 +j    1.0        6.1       0.9864
+20_ADAMS         3       6.0 +j    1.0        6.1       0.9864
+20_ADAMS         0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    18.0 +j      3.0       18.2       0.9864
+
+ELEMENT = "Load.LOAD_AT_21_1"
+21_JAY           1       4.7 +j    2.7        5.4       0.8682
+21_JAY           2       4.7 +j    2.7        5.4       0.8682
+21_JAY           3       4.7 +j    2.7        5.4       0.8682
+21_JAY           0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    14.0 +j      8.0       16.1       0.8682
+
+ELEMENT = "Load.LOAD_AT_22_1"
+22_RANDOLPH      1       3.3 +j    1.7        3.7       0.8944
+22_RANDOLPH      2       3.3 +j    1.7        3.7       0.8944
+22_RANDOLPH      3       3.3 +j    1.7        3.7       0.8944
+22_RANDOLPH      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    10.0 +j      5.0       11.2       0.8944
+
+ELEMENT = "Load.LOAD_AT_23_1"
+23_COLLCRNR      1       2.3 +j    1.0        2.5       0.9191
+23_COLLCRNR      2       2.3 +j    1.0        2.5       0.9191
+23_COLLCRNR      3       2.3 +j    1.0        2.5       0.9191
+23_COLLCRNR      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....     7.0 +j      3.0        7.6       0.9191
+
+ELEMENT = "Load.LOAD_AT_24_1"
+24_TRENTON       1       4.3 +j   -0.0        4.3      -1.0000
+24_TRENTON       2       4.3 +j    0.0        4.3       1.0000
+24_TRENTON       3       4.3 +j    0.0        4.3       1.0000
+24_TRENTON       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    13.0 +j     -0.0       13.0      -1.0000
+
+ELEMENT = "Load.LOAD_AT_27_1"
+27_MADISON       1      23.7 +j    4.3       24.1       0.9836
+27_MADISON       2      23.7 +j    4.3       24.1       0.9836
+27_MADISON       3      23.7 +j    4.3       24.1       0.9836
+27_MADISON       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    71.0 +j     13.0       72.2       0.9836
+
+ELEMENT = "Load.LOAD_AT_28_1"
+28_MULLIN        1       5.7 +j    2.3        6.1       0.9247
+28_MULLIN        2       5.7 +j    2.3        6.1       0.9247
+28_MULLIN        3       5.7 +j    2.3        6.1       0.9247
+28_MULLIN        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    17.0 +j      7.0       18.4       0.9247
+
+ELEMENT = "Load.LOAD_AT_29_1"
+29_GRANT         1       8.0 +j    1.3        8.1       0.9864
+29_GRANT         2       8.0 +j    1.3        8.1       0.9864
+29_GRANT         3       8.0 +j    1.3        8.1       0.9864
+29_GRANT         0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    24.0 +j      4.0       24.3       0.9864
+
+ELEMENT = "Load.LOAD_AT_31_1"
+31_DEERCRK       1      14.3 +j    9.0       16.9       0.8469
+31_DEERCRK       2      14.3 +j    9.0       16.9       0.8469
+31_DEERCRK       3      14.3 +j    9.0       16.9       0.8469
+31_DEERCRK       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    43.0 +j     27.0       50.8       0.8469
+
+ELEMENT = "Load.LOAD_AT_32_1"
+32_DELAWARE      1      19.7 +j    7.7       21.1       0.9317
+32_DELAWARE      2      19.7 +j    7.7       21.1       0.9317
+32_DELAWARE      3      19.7 +j    7.7       21.1       0.9317
+32_DELAWARE      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    59.0 +j     23.0       63.3       0.9317
+
+ELEMENT = "Load.LOAD_AT_33_1"
+33_HAVILAND      1       7.7 +j    3.0        8.2       0.9312
+33_HAVILAND      2       7.7 +j    3.0        8.2       0.9312
+33_HAVILAND      3       7.7 +j    3.0        8.2       0.9312
+33_HAVILAND      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    23.0 +j      9.0       24.7       0.9312
+
+ELEMENT = "Load.LOAD_AT_34_1"
+34_ROCKHILL      1      19.7 +j    8.7       21.5       0.9151
+34_ROCKHILL      2      19.7 +j    8.7       21.5       0.9151
+34_ROCKHILL      3      19.7 +j    8.7       21.5       0.9151
+34_ROCKHILL      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    59.0 +j     26.0       64.5       0.9151
+
+ELEMENT = "Load.LOAD_AT_35_1"
+35_WESTLIMA      1      11.0 +j    3.0       11.4       0.9648
+35_WESTLIMA      2      11.0 +j    3.0       11.4       0.9648
+35_WESTLIMA      3      11.0 +j    3.0       11.4       0.9648
+35_WESTLIMA      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    33.0 +j      9.0       34.2       0.9648
+
+ELEMENT = "Load.LOAD_AT_36_1"
+36_STERLING      1      10.3 +j    5.7       11.8       0.8768
+36_STERLING      2      10.3 +j    5.7       11.8       0.8768
+36_STERLING      3      10.3 +j    5.7       11.8       0.8768
+36_STERLING      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    31.0 +j     17.0       35.4       0.8768
+
+ELEMENT = "Load.LOAD_AT_39_1"
+39_NWLIBRTY      1       9.0 +j    3.7        9.7       0.9261
+39_NWLIBRTY      2       9.0 +j    3.7        9.7       0.9261
+39_NWLIBRTY      3       9.0 +j    3.7        9.7       0.9261
+39_NWLIBRTY      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    27.0 +j     11.0       29.2       0.9261
+
+ELEMENT = "Load.LOAD_AT_40_1"
+40_WESTEND       1      22.0 +j    7.7       23.3       0.9443
+40_WESTEND       2      22.0 +j    7.7       23.3       0.9443
+40_WESTEND       3      22.0 +j    7.7       23.3       0.9443
+40_WESTEND       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    66.0 +j     23.0       69.9       0.9443
+
+ELEMENT = "Load.LOAD_AT_41_1"
+41_STIFFIN       1      12.3 +j    3.3       12.8       0.9654
+41_STIFFIN       2      12.3 +j    3.3       12.8       0.9654
+41_STIFFIN       3      12.3 +j    3.3       12.8       0.9654
+41_STIFFIN       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    37.0 +j     10.0       38.3       0.9654
+
+ELEMENT = "Load.LOAD_AT_42_1"
+42_HOWARD        1      32.0 +j    7.7       32.9       0.9725
+42_HOWARD        2      32.0 +j    7.7       32.9       0.9725
+42_HOWARD        3      32.0 +j    7.7       32.9       0.9725
+42_HOWARD        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    96.0 +j     23.0       98.7       0.9725
+
+ELEMENT = "Load.LOAD_AT_43_1"
+43_SKENTON       1       6.0 +j    2.3        6.4       0.9320
+43_SKENTON       2       6.0 +j    2.3        6.4       0.9320
+43_SKENTON       3       6.0 +j    2.3        6.4       0.9320
+43_SKENTON       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    18.0 +j      7.0       19.3       0.9320
+
+ELEMENT = "Load.LOAD_AT_44_1"
+44_WMVERNON      1       5.3 +j    2.7        6.0       0.8944
+44_WMVERNON      2       5.3 +j    2.7        6.0       0.8944
+44_WMVERNON      3       5.3 +j    2.7        6.0       0.8944
+44_WMVERNON      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    16.0 +j      8.0       17.9       0.8944
+
+ELEMENT = "Load.LOAD_AT_45_1"
+45_NNEWARK       1      17.7 +j    7.3       19.1       0.9236
+45_NNEWARK       2      17.7 +j    7.3       19.1       0.9236
+45_NNEWARK       3      17.7 +j    7.3       19.1       0.9236
+45_NNEWARK       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    53.0 +j     22.0       57.4       0.9236
+
+ELEMENT = "Load.LOAD_AT_46_1"
+46_WLANCST       1       9.3 +j    3.3        9.9       0.9417
+46_WLANCST       2       9.3 +j    3.3        9.9       0.9417
+46_WLANCST       3       9.3 +j    3.3        9.9       0.9417
+46_WLANCST       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    28.0 +j     10.0       29.7       0.9417
+
+ELEMENT = "Load.LOAD_AT_47_1"
+47_CROOKSVL      1      11.3 +j    0.0       11.3       1.0000
+47_CROOKSVL      2      11.3 +j   -0.0       11.3      -1.0000
+47_CROOKSVL      3      11.3 +j   -0.0       11.3      -1.0000
+47_CROOKSVL      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    34.0 +j     -0.0       34.0      -1.0000
+
+ELEMENT = "Load.LOAD_AT_48_1"
+48_ZANESVLL      1       6.7 +j    3.7        7.6       0.8762
+48_ZANESVLL      2       6.7 +j    3.7        7.6       0.8762
+48_ZANESVLL      3       6.7 +j    3.7        7.6       0.8762
+48_ZANESVLL      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    20.0 +j     11.0       22.8       0.8762
+
+ELEMENT = "Load.LOAD_AT_49_1"
+49_PHILO         1      29.0 +j   10.0       30.7       0.9454
+49_PHILO         2      29.0 +j   10.0       30.7       0.9454
+49_PHILO         3      29.0 +j   10.0       30.7       0.9454
+49_PHILO         0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    87.0 +j     30.0       92.0       0.9454
+
+ELEMENT = "Load.LOAD_AT_50_1"
+50_WCAMBRDG      1       5.7 +j    1.3        5.8       0.9734
+50_WCAMBRDG      2       5.7 +j    1.3        5.8       0.9734
+50_WCAMBRDG      3       5.7 +j    1.3        5.8       0.9734
+50_WCAMBRDG      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    17.0 +j      4.0       17.5       0.9734
+
+ELEMENT = "Load.LOAD_AT_51_1"
+51_NEWCMRST      1       5.7 +j    2.7        6.3       0.9048
+51_NEWCMRST      2       5.7 +j    2.7        6.3       0.9048
+51_NEWCMRST      3       5.7 +j    2.7        6.3       0.9048
+51_NEWCMRST      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    17.0 +j      8.0       18.8       0.9048
+
+ELEMENT = "Load.LOAD_AT_52_1"
+52_SCOSHOCT      1       6.0 +j    1.7        6.2       0.9635
+52_SCOSHOCT      2       6.0 +j    1.7        6.2       0.9635
+52_SCOSHOCT      3       6.0 +j    1.7        6.2       0.9635
+52_SCOSHOCT      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    18.0 +j      5.0       18.7       0.9635
+
+ELEMENT = "Load.LOAD_AT_53_1"
+53_WOOSTER       1       7.6 +j    3.6        8.4       0.9021
+53_WOOSTER       2       7.6 +j    3.6        8.4       0.9021
+53_WOOSTER       3       7.6 +j    3.6        8.4       0.9021
+53_WOOSTER       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    22.8 +j     10.9       25.3       0.9021
+
+ELEMENT = "Load.LOAD_AT_54_1"
+54_TORREY        1      37.7 +j   10.7       39.1       0.9622
+54_TORREY        2      37.7 +j   10.7       39.1       0.9622
+54_TORREY        3      37.7 +j   10.7       39.1       0.9622
+54_TORREY        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....   113.0 +j     32.0      117.4       0.9622
+
+ELEMENT = "Load.LOAD_AT_55_1"
+55_WAGENHLS      1      21.0 +j    7.3       22.2       0.9441
+55_WAGENHLS      2      21.0 +j    7.3       22.2       0.9441
+55_WAGENHLS      3      21.0 +j    7.3       22.2       0.9441
+55_WAGENHLS      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    63.0 +j     22.0       66.7       0.9441
+
+ELEMENT = "Load.LOAD_AT_56_1"
+56_SUNNYSDE      1      28.0 +j    6.0       28.6       0.9778
+56_SUNNYSDE      2      28.0 +j    6.0       28.6       0.9778
+56_SUNNYSDE      3      28.0 +j    6.0       28.6       0.9778
+56_SUNNYSDE      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    84.0 +j     18.0       85.9       0.9778
+
+ELEMENT = "Load.LOAD_AT_57_1"
+57_WNWPHIL1      1       4.0 +j    1.0        4.1       0.9701
+57_WNWPHIL1      2       4.0 +j    1.0        4.1       0.9701
+57_WNWPHIL1      3       4.0 +j    1.0        4.1       0.9701
+57_WNWPHIL1      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    12.0 +j      3.0       12.4       0.9701
+
+ELEMENT = "Load.LOAD_AT_58_1"
+58_WNWPHIL2      1       4.0 +j    1.0        4.1       0.9701
+58_WNWPHIL2      2       4.0 +j    1.0        4.1       0.9701
+58_WNWPHIL2      3       4.0 +j    1.0        4.1       0.9701
+58_WNWPHIL2      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    12.0 +j      3.0       12.4       0.9701
+
+ELEMENT = "Load.LOAD_AT_59_1"
+59_TIDD          1      92.3 +j   37.7       99.7       0.9259
+59_TIDD          2      92.3 +j   37.7       99.7       0.9259
+59_TIDD          3      92.3 +j   37.7       99.7       0.9259
+59_TIDD          0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....   277.0 +j    113.0      299.2       0.9259
+
+ELEMENT = "Load.LOAD_AT_60_1"
+60_SWKAMMER      1      26.0 +j    1.0       26.0       0.9993
+60_SWKAMMER      2      26.0 +j    1.0       26.0       0.9993
+60_SWKAMMER      3      26.0 +j    1.0       26.0       0.9993
+60_SWKAMMER      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    78.0 +j      3.0       78.1       0.9993
+
+ELEMENT = "Load.LOAD_AT_62_1"
+62_NATRIUM       1      25.7 +j    4.7       26.1       0.9839
+62_NATRIUM       2      25.7 +j    4.7       26.1       0.9839
+62_NATRIUM       3      25.7 +j    4.7       26.1       0.9839
+62_NATRIUM       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    77.0 +j     14.0       78.3       0.9839
+
+ELEMENT = "Load.LOAD_AT_66_1"
+66_MUSKNGUM      1      13.0 +j    6.0       14.3       0.9080
+66_MUSKNGUM      2      13.0 +j    6.0       14.3       0.9080
+66_MUSKNGUM      3      13.0 +j    6.0       14.3       0.9080
+66_MUSKNGUM      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    39.0 +j     18.0       43.0       0.9080
+
+ELEMENT = "Load.LOAD_AT_67_1"
+67_SUMMERFL      1       9.3 +j    2.3        9.6       0.9701
+67_SUMMERFL      2       9.3 +j    2.3        9.6       0.9701
+67_SUMMERFL      3       9.3 +j    2.3        9.6       0.9701
+67_SUMMERFL      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    28.0 +j      7.0       28.9       0.9701
+
+ELEMENT = "Load.LOAD_AT_70_1"
+70_PORTSMTH      1      22.0 +j    6.7       23.0       0.9570
+70_PORTSMTH      2      22.0 +j    6.7       23.0       0.9570
+70_PORTSMTH      3      22.0 +j    6.7       23.0       0.9570
+70_PORTSMTH      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    66.0 +j     20.0       69.0       0.9570
+
+ELEMENT = "Load.LOAD_AT_72_1"
+72_HILLSBRO      1       4.0 +j    0.0        4.0       1.0000
+72_HILLSBRO      2       4.0 +j    0.0        4.0       1.0000
+72_HILLSBRO      3       4.0 +j    0.0        4.0       1.0000
+72_HILLSBRO      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    12.0 +j      0.0       12.0       1.0000
+
+ELEMENT = "Load.LOAD_AT_73_1"
+73_SARGENTS      1       2.0 +j    0.0        2.0       1.0000
+73_SARGENTS      2       2.0 +j    0.0        2.0       1.0000
+73_SARGENTS      3       2.0 +j   -0.0        2.0      -1.0000
+73_SARGENTS      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....     6.0 +j     -0.0        6.0      -1.0000
+
+ELEMENT = "Load.LOAD_AT_74_1"
+74_BELLEFNT      1      22.7 +j    9.0       24.4       0.9294
+74_BELLEFNT      2      22.7 +j    9.0       24.4       0.9294
+74_BELLEFNT      3      22.7 +j    9.0       24.4       0.9294
+74_BELLEFNT      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    68.0 +j     27.0       73.2       0.9294
+
+ELEMENT = "Load.LOAD_AT_75_1"
+75_STHPOINT      1      15.7 +j    3.7       16.1       0.9737
+75_STHPOINT      2      15.7 +j    3.7       16.1       0.9737
+75_STHPOINT      3      15.7 +j    3.7       16.1       0.9737
+75_STHPOINT      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    47.0 +j     11.0       48.3       0.9737
+
+ELEMENT = "Load.LOAD_AT_76_1"
+76_DARRAH        1      22.3 +j   11.8       25.3       0.8838
+76_DARRAH        2      22.3 +j   11.8       25.3       0.8838
+76_DARRAH        3      22.3 +j   11.8       25.3       0.8838
+76_DARRAH        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    66.9 +j     35.4       75.8       0.8838
+
+ELEMENT = "Load.LOAD_AT_77_1"
+77_TURNER        1      20.3 +j    9.3       22.4       0.9088
+77_TURNER        2      20.3 +j    9.3       22.4       0.9088
+77_TURNER        3      20.3 +j    9.3       22.4       0.9088
+77_TURNER        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    61.0 +j     28.0       67.1       0.9088
+
+ELEMENT = "Load.LOAD_AT_78_1"
+78_CHEMICAL      1      23.7 +j    8.7       25.2       0.9390
+78_CHEMICAL      2      23.7 +j    8.7       25.2       0.9390
+78_CHEMICAL      3      23.7 +j    8.7       25.2       0.9390
+78_CHEMICAL      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    71.0 +j     26.0       75.6       0.9390
+
+ELEMENT = "Load.LOAD_AT_79_1"
+79_CAPITLHL      1      13.0 +j   10.7       16.8       0.7731
+79_CAPITLHL      2      13.0 +j   10.7       16.8       0.7731
+79_CAPITLHL      3      13.0 +j   10.7       16.8       0.7731
+79_CAPITLHL      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    39.0 +j     32.0       50.4       0.7731
+
+ELEMENT = "Load.LOAD_AT_80_1"
+80_CABINCRK      1      43.3 +j    8.7       44.2       0.9806
+80_CABINCRK      2      43.3 +j    8.7       44.2       0.9806
+80_CABINCRK      3      43.3 +j    8.7       44.2       0.9806
+80_CABINCRK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....   130.0 +j     26.0      132.6       0.9806
+
+ELEMENT = "Load.LOAD_AT_82_1"
+82_LOGAN         1      18.0 +j    9.0       20.1       0.8944
+82_LOGAN         2      18.0 +j    9.0       20.1       0.8944
+82_LOGAN         3      18.0 +j    9.0       20.1       0.8944
+82_LOGAN         0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    54.0 +j     27.0       60.4       0.8944
+
+ELEMENT = "Load.LOAD_AT_83_1"
+83_SPRIGG        1       6.7 +j    3.3        7.5       0.8944
+83_SPRIGG        2       6.7 +j    3.3        7.5       0.8944
+83_SPRIGG        3       6.7 +j    3.3        7.5       0.8944
+83_SPRIGG        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    20.0 +j     10.0       22.4       0.8944
+
+ELEMENT = "Load.LOAD_AT_84_1"
+84_BETSYLNE      1       3.7 +j    2.3        4.3       0.8437
+84_BETSYLNE      2       3.7 +j    2.3        4.3       0.8437
+84_BETSYLNE      3       3.7 +j    2.3        4.3       0.8437
+84_BETSYLNE      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    11.0 +j      7.0       13.0       0.8437
+
+ELEMENT = "Load.LOAD_AT_85_1"
+85_BEAVERCK      1       8.0 +j    5.0        9.4       0.8480
+85_BEAVERCK      2       8.0 +j    5.0        9.4       0.8480
+85_BEAVERCK      3       8.0 +j    5.0        9.4       0.8480
+85_BEAVERCK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    24.0 +j     15.0       28.3       0.8480
+
+ELEMENT = "Load.LOAD_AT_86_1"
+86_HAZARD        1       7.0 +j    3.3        7.8       0.9029
+86_HAZARD        2       7.0 +j    3.3        7.8       0.9029
+86_HAZARD        3       7.0 +j    3.3        7.8       0.9029
+86_HAZARD        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    21.0 +j     10.0       23.3       0.9029
+
+ELEMENT = "Load.LOAD_AT_88_1"
+88_FREMONT       1      16.0 +j    3.3       16.3       0.9790
+88_FREMONT       2      16.0 +j    3.3       16.3       0.9790
+88_FREMONT       3      16.0 +j    3.3       16.3       0.9790
+88_FREMONT       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    48.0 +j     10.0       49.0       0.9790
+
+ELEMENT = "Load.LOAD_AT_90_1"
+90_HOLSTON       1      54.3 +j   14.0       56.1       0.9684
+90_HOLSTON       2      54.3 +j   14.0       56.1       0.9684
+90_HOLSTON       3      54.3 +j   14.0       56.1       0.9684
+90_HOLSTON       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....   163.0 +j     42.0      168.3       0.9684
+
+ELEMENT = "Load.LOAD_AT_91_1"
+91_HOLSTONT      1       3.3 +j    0.0        3.3       1.0000
+91_HOLSTONT      2       3.3 +j    0.0        3.3       1.0000
+91_HOLSTONT      3       3.3 +j    0.0        3.3       1.0000
+91_HOLSTONT      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    10.0 +j      0.0       10.0       1.0000
+
+ELEMENT = "Load.LOAD_AT_92_1"
+92_SALTVLLE      1      21.7 +j    3.3       21.9       0.9884
+92_SALTVLLE      2      21.7 +j    3.3       21.9       0.9884
+92_SALTVLLE      3      21.7 +j    3.3       21.9       0.9884
+92_SALTVLLE      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    65.0 +j     10.0       65.8       0.9884
+
+ELEMENT = "Load.LOAD_AT_93_1"
+93_TAZEWELL      1       4.0 +j    2.3        4.6       0.8638
+93_TAZEWELL      2       4.0 +j    2.3        4.6       0.8638
+93_TAZEWELL      3       4.0 +j    2.3        4.6       0.8638
+93_TAZEWELL      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    12.0 +j      7.0       13.9       0.8638
+
+ELEMENT = "Load.LOAD_AT_94_1"
+94_SWITCHBK      1      10.0 +j    5.3       11.3       0.8824
+94_SWITCHBK      2      10.0 +j    5.3       11.3       0.8824
+94_SWITCHBK      3      10.0 +j    5.3       11.3       0.8824
+94_SWITCHBK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    30.0 +j     16.0       34.0       0.8824
+
+ELEMENT = "Load.LOAD_AT_95_1"
+95_CALDWELL      1      14.0 +j   10.3       17.4       0.8046
+95_CALDWELL      2      14.0 +j   10.3       17.4       0.8046
+95_CALDWELL      3      14.0 +j   10.3       17.4       0.8046
+95_CALDWELL      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    42.0 +j     31.0       52.2       0.8046
+
+ELEMENT = "Load.LOAD_AT_96_1"
+96_BAILEYSV      1      12.7 +j    5.0       13.6       0.9302
+96_BAILEYSV      2      12.7 +j    5.0       13.6       0.9302
+96_BAILEYSV      3      12.7 +j    5.0       13.6       0.9302
+96_BAILEYSV      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    38.0 +j     15.0       40.9       0.9302
+
+ELEMENT = "Load.LOAD_AT_97_1"
+97_SUNDIAL       1       5.0 +j    3.0        5.8       0.8575
+97_SUNDIAL       2       5.0 +j    3.0        5.8       0.8575
+97_SUNDIAL       3       5.0 +j    3.0        5.8       0.8575
+97_SUNDIAL       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    15.0 +j      9.0       17.5       0.8575
+
+ELEMENT = "Load.LOAD_AT_98_1"
+98_BRADLEY       1      11.3 +j    2.7       11.6       0.9734
+98_BRADLEY       2      11.3 +j    2.7       11.6       0.9734
+98_BRADLEY       3      11.3 +j    2.7       11.6       0.9734
+98_BRADLEY       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    34.0 +j      8.0       34.9       0.9734
+
+ELEMENT = "Load.LOAD_AT_99_1"
+99_HINTON        1      14.0 +j   -0.0       14.0      -1.0000
+99_HINTON        2      14.0 +j   -0.0       14.0      -1.0000
+99_HINTON        3      14.0 +j   -0.0       14.0      -1.0000
+99_HINTON        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    42.0 +j     -0.0       42.0      -1.0000
+
+ELEMENT = "Load.LOAD_AT_100_1"
+100_GLENLYN      1      12.3 +j    6.0       13.7       0.8992
+100_GLENLYN      2      12.3 +j    6.0       13.7       0.8992
+100_GLENLYN      3      12.3 +j    6.0       13.7       0.8992
+100_GLENLYN      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    37.0 +j     18.0       41.1       0.8992
+
+ELEMENT = "Load.LOAD_AT_101_1"
+101_WYTHE        1       7.3 +j    5.0        8.9       0.8262
+101_WYTHE        2       7.3 +j    5.0        8.9       0.8262
+101_WYTHE        3       7.3 +j    5.0        8.9       0.8262
+101_WYTHE        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    22.0 +j     15.0       26.6       0.8262
+
+ELEMENT = "Load.LOAD_AT_102_1"
+102_SMYTHE       1       1.7 +j    1.0        1.9       0.8575
+102_SMYTHE       2       1.7 +j    1.0        1.9       0.8575
+102_SMYTHE       3       1.7 +j    1.0        1.9       0.8575
+102_SMYTHE       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....     5.0 +j      3.0        5.8       0.8575
+
+ELEMENT = "Load.LOAD_AT_103_1"
+103_CLAYTOR      1       7.7 +j    5.3        9.3       0.8209
+103_CLAYTOR      2       7.7 +j    5.3        9.3       0.8209
+103_CLAYTOR      3       7.7 +j    5.3        9.3       0.8209
+103_CLAYTOR      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    23.0 +j     16.0       28.0       0.8209
+
+ELEMENT = "Load.LOAD_AT_104_1"
+104_HANCOCK      1      12.7 +j    8.3       15.2       0.8354
+104_HANCOCK      2      12.7 +j    8.3       15.2       0.8354
+104_HANCOCK      3      12.7 +j    8.3       15.2       0.8354
+104_HANCOCK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    38.0 +j     25.0       45.5       0.8354
+
+ELEMENT = "Load.LOAD_AT_105_1"
+105_ROANOKE      1      10.3 +j    8.7       13.5       0.7662
+105_ROANOKE      2      10.3 +j    8.7       13.5       0.7662
+105_ROANOKE      3      10.3 +j    8.7       13.5       0.7662
+105_ROANOKE      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    31.0 +j     26.0       40.5       0.7662
+
+ELEMENT = "Load.LOAD_AT_106_1"
+106_CLOVERDL     1      14.3 +j    5.3       15.3       0.9372
+106_CLOVERDL     2      14.3 +j    5.3       15.3       0.9372
+106_CLOVERDL     3      14.3 +j    5.3       15.3       0.9372
+106_CLOVERDL     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    43.0 +j     16.0       45.9       0.9372
+
+ELEMENT = "Load.LOAD_AT_107_1"
+107_REUSENS      1      16.7 +j    4.0       17.1       0.9724
+107_REUSENS      2      16.7 +j    4.0       17.1       0.9724
+107_REUSENS      3      16.7 +j    4.0       17.1       0.9724
+107_REUSENS      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    50.0 +j     12.0       51.4       0.9724
+
+ELEMENT = "Load.LOAD_AT_108_1"
+108_BLAINE       1       0.7 +j    0.3        0.7       0.8944
+108_BLAINE       2       0.7 +j    0.3        0.7       0.8944
+108_BLAINE       3       0.7 +j    0.3        0.7       0.8944
+108_BLAINE       0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....     2.0 +j      1.0        2.2       0.8944
+
+ELEMENT = "Load.LOAD_AT_109_1"
+109_FRANKLIN     1       2.7 +j    1.0        2.8       0.9363
+109_FRANKLIN     2       2.7 +j    1.0        2.8       0.9363
+109_FRANKLIN     3       2.7 +j    1.0        2.8       0.9363
+109_FRANKLIN     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....     8.0 +j      3.0        8.5       0.9363
+
+ELEMENT = "Load.LOAD_AT_110_1"
+110_FIELDALE     1      13.0 +j   10.0       16.4       0.7926
+110_FIELDALE     2      13.0 +j   10.0       16.4       0.7926
+110_FIELDALE     3      13.0 +j   10.0       16.4       0.7926
+110_FIELDALE     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    39.0 +j     30.0       49.2       0.7926
+
+ELEMENT = "Load.LOAD_AT_112_1"
+112_DANVILLE     1      22.7 +j    4.3       23.1       0.9822
+112_DANVILLE     2      22.7 +j    4.3       23.1       0.9822
+112_DANVILLE     3      22.7 +j    4.3       23.1       0.9822
+112_DANVILLE     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    68.0 +j     13.0       69.2       0.9822
+
+ELEMENT = "Load.LOAD_AT_113_1"
+113_DEERCRK      1       2.0 +j    0.0        2.0       1.0000
+113_DEERCRK      2       2.0 +j    0.0        2.0       1.0000
+113_DEERCRK      3       2.0 +j    0.0        2.0       1.0000
+113_DEERCRK      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....     6.0 +j      0.0        6.0       1.0000
+
+ELEMENT = "Load.LOAD_AT_114_1"
+114_WMEDFORD     1       2.7 +j    1.0        2.8       0.9363
+114_WMEDFORD     2       2.7 +j    1.0        2.8       0.9363
+114_WMEDFORD     3       2.7 +j    1.0        2.8       0.9363
+114_WMEDFORD     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....     8.0 +j      3.0        8.5       0.9363
+
+ELEMENT = "Load.LOAD_AT_115_1"
+115_MEDFORD      1       7.3 +j    2.3        7.7       0.9529
+115_MEDFORD      2       7.3 +j    2.3        7.7       0.9529
+115_MEDFORD      3       7.3 +j    2.3        7.7       0.9529
+115_MEDFORD      0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    22.0 +j      7.0       23.1       0.9529
+
+ELEMENT = "Load.LOAD_AT_116_1"
+116_KYGERCRK     1      61.3 +j    0.0       61.3       1.0000
+116_KYGERCRK     2      61.3 +j   -0.0       61.3      -1.0000
+116_KYGERCRK     3      61.3 +j   -0.0       61.3      -1.0000
+116_KYGERCRK     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....   184.0 +j     -0.0      184.0      -1.0000
+
+ELEMENT = "Load.LOAD_AT_117_1"
+117_COREY        1       6.7 +j    2.7        7.2       0.9285
+117_COREY        2       6.7 +j    2.7        7.2       0.9285
+117_COREY        3       6.7 +j    2.7        7.2       0.9285
+117_COREY        0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    20.0 +j      8.0       21.5       0.9285
+
+ELEMENT = "Load.LOAD_AT_118_1"
+118_WHUNTNGD     1      11.0 +j    5.0       12.1       0.9104
+118_WHUNTNGD     2      11.0 +j    5.0       12.1       0.9104
+118_WHUNTNGD     3      11.0 +j    5.0       12.1       0.9104
+118_WHUNTNGD     0       0.0 +j    0.0        0.0       1.0000
+  TERMINAL TOTAL  ....    33.0 +j     15.0       36.2       0.9104
+
+
+Total Circuit Losses =  132.5 +j -559.6

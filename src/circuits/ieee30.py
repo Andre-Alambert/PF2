@@ -83,16 +83,19 @@ CONFIG = {
     # =========================
     # Gerador eólico em B30 (33 kV, barra de carga no extremo da rede).
     # Tratado como não-despachável: kW fixo por cenário, GA otimiza só os térmicos.
-    "wind_generators": [
-        {"name": "Wind_B30", "bus": "B30", "kv": 33.0, "kw_max": 20_000.0},
-    ],
-    # Perfil de fator de capacidade horário (24h). Vento mais forte à noite/madrugada.
-    "wind_loadshape": [
-        0.35, 0.40, 0.45, 0.50, 0.48, 0.42,  # 00-05h
-        0.30, 0.22, 0.18, 0.20, 0.28, 0.35,  # 06-11h
-        0.45, 0.52, 0.58, 0.55, 0.48, 0.55,  # 12-17h
-        0.68, 0.72, 0.65, 0.58, 0.50, 0.42,  # 18-23h
-    ],
-    # Hora do cenário a simular (0-23). Override via --hour na CLI.
-    "wind_scenario_hour": 12,
+    # "wind_generators": [
+    #     {"name": "Wind_B30", "bus": "B30", "kv": 33.0, "kw_max": 20_000.0},
+    # ],
+    # # Perfil de fator de capacidade horário (24h). Vento mais forte à noite/madrugada.
+    # "wind_loadshape": [
+    #     0.35, 0.40, 0.45, 0.50, 0.48, 0.42,  # 00-05h
+    #     0.30, 0.22, 0.18, 0.20, 0.28, 0.35,  # 06-11h
+    #     0.45, 0.52, 0.58, 0.55, 0.48, 0.55,  # 12-17h
+    #     0.68, 0.72, 0.65, 0.58, 0.50, 0.42,  # 18-23h
+    # ],
+    # # Hora do cenário a simular (0-23). Override via --hour na CLI.
+    # "wind_scenario_hour": 12,
+    "wind_generators": [],
+    "wind_loadshape": [],
+    "wind_scenario_hour": 0,
 }

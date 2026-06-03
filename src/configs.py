@@ -2,6 +2,7 @@ import importlib.util
 from pathlib import Path
 
 from src.circuits.ieee30 import CONFIG as CONFIG_30BUS
+from src.circuits.ieee118 import CONFIG as CONFIG_118BUS
 
 
 def _load_circuit(filename: str):
@@ -13,6 +14,7 @@ def _load_circuit(filename: str):
 
 
 CONFIGS = {
-    "4bus":  _load_circuit("4bus.py"),
+    "4bus":   _load_circuit("4bus.py"),
     "ieee30": CONFIG_30BUS,
+    "ieee118": CONFIG_118BUS,
 }

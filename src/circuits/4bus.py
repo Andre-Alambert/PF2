@@ -3,9 +3,9 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 CONFIG = {
-    # =========================
+    # ==========================
     # Paths
-    # =========================
+    # ==========================
     "case_name": "4bus",
     "project_root": PROJECT_ROOT,
     "results_dir": PROJECT_ROOT / "results" / "4bus",
