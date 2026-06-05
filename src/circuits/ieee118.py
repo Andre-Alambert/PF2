@@ -119,14 +119,14 @@ CONFIG = {
     "convergence_penalty": 1e6,
 
     # =========================
-    # Parâmetros do NSGA-II
-    # 18 variáveis de decisão → população maior que o 30-bus (5 vars).
-    # Regra prática: pop >= 4–5 × n_var.
+    # Parâmetros do GA
+    # 18 variáveis de decisão → pop maior que o 30-bus (5 vars).
+    # NSGA-II usa population_size; NSGA-III usa n_partitions (pop derivado automaticamente).
+    # n_partitions=8 → 45 reference points (Das-Dennis, n_obj=3)
     # =========================
     "population_size": 80,
+    "n_partitions": 8,
     "num_generations": 80,
-    "num_parents_mating": 40,
-    "mutation_percent_genes": 20,
 
     # =========================
     # OpenDSS

@@ -6,7 +6,9 @@
       "Bash(Format-Table -AutoSize)",
       "Bash(Sort-Object LastWriteTime -Descending)",
       "Bash(Select-Object -First 10)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(python *)",
+      "Bash(Get-Content *)"
     ]
   }
 }

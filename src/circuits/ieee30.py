@@ -64,11 +64,13 @@ CONFIG = {
     "convergence_penalty": 1e6,
 
     # =========================
-    # Parâmetros do NSGA-III
-    # n_partitions=8 → 45 reference points (Das-Dennis) → pop_size=45
+    # Parâmetros do GA
+    # NSGA-II usa population_size; NSGA-III usa n_partitions (pop derivado automaticamente).
+    # n_partitions=8 → 45 reference points (Das-Dennis)
     # =========================
+    "population_size": 40,
     "n_partitions": 8,
-    "num_generations": 40,
+    "num_generations": 100,
 
     # =========================
     # OpenDSS
