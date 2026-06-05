@@ -125,8 +125,8 @@ CONFIG = {
     # n_partitions=8 → 45 reference points (Das-Dennis, n_obj=3)
     # =========================
     "population_size": 80,
-    "n_partitions": 8,
-    "num_generations": 80,
+    "n_partitions": 12,
+    "num_generations": 120,
 
     # =========================
     # OpenDSS
