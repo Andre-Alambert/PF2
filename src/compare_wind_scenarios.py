@@ -14,7 +14,7 @@ from src.configs import CONFIGS
 from src.genetic_algorithm.nsga2_runner import run_nsga2
 from src.opendss.opendss_interface import (
     create_dss, compile_circuit, solve_power_flow, get_all_bus_voltages_pu,
-    add_wind_generators, apply_wind_scenario,
+    add_wind_generators, apply_wind_scenario, resolve_loadshape,
 )
 from src.results.pareto import plot_wind_scenario_comparison
 
@@ -29,12 +29,10 @@ def _run_scenario(base_config, wind_config):
 
     res = run_nsga2(base_config, dss, v_refs, verbose=False)
 
-    hour = wind_config["hour"]
-    total_kw = sum(
-        wg.get("loadshape", [])[hour % len(wg["loadshape"])] * wg["kw_max"]
-        for wg in wind_config["generators"]
-        if wg.get("loadshape")
-    )
+    hour      = wind_config["hour"]
+    loadshape = resolve_loadshape(wind_config)
+    factor    = loadshape[hour % len(loadshape)]
+    total_kw  = sum(wg["kw_max"] * factor for wg in wind_config["generators"])
     return res, total_kw
 
 

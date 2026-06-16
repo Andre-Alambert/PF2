@@ -49,21 +49,6 @@ CONFIG = {
     "voltage_upper_limit": 1.10,
 
     # =========================
-    # Função objetivo agregada
-    # =========================
-    # Pesos da soma ponderada normalizada: F = w_cost·f1' + w_voltage·f2' + w_emissions·f3'
-    # w_emissions=0 desativa emissões na Etapa 1; basta mudar o valor para ativá-las.
-    "objective_weights": {"w_cost": 0.4, "w_voltage": 0.3, "w_emissions": 0.3},
-
-    # =========================
-    # Penalizações (restrições duras)
-    # =========================
-    # F normalizado fica em [0, 2]; voltage_penalty_weight recalibrado para essa escala.
-    # Violação de 0.03 pu em 5 barras → pen_v ≈ 0.0009 × 5 × 100 = 0.45 >> F típico.
-    "voltage_penalty_weight": 100.0,
-    "convergence_penalty": 1e6,
-
-    # =========================
     # Parâmetros do GA
     # NSGA-II usa population_size; NSGA-III usa n_partitions (pop derivado automaticamente).
     # n_partitions=8 → 45 reference points (Das-Dennis)

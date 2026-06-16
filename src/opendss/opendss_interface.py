@@ -1,6 +1,7 @@
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional
 
+import numpy as np
 from py_dss_interface import DSS
 
 
@@ -128,6 +129,57 @@ def get_max_voltage_pu(dss: DSS) -> float:
     return max(voltages)
 
 
+def generate_loadshape_weibull(k: float, lam: float, seed: Optional[int] = None) -> List[float]:
+    """
+    Gera um loadshape de 24 pontos a partir da distribuição de Weibull.
+
+    Parâmetros:
+        k   : parâmetro de forma da Weibull
+        lam : parâmetro de escala [m/s] (velocidade média)
+        seed: semente para reprodutibilidade (None = aleatório a cada chamada)
+
+    Curva de potência por partes (típica de aerogeradores):
+        v < v_ci (3 m/s)          → P = 0  (cut-in)
+        v_ci ≤ v < v_r (12 m/s)   → P = (v - v_ci) / (v_r - v_ci)  (rampa linear)
+        v_r ≤ v ≤ v_co (25 m/s)   → P = 1  (potência nominal)
+        v > v_co                   → P = 0  (cut-out)
+    """
+    rng = np.random.default_rng(seed)
+    velocities = lam * rng.weibull(k, 24)
+    v_ci, v_r, v_co = 3.0, 12.0, 25.0
+    loadshape = []
+    for v in velocities:
+        if v < v_ci:
+            p = 0.0
+        elif v < v_r:
+            p = (v - v_ci) / (v_r - v_ci)
+        elif v <= v_co:
+            p = 1.0
+        else:
+            p = 0.0
+        loadshape.append(float(p))
+    return loadshape
+
+
+def resolve_loadshape(wind_config: Dict) -> List[float]:
+    """
+    Resolve o loadshape de 24 pontos a partir da configuração do cenário eólico.
+
+    Prioridade:
+        1. Campo "loadshape" no JSON — se for uma lista de exatamente 24 pontos.
+        2. Campo "weibull" no JSON — gera estocasticamente (seed opcional).
+    """
+    ls = wind_config.get("loadshape")
+    if isinstance(ls, list) and len(ls) == 24:
+        return [float(v) for v in ls]
+
+    weibull = wind_config.get("weibull", {})
+    k    = float(weibull.get("k",      2.0))
+    lam  = float(weibull.get("lambda", 8.0))
+    seed = weibull.get("seed", None)
+    return generate_loadshape_weibull(k, lam, seed)
+
+
 def add_wind_generators(dss: DSS, wind_config: Dict) -> None:
     """
     Adiciona geradores eólicos ao circuito via comandos DSS.
@@ -144,12 +196,12 @@ def add_wind_generators(dss: DSS, wind_config: Dict) -> None:
 def apply_wind_scenario(dss: DSS, wind_config: Dict) -> None:
     """
     Ajusta kW de cada gerador eólico para o fator de capacidade da hora definida no JSON.
-    Cada gerador tem seu próprio loadshape.
+    O loadshape é resolvido uma vez (Weibull ou hardcoded) e aplicado a todos os geradores.
     """
     hour = wind_config.get("hour", 12)
+    loadshape = resolve_loadshape(wind_config)
+    factor = loadshape[hour % len(loadshape)]
     for wg in wind_config.get("generators", []):
-        loadshape = wg.get("loadshape", [])
-        factor = loadshape[hour % len(loadshape)] if loadshape else 0.0
         kw = factor * wg["kw_max"]
         dss.text(f"Edit Generator.{wg['name']} kW={kw:.1f}")
 

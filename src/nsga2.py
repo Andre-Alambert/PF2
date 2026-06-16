@@ -15,7 +15,7 @@ from src.genetic_algorithm.encoding import get_gene_names
 from src.genetic_algorithm.nsga2_runner import run_nsga2
 from src.opendss.opendss_interface import (
     create_dss, compile_circuit, solve_power_flow, get_all_bus_voltages_pu,
-    add_wind_generators, apply_wind_scenario,
+    add_wind_generators, apply_wind_scenario, resolve_loadshape,
 )
 from src.results.pareto import plot_pareto_nsga2
 
@@ -39,10 +39,10 @@ def main():
     print(f"Pop={CONFIG['population_size']}  Gen={CONFIG['num_generations']}  Objetivos=3 (custo, tensão, emissões)")
 
     if wind_config:
-        hour = wind_config["hour"]
+        hour      = wind_config["hour"]
+        loadshape = resolve_loadshape(wind_config)
+        factor    = loadshape[hour % len(loadshape)]
         for wg in wind_config["generators"]:
-            loadshape = wg.get("loadshape", [])
-            factor = loadshape[hour % len(loadshape)] if loadshape else 0.0
             kw = factor * wg["kw_max"]
             print(f"Vento    : {wg['name']} @ {wg['bus']} | hora={hour} | "
                   f"P={kw:.0f} kW ({factor*100:.0f}% de {wg['kw_max']:.0f} kW)")
