@@ -1,5 +1,6 @@
 import argparse
 import csv
+import json
 import time
 from datetime import datetime
 from pathlib import Path
@@ -42,16 +43,19 @@ SEEDS = [42, 7, 99]
 def main():
     parser = argparse.ArgumentParser(description="Experimento de hiperparâmetros NSGA-II")
     parser.add_argument("case", choices=list(CONFIGS.keys()), help="Caso a executar")
-    parser.add_argument("--hour", type=int, choices=range(24), metavar="0-23",
-                        help="Hora do cenário eólico")
+    parser.add_argument("--wind-config", type=Path, metavar="JSON",
+                        help="Arquivo JSON com configuração dos geradores eólicos (opcional)")
     parser.add_argument("--seeds", type=int, default=3, metavar="N",
                         help="Número de seeds por configuração (padrão: 3)")
     args = parser.parse_args()
 
     CONFIG = dict(CONFIGS[args.case])
     case_name = CONFIG["case_name"]
-    if args.hour is not None and CONFIG.get("wind_generators"):
-        CONFIG["wind_scenario_hour"] = args.hour
+
+    wind_config = None
+    if args.wind_config:
+        with open(args.wind_config) as f:
+            wind_config = json.load(f)
 
     seeds = SEEDS[:args.seeds]
     n_configs = len(PARAM_GRID)
@@ -59,20 +63,21 @@ def main():
 
     print(f"\nExperimento NSGA-II | Caso: {case_name}")
     print(f"Configurações: {n_configs} | Seeds: {len(seeds)} | Total rodadas: {n_runs}")
-    if CONFIG.get("wind_generators"):
-        hour = CONFIG.get("wind_scenario_hour", 12)
-        ls   = CONFIG.get("wind_loadshape", [])
-        fac  = ls[hour % len(ls)] if ls else 0.0
-        kw   = fac * CONFIG["wind_generators"][0]["kw_max"]
-        print(f"Vento: hora={hour} | P={kw:.0f} kW ({fac*100:.0f}%)")
+    if wind_config:
+        hour = wind_config["hour"]
+        for wg in wind_config["generators"]:
+            ls  = wg.get("loadshape", [])
+            fac = ls[hour % len(ls)] if ls else 0.0
+            kw  = fac * wg["kw_max"]
+            print(f"Vento: {wg['name']} hora={hour} | P={kw:.0f} kW ({fac*100:.0f}%)")
     print()
 
     # ── Setup OpenDSS (uma única vez para todo o experimento) ────────────────
     dss = create_dss(allow_forms=CONFIG["allow_forms"])
     compile_circuit(dss, CONFIG["circuit_path"])
-    if CONFIG.get("wind_generators"):
-        add_wind_generators(dss, CONFIG)
-        apply_wind_scenario(dss, CONFIG, CONFIG.get("wind_scenario_hour", 12))
+    if wind_config:
+        add_wind_generators(dss, wind_config)
+        apply_wind_scenario(dss, wind_config)
     solve_power_flow(dss)
     v_refs = get_all_bus_voltages_pu(dss)
 

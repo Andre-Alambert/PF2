@@ -128,27 +128,28 @@ def get_max_voltage_pu(dss: DSS) -> float:
     return max(voltages)
 
 
-def add_wind_generators(dss: DSS, config: Dict) -> None:
+def add_wind_generators(dss: DSS, wind_config: Dict) -> None:
     """
     Adiciona geradores eólicos ao circuito via comandos DSS.
+    wind_config: dict carregado do JSON de cenário eólico.
     Chamado uma vez após compile_circuit; kW inicial = kw_max (ajustado em seguida).
     """
-    for wg in config.get("wind_generators", []):
+    for wg in wind_config.get("generators", []):
         dss.text(
             f"New Generator.{wg['name']} Bus1={wg['bus']} "
             f"kV={wg['kv']} kW={wg['kw_max']:.1f} Model=1"
         )
 
 
-def apply_wind_scenario(dss: DSS, config: Dict, hour: int) -> None:
+def apply_wind_scenario(dss: DSS, wind_config: Dict) -> None:
     """
-    Ajusta kW dos geradores eólicos para o fator de capacidade do horário dado.
+    Ajusta kW de cada gerador eólico para o fator de capacidade da hora definida no JSON.
+    Cada gerador tem seu próprio loadshape.
     """
-    loadshape = config.get("wind_loadshape", [])
-    if not loadshape:
-        return
-    factor = loadshape[hour % len(loadshape)]
-    for wg in config.get("wind_generators", []):
+    hour = wind_config.get("hour", 12)
+    for wg in wind_config.get("generators", []):
+        loadshape = wg.get("loadshape", [])
+        factor = loadshape[hour % len(loadshape)] if loadshape else 0.0
         kw = factor * wg["kw_max"]
         dss.text(f"Edit Generator.{wg['name']} kW={kw:.1f}")
 

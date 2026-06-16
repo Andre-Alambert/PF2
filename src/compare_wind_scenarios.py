@@ -1,5 +1,6 @@
 import argparse
 import csv
+import json
 from datetime import datetime
 from pathlib import Path
 import sys
@@ -10,7 +11,7 @@ if __package__ is None or __package__ == "":
         sys.path.insert(0, str(project_root))
 
 from src.configs import CONFIGS
-from src.genetic_algorithm.nsga3_runner import run_nsga3
+from src.genetic_algorithm.nsga2_runner import run_nsga2
 from src.opendss.opendss_interface import (
     create_dss, compile_circuit, solve_power_flow, get_all_bus_voltages_pu,
     add_wind_generators, apply_wind_scenario,
@@ -18,34 +19,30 @@ from src.opendss.opendss_interface import (
 from src.results.pareto import plot_wind_scenario_comparison
 
 
-DEFAULT_HOURS = [8, 12, 18]
-
-
-def _run_scenario(base_config, hour):
-    loadshape = base_config.get("wind_loadshape", [])
-    kw_max    = base_config["wind_generators"][0]["kw_max"]
-    factor    = loadshape[hour % len(loadshape)] if loadshape else 0.0
-    kw        = factor * kw_max
-
-    CONFIG = dict(base_config)
-    CONFIG["wind_scenario_hour"] = hour
-
-    dss = create_dss(allow_forms=CONFIG["allow_forms"])
-    compile_circuit(dss, CONFIG["circuit_path"])
-    add_wind_generators(dss, CONFIG)
-    apply_wind_scenario(dss, CONFIG, hour)
+def _run_scenario(base_config, wind_config):
+    dss = create_dss(allow_forms=base_config["allow_forms"])
+    compile_circuit(dss, base_config["circuit_path"])
+    add_wind_generators(dss, wind_config)
+    apply_wind_scenario(dss, wind_config)
     solve_power_flow(dss)
     v_refs = get_all_bus_voltages_pu(dss)
 
-    res = run_nsga3(CONFIG, dss, v_refs, verbose=False)
-    return res, kw, factor
+    res = run_nsga2(base_config, dss, v_refs, verbose=False)
+
+    hour = wind_config["hour"]
+    total_kw = sum(
+        wg.get("loadshape", [])[hour % len(wg["loadshape"])] * wg["kw_max"]
+        for wg in wind_config["generators"]
+        if wg.get("loadshape")
+    )
+    return res, total_kw
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Comparação de cenários eólicos — NSGA-III")
+    parser = argparse.ArgumentParser(description="Comparação de cenários eólicos — NSGA-II")
     parser.add_argument("case", choices=list(CONFIGS.keys()), help="Caso a executar")
-    parser.add_argument("--hours", type=int, nargs="+", default=DEFAULT_HOURS, metavar="H",
-                        help=f"Horas dos cenários (padrão: {DEFAULT_HOURS})")
+    parser.add_argument("--wind-configs", type=Path, nargs="+", required=True, metavar="JSON",
+                        help="Arquivos JSON dos cenários eólicos a comparar")
     args = parser.parse_args()
 
     base_config = CONFIGS[args.case]
@@ -53,31 +50,31 @@ def main():
     results_dir = base_config["results_dir"]
     results_dir.mkdir(parents=True, exist_ok=True)
 
-    if not base_config.get("wind_generators"):
-        print("Erro: caso sem geradores eólicos configurados.")
-        return
-
     scenarios = {}
 
-    for hour in sorted(args.hours):
+    for json_path in args.wind_configs:
+        with open(json_path) as f:
+            wind_config = json.load(f)
+
+        hour = wind_config["hour"]
         print(f"\n{'='*55}")
-        print(f"Cenário: hora {hour}")
+        print(f"Cenário: {json_path.name}  (hora {hour})")
         print(f"{'='*55}")
 
-        res, kw, factor = _run_scenario(base_config, hour)
+        res, total_kw = _run_scenario(base_config, wind_config)
 
         if res.F is None or len(res.F) == 0:
             print(f"  Nenhuma solução factível para hora {hour}.")
             continue
 
-        F     = res.F
-        label = f"Hora {hour}  ({kw:.0f} kW, {factor*100:.0f}%)"
+        F = res.F
+        label = f"Hora {hour}  ({total_kw:.0f} kW)"
         print(f"  {len(F)} soluções | "
               f"f1_min={F[:,0].min():.1f} $/h | "
               f"f2_min={F[:,1].min():.4f} pu | "
               f"f3_min={F[:,2].min():.3f} ton/h")
 
-        scenarios[hour] = {"F": F, "label": label, "kw": kw, "factor": factor}
+        scenarios[hour] = {"F": F, "label": label, "kw": total_kw}
 
     if not scenarios:
         print("Nenhum cenário com solução factível.")

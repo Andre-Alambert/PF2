@@ -133,22 +133,4 @@ CONFIG = {
     # =========================
     "allow_forms": False,
 
-    # =========================
-    # Geração eólica
-    # =========================
-    # Gerador eólico em bus 17 (138 kV, barra periférica com 11 MW de carga, sem geração).
-    # Pmax = 200 MW (~5% da carga total do sistema de 4.242 MW).
-    # Não-despachável: kW fixo por cenário, NSGA-II otimiza só os 18 térmicos.
-    "wind_generators": [
-        {"name": "Wind_B17", "bus": "17_sorenson", "kv": 138.0, "kw_max": 200_000.0},
-    ],
-    # Perfil de fator de capacidade horário (24h).
-    "wind_loadshape": [
-        0.35, 0.40, 0.45, 0.50, 0.48, 0.42,  # 00-05h
-        0.30, 0.22, 0.18, 0.20, 0.28, 0.35,  # 06-11h
-        0.45, 0.52, 0.58, 0.55, 0.48, 0.55,  # 12-17h
-        0.68, 0.72, 0.65, 0.58, 0.50, 0.42,  # 18-23h
-    ],
-    # Hora padrão do cenário (override via --hour na CLI).
-    "wind_scenario_hour": 12,
 }
