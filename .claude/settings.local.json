@@ -8,7 +8,12 @@
       "Bash(Select-Object -First 10)",
       "Bash(python -c ' *)",
       "Bash(python *)",
-      "Bash(Get-Content *)"
+      "Bash(Get-Content *)",
+      "Bash(Get-Process python *)",
+      "Bash(Select-Object Id, CPU, WorkingSet, StartTime)",
+      "PowerShell(Get-Process *)",
+      "Bash(Select-String -Pattern \"^\\(#{1,4}|\\\\*\\\\*3\\)\")",
+      "Bash(Select-Object -First 30)"
     ]
   }
 }

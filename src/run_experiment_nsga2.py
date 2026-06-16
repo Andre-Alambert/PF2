@@ -5,6 +5,8 @@ from datetime import datetime
 from pathlib import Path
 import sys
 
+sys.stdout.reconfigure(encoding="utf-8")
+
 if __package__ is None or __package__ == "":
     project_root = Path(__file__).resolve().parent.parent
     if str(project_root) not in sys.path:
@@ -29,7 +31,7 @@ from src.results.pareto import plot_hypervolume_pareto
 PARAM_GRID = [
     {"pop_size": pop, "num_gen": gen, "sbx_eta": sbx, "pm_eta": pm}
     for pop in [20, 40, 80]
-    for gen in [20, 40]
+    for gen in [20, 40, 80]
     for sbx in [10, 20]
     for pm  in [10, 20]
 ]
@@ -123,8 +125,8 @@ def main():
             "std_hv":            float(np.std(hvs)),
             "median_elapsed_sec": float(np.median(elapsed_list)),
         })
-        print(f"          → HV mediano={agg_rows[-1]['median_hv']:.4f} "
-              f"± {agg_rows[-1]['std_hv']:.4f}  "
+        print(f"          -> HV mediano={agg_rows[-1]['median_hv']:.4f} "
+              f"+/- {agg_rows[-1]['std_hv']:.4f}  "
               f"t={agg_rows[-1]['median_elapsed_sec']:.1f}s\n")
 
     total_elapsed = time.perf_counter() - t_experiment_start
@@ -132,8 +134,8 @@ def main():
 
     # ── Ranking final ────────────────────────────────────────────────────────
     ranked = sorted(agg_rows, key=lambda r: r["median_hv"], reverse=True)
-    print(f"{'#':>3}  {'pop':>4}  {'gen':>4}  {'sbx_η':>5}  {'pm_η':>5}  "
-          f"{'HV mediano':>12}  {'±std':>10}  {'t (s)':>7}")
+    print(f"{'#':>3}  {'pop':>4}  {'gen':>4}  {'sbx_eta':>7}  {'pm_eta':>6}  "
+          f"{'HV mediano':>12}  {'+/-std':>10}  {'t (s)':>7}")
     for i, r in enumerate(ranked):
         print(f"{i+1:>3}  {r['pop_size']:>4}  {r['num_gen']:>4}  "
               f"{r['sbx_eta']:>5}  {r['pm_eta']:>5}  "

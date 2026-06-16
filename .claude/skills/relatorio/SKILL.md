@@ -10,8 +10,6 @@ Projeto de Formatura 2 (PF2) — Otimização de Fluxo de Potência Multiobjetiv
 Algoritmo: NSGA-III (pymoo). Simulação via OpenDSS (py_dss_interface).
 Caso principal: IEEE 118-Bus (18 geradores controláveis). IEEE 30-Bus: pode aparecer pontualmente para validação de pipeline, mas sua inclusão no relatório ainda não está decidida — não trate como caso central.
 Três objetivos: f1 = custo de geração [$/h], f2 = desvio de tensão [pu], f3 = emissões [ton/h].
-Restrição dura de tensão implementada como constraint do pymoo (n_ieq_constr=1).
-Configuração definitiva do NSGA-III: n_partitions=12 (pop=91, Das-Dennis), 120 gerações, SBX prob=0.9 η=15, PM prob=1/18 η=20.
 
 ## O que fazer quando esta skill for invocada
 

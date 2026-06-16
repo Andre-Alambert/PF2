@@ -42,8 +42,17 @@ from src.results.pareto import plot_comparison
 
 SEEDS = [42, 7, 99]
 
-NSGA2_PARAMS = {"pop_size": 80,  "num_gen": 120, "sbx_eta": 15, "pm_eta": 20}
-NSGA3_PARAMS = {"n_partitions": 12, "num_gen": 120, "sbx_eta": 15, "pm_eta": 20}
+# Parâmetros por caso — derivados do grid search (ieee30) e escalonados (ieee118)
+PARAMS_BY_CASE = {
+    "ieee30": {
+        "nsga2": {"pop_size": 80, "num_gen": 80,  "sbx_eta": 10, "pm_eta": 10},
+        "nsga3": {"n_partitions": 11, "num_gen": 40,  "sbx_eta": 10, "pm_eta": 20},
+    },
+    "ieee118": {
+        "nsga2": {"pop_size": 80, "num_gen": 120, "sbx_eta": 10, "pm_eta": 10},
+        "nsga3": {"n_partitions": 12, "num_gen": 120, "sbx_eta": 10, "pm_eta": 20},
+    },
+}
 
 
 def _run_block(label, runner, params, seeds, config, dss, v_refs, hv_indicator, total_runs, run_counter):
@@ -93,11 +102,15 @@ def main():
     CONFIG = dict(CONFIGS[args.case])
     case_name = CONFIG["case_name"]
 
+    case_params = PARAMS_BY_CASE.get(args.case, PARAMS_BY_CASE["ieee118"])
+    NSGA2_PARAMS = case_params["nsga2"]
+    NSGA3_PARAMS = case_params["nsga3"]
+
     total_runs = 2 * len(SEEDS)
     print(f"\nComparação NSGA-II vs NSGA-III | Caso: {case_name}")
     print(f"Seeds: {SEEDS}  |  Total rodadas: {total_runs}")
     print(f"NSGA-II  : pop={NSGA2_PARAMS['pop_size']}  gen={NSGA2_PARAMS['num_gen']}  sbx_eta={NSGA2_PARAMS['sbx_eta']}  pm_eta={NSGA2_PARAMS['pm_eta']}")
-    print(f"NSGA-III : n_parts={NSGA3_PARAMS['n_partitions']} (pop=91)  gen={NSGA3_PARAMS['num_gen']}  sbx_eta={NSGA3_PARAMS['sbx_eta']}  pm_eta={NSGA3_PARAMS['pm_eta']}\n")
+    print(f"NSGA-III : n_parts={NSGA3_PARAMS['n_partitions']}  gen={NSGA3_PARAMS['num_gen']}  sbx_eta={NSGA3_PARAMS['sbx_eta']}  pm_eta={NSGA3_PARAMS['pm_eta']}\n")
 
     dss = create_dss(allow_forms=CONFIG["allow_forms"])
     compile_circuit(dss, CONFIG["circuit_path"])
