@@ -238,7 +238,7 @@ def main():
                         help="JSON de vento usado na rodada (necessário para perfil de tensão com vento)")
     args = parser.parse_args()
 
-    csv_path = args.csv
+    csv_path = args.csv.resolve()
     if not csv_path.exists():
         print(f"Erro: arquivo não encontrado: {csv_path}")
         sys.exit(1)

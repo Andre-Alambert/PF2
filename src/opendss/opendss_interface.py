@@ -182,14 +182,16 @@ def resolve_loadshape(wind_config: Dict) -> List[float]:
 
 def add_wind_generators(dss: DSS, wind_config: Dict) -> None:
     """
-    Adiciona geradores eólicos ao circuito via comandos DSS.
+    Adiciona geradores eólicos como cargas negativas (injeção P, Q=0).
+    Usar Load em vez de Generator mantém a barra como PQ bus, compatível
+    com os geradores model=3 (PV bus) já presentes no circuito.
     wind_config: dict carregado do JSON de cenário eólico.
-    Chamado uma vez após compile_circuit; kW inicial = kw_max (ajustado em seguida).
+    Chamado uma vez após compile_circuit; kW inicial = -kw_max (ajustado em seguida).
     """
     for wg in wind_config.get("generators", []):
         dss.text(
-            f"New Generator.{wg['name']} Bus1={wg['bus']} "
-            f"kV={wg['kv']} kW={wg['kw_max']:.1f} Model=1"
+            f"New Load.{wg['name']} Bus1={wg['bus']} Phases=3 "
+            f"kV={wg['kv']} kW=-{wg['kw_max']:.1f} kvar=0 Model=1"
         )
 
 
@@ -197,13 +199,18 @@ def apply_wind_scenario(dss: DSS, wind_config: Dict) -> None:
     """
     Ajusta kW de cada gerador eólico para o fator de capacidade da hora definida no JSON.
     O loadshape é resolvido uma vez (Weibull ou hardcoded) e aplicado a todos os geradores.
+    Geradores com kW < 0.1 (abaixo do cut-in) são desabilitados para não alterar a
+    topologia do fluxo de potência.
     """
     hour = wind_config.get("hour", 12)
     loadshape = resolve_loadshape(wind_config)
     factor = loadshape[hour % len(loadshape)]
     for wg in wind_config.get("generators", []):
         kw = factor * wg["kw_max"]
-        dss.text(f"Edit Generator.{wg['name']} kW={kw:.1f}")
+        if kw < 0.1:
+            dss.text(f"Edit Load.{wg['name']} Enabled=No")
+        else:
+            dss.text(f"Edit Load.{wg['name']} kW=-{kw:.1f} kvar=0 Enabled=Yes")
 
 
 def reset_and_recompile(dss: DSS, circuit_path: str | Path) -> None:
