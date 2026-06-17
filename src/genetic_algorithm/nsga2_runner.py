@@ -82,8 +82,8 @@ def run_nsga2(config, dss, v_refs, overrides=None, verbose=True):
     ov = overrides or {}
     pop_size = ov.get("pop_size", config["population_size"])
     num_gen  = ov.get("num_gen",  config["num_generations"])
-    sbx_eta  = ov.get("sbx_eta", 15)
-    pm_eta   = ov.get("pm_eta",  20)
+    sbx_eta  = ov.get("sbx_eta", config.get("sbx_eta", 15))
+    pm_eta   = ov.get("pm_eta",  config.get("pm_eta",  20))
     seed     = ov.get("seed",    None)
 
     problem = OPFProblem(config, dss, v_refs)

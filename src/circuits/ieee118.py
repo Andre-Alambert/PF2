@@ -119,7 +119,11 @@ CONFIG = {
     # =========================
     "population_size": 80,
     "n_partitions": 12,
-    "num_generations": 120,
+    "num_generations": 80,
+    # sbx_eta/pm_eta: ótimo do experimento de hiperparâmetros (HV mediano mais alto,
+    # ver results/118bus/experiment_nsga2_ieee118_2026-06-16_03-43-01.csv)
+    "sbx_eta": 20,
+    "pm_eta": 10,
 
     # =========================
     # OpenDSS

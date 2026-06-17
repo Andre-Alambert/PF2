@@ -163,7 +163,7 @@ def main():
 
     # ── Salvar gráfico ───────────────────────────────────────────────────────
     plot_path = results_dir / f"experiment_nsga3_{case_name}_{timestamp}.png"
-    plot_hypervolume_pareto(agg_rows, plot_path)
+    plot_hypervolume_pareto(agg_rows, plot_path, algo_label="NSGA-III")
     print(f"Gráfico salvo: {plot_path}")
 
 

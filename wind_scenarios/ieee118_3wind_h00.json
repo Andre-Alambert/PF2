@@ -1,0 +1,28 @@
+{
+  "hour": 0,
+  "weibull": {
+    "k": 2.0,
+    "lambda": 8.0,
+    "seed": 42
+  },
+  "generators": [
+    {
+      "name": "Wind_B17",
+      "bus": "17_sorenson",
+      "kv": 138.0,
+      "kw_max": 200000.0
+    },
+    {
+      "name": "Wind_B53",
+      "bus": "53_wooster",
+      "kv": 138.0,
+      "kw_max": 200000.0
+    },
+    {
+      "name": "Wind_B118",
+      "bus": "118_whuntngd",
+      "kv": 138.0,
+      "kw_max": 200000.0
+    }
+  ]
+}

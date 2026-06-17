@@ -25,6 +25,8 @@ def main():
     parser.add_argument("case", choices=list(CONFIGS.keys()), help="Caso a executar")
     parser.add_argument("--wind-config", type=Path, metavar="JSON",
                         help="Arquivo JSON com configuração dos geradores eólicos")
+    parser.add_argument("--label", default="base",
+                        help="Subdiretório em results_dir para organizar a rodada (ex.: base, h00, h11, h17)")
     args = parser.parse_args()
 
     CONFIG = dict(CONFIGS[args.case])
@@ -72,7 +74,7 @@ def main():
         print(f"{i+1:>3}  {f[0]:>12.1f}  {f[1]:>10.4f}  {f[2]:>16.3f}")
 
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    results_dir = CONFIG["results_dir"]
+    results_dir = CONFIG["results_dir"] / args.label
     results_dir.mkdir(parents=True, exist_ok=True)
 
     gene_names = get_gene_names(CONFIG)

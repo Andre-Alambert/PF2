@@ -1,5 +1,0 @@
-point,sol_idx,cost_dh,voltage_deviation_pu,emissions_ton_h
-min_cost,6,12838.6392,3.053861,54136.4097
-min_vdev,2,17259.6645,0.072444,65250.5773
-min_emissions,4,15949.3068,2.410280,40625.6117
-compromise,77,14245.4709,0.901773,57014.2472
