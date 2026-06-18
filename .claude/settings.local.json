@@ -16,7 +16,17 @@
       "Bash(Select-Object -First 30)",
       "Bash(tee results-wind/118bus/run_h12_v2.log)",
       "Bash(timeout 60 powershell -Command \"while \\(\\(Get-Content 'C:/Users/andre/AppData/Local/Temp/claude/C--Users-andre-PF2/78777ae4-6fff-4185-9c68-b4b34dfc985e/tasks/bfa48ggd5.output' -Raw\\).Length -lt 200\\) { Start-Sleep 5 }; Get-Content 'C:/Users/andre/AppData/Local/Temp/claude/C--Users-andre-PF2/78777ae4-6fff-4185-9c68-b4b34dfc985e/tasks/bfa48ggd5.output' -TotalCount 20\")",
-      "Bash(sort -t, -k5 -rn results/118bus/experiment_nsga2_ieee118_2026-06-16_03-43-01.csv)"
+      "Bash(sort -t, -k5 -rn results/118bus/experiment_nsga2_ieee118_2026-06-16_03-43-01.csv)",
+      "Bash(ls .venv/Scripts/python.exe)",
+      "Bash(ls .venv/bin/python)",
+      "Bash(./.venv/Scripts/python.exe -c \"import pymoo; print\\('pymoo ok', pymoo.__version__\\)\")",
+      "Bash(tasklist)",
+      "Bash(mv results-wind/118bus/base_run.log results-wind/118bus/base/run.log)",
+      "Bash(mv results-wind/118bus/h00_run.log results-wind/118bus/h00/run.log)",
+      "Bash(mv results-wind/118bus/h11_run.log results-wind/118bus/h11/run.log)",
+      "Bash(mv results-wind/118bus/h17_run.log results-wind/118bus/h17/run.log)",
+      "Bash(./.venv/Scripts/python.exe -m src.compare_wind_results)",
+      "Bash(./.venv/Scripts/python.exe -c ' *)"
     ]
   }
 }

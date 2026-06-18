@@ -1,0 +1,175 @@
+
+NSGA-II | Circuito: master_file.dss
+Pop=80  Gen=80  Objetivos=3 (custo, tensão, emissões)
+Vento    : Wind_B17 @ 17_sorenson | hora=0 | P=200000 kW (100% de 200000 kW)
+Vento    : Wind_B53 @ 53_wooster | hora=0 | P=200000 kW (100% de 200000 kW)
+Vento    : Wind_B118 @ 118_whuntngd | hora=0 | P=200000 kW (100% de 200000 kW)
+
+Iniciando NSGA-II...
+
+  Gen   1 | custo_min= 12461.7 $/h | vdev_min=0.4789 pu | emit_min=34147.379 ton/h | factíveis=12/80
+  Gen   2 | custo_min= 12461.7 $/h | vdev_min=0.4056 pu | emit_min=31660.245 ton/h | factíveis=22/80
+  Gen   3 | custo_min= 11208.0 $/h | vdev_min=0.4056 pu | emit_min=31660.245 ton/h | factíveis=53/80
+  Gen   4 | custo_min= 11145.0 $/h | vdev_min=0.2732 pu | emit_min=31660.245 ton/h | factíveis=75/80
+  Gen   5 | custo_min= 11145.0 $/h | vdev_min=0.2732 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen   6 | custo_min= 11145.0 $/h | vdev_min=0.2732 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen   7 | custo_min= 11145.0 $/h | vdev_min=0.2732 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen   8 | custo_min= 11145.0 $/h | vdev_min=0.2245 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen   9 | custo_min= 11145.0 $/h | vdev_min=0.2245 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen  10 | custo_min= 11145.0 $/h | vdev_min=0.2245 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen  11 | custo_min= 11145.0 $/h | vdev_min=0.2245 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen  12 | custo_min= 11145.0 $/h | vdev_min=0.2245 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen  13 | custo_min= 11145.0 $/h | vdev_min=0.2245 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen  14 | custo_min= 11145.0 $/h | vdev_min=0.2245 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen  15 | custo_min= 11066.1 $/h | vdev_min=0.1709 pu | emit_min=31660.245 ton/h | factíveis=80/80
+  Gen  16 | custo_min= 11066.1 $/h | vdev_min=0.1571 pu | emit_min=30488.397 ton/h | factíveis=80/80
+  Gen  17 | custo_min= 11066.1 $/h | vdev_min=0.1571 pu | emit_min=30488.397 ton/h | factíveis=80/80
+  Gen  18 | custo_min= 11066.1 $/h | vdev_min=0.1571 pu | emit_min=30334.861 ton/h | factíveis=80/80
+  Gen  19 | custo_min= 11066.1 $/h | vdev_min=0.1571 pu | emit_min=30334.861 ton/h | factíveis=80/80
+  Gen  20 | custo_min= 11066.1 $/h | vdev_min=0.1571 pu | emit_min=30006.484 ton/h | factíveis=80/80
+  Gen  21 | custo_min= 11066.1 $/h | vdev_min=0.1571 pu | emit_min=30006.484 ton/h | factíveis=80/80
+  Gen  22 | custo_min= 11064.1 $/h | vdev_min=0.1418 pu | emit_min=30006.484 ton/h | factíveis=80/80
+  Gen  23 | custo_min= 11063.4 $/h | vdev_min=0.1418 pu | emit_min=30006.484 ton/h | factíveis=80/80
+  Gen  24 | custo_min= 11063.4 $/h | vdev_min=0.1418 pu | emit_min=29840.892 ton/h | factíveis=80/80
+  Gen  25 | custo_min= 11050.2 $/h | vdev_min=0.1418 pu | emit_min=29840.892 ton/h | factíveis=80/80
+  Gen  26 | custo_min= 10934.0 $/h | vdev_min=0.1418 pu | emit_min=29840.892 ton/h | factíveis=80/80
+  Gen  27 | custo_min= 10432.6 $/h | vdev_min=0.1418 pu | emit_min=29840.892 ton/h | factíveis=80/80
+  Gen  28 | custo_min= 10432.6 $/h | vdev_min=0.1418 pu | emit_min=29840.892 ton/h | factíveis=80/80
+  Gen  29 | custo_min= 10432.6 $/h | vdev_min=0.1418 pu | emit_min=29840.892 ton/h | factíveis=80/80
+  Gen  30 | custo_min= 10330.7 $/h | vdev_min=0.1418 pu | emit_min=29318.704 ton/h | factíveis=80/80
+  Gen  31 | custo_min= 10330.7 $/h | vdev_min=0.1418 pu | emit_min=29318.704 ton/h | factíveis=80/80
+  Gen  32 | custo_min= 10330.7 $/h | vdev_min=0.1418 pu | emit_min=29318.704 ton/h | factíveis=80/80
+  Gen  33 | custo_min= 10330.7 $/h | vdev_min=0.1418 pu | emit_min=29007.432 ton/h | factíveis=80/80
+  Gen  34 | custo_min= 10330.7 $/h | vdev_min=0.1418 pu | emit_min=29007.432 ton/h | factíveis=80/80
+  Gen  35 | custo_min= 10330.7 $/h | vdev_min=0.1418 pu | emit_min=28704.678 ton/h | factíveis=80/80
+  Gen  36 | custo_min= 10289.1 $/h | vdev_min=0.1418 pu | emit_min=28704.678 ton/h | factíveis=80/80
+  Gen  37 | custo_min= 10289.1 $/h | vdev_min=0.1418 pu | emit_min=28704.678 ton/h | factíveis=80/80
+  Gen  38 | custo_min= 10289.1 $/h | vdev_min=0.1418 pu | emit_min=28704.678 ton/h | factíveis=80/80
+  Gen  39 | custo_min= 10289.1 $/h | vdev_min=0.1418 pu | emit_min=28704.678 ton/h | factíveis=80/80
+  Gen  40 | custo_min= 10289.1 $/h | vdev_min=0.1418 pu | emit_min=28704.678 ton/h | factíveis=80/80
+  Gen  41 | custo_min= 10289.1 $/h | vdev_min=0.1292 pu | emit_min=28704.678 ton/h | factíveis=80/80
+  Gen  42 | custo_min= 10289.1 $/h | vdev_min=0.1292 pu | emit_min=28704.678 ton/h | factíveis=80/80
+  Gen  43 | custo_min= 10289.1 $/h | vdev_min=0.1292 pu | emit_min=28704.678 ton/h | factíveis=80/80
+  Gen  44 | custo_min= 10289.1 $/h | vdev_min=0.1292 pu | emit_min=28689.561 ton/h | factíveis=80/80
+  Gen  45 | custo_min= 10289.1 $/h | vdev_min=0.1236 pu | emit_min=28689.561 ton/h | factíveis=80/80
+  Gen  46 | custo_min= 10289.1 $/h | vdev_min=0.1236 pu | emit_min=28689.561 ton/h | factíveis=80/80
+  Gen  47 | custo_min= 10289.1 $/h | vdev_min=0.1139 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  48 | custo_min= 10289.1 $/h | vdev_min=0.1139 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  49 | custo_min= 10289.1 $/h | vdev_min=0.1139 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  50 | custo_min= 10289.1 $/h | vdev_min=0.1139 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  51 | custo_min= 10289.1 $/h | vdev_min=0.1139 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  52 | custo_min= 10289.1 $/h | vdev_min=0.1139 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  53 | custo_min= 10289.1 $/h | vdev_min=0.1139 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  54 | custo_min= 10283.8 $/h | vdev_min=0.1139 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  55 | custo_min= 10283.8 $/h | vdev_min=0.1139 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  56 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  57 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  58 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  59 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28227.751 ton/h | factíveis=80/80
+  Gen  60 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  61 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  62 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  63 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  64 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  65 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  66 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  67 | custo_min= 10283.8 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  68 | custo_min= 10282.3 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  69 | custo_min= 10282.3 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  70 | custo_min= 10282.3 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  71 | custo_min= 10282.3 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  72 | custo_min= 10282.3 $/h | vdev_min=0.0975 pu | emit_min=28186.009 ton/h | factíveis=80/80
+  Gen  73 | custo_min= 10248.9 $/h | vdev_min=0.0975 pu | emit_min=28029.483 ton/h | factíveis=80/80
+  Gen  74 | custo_min= 10248.9 $/h | vdev_min=0.0975 pu | emit_min=28029.483 ton/h | factíveis=80/80
+  Gen  75 | custo_min= 10004.8 $/h | vdev_min=0.0903 pu | emit_min=28029.483 ton/h | factíveis=80/80
+  Gen  76 | custo_min= 10004.8 $/h | vdev_min=0.0903 pu | emit_min=28029.483 ton/h | factíveis=80/80
+  Gen  77 | custo_min= 10004.8 $/h | vdev_min=0.0903 pu | emit_min=28029.483 ton/h | factíveis=80/80
+  Gen  78 | custo_min= 10004.8 $/h | vdev_min=0.0903 pu | emit_min=27963.115 ton/h | factíveis=80/80
+  Gen  79 | custo_min= 10004.8 $/h | vdev_min=0.0903 pu | emit_min=27489.509 ton/h | factíveis=80/80
+  Gen  80 | custo_min= 10004.8 $/h | vdev_min=0.0903 pu | emit_min=27489.509 ton/h | factíveis=80/80
+
+=== FRENTE DE PARETO — 80 soluções ===
+  #   Custo ($/h)   Vdev (pu)  Emissões (ton/h)
+  1       13020.0      2.1542         27489.509
+  2       17534.5      0.2264         64155.214
+  3       15877.4      0.1533         80058.222
+  4       11395.6      3.6584         28519.990
+  5       10004.8      2.9659         43083.278
+  6       17471.7      0.0903         66134.300
+  7       12604.6      0.4022         58363.022
+  8       16864.9      0.1881         67829.082
+  9       10155.5      3.0871         37504.777
+ 10       15137.2      0.2308         41619.621
+ 11       11382.1      1.9800         29613.421
+ 12       10248.9      2.1482         50422.166
+ 13       10357.9      1.8300         52520.929
+ 14       15677.4      0.2070         77801.843
+ 15       14583.0      0.6123         31666.878
+ 16       16725.8      0.2195         70498.694
+ 17       10432.6      2.2808         42586.817
+ 18       10563.7      3.2891         36084.787
+ 19       17076.0      0.1295         71094.608
+ 20       11141.6      0.4967         57224.783
+ 21       17248.7      0.2258         65527.728
+ 22       11763.5      0.4230         53886.480
+ 23       15192.7      0.3447         33614.233
+ 24       13697.4      0.2875         40333.292
+ 25       14543.8      0.2331         42177.134
+ 26       16330.4      0.1993         72615.927
+ 27       13199.4      0.3928         36442.537
+ 28       10510.6      1.7738         46452.666
+ 29       12490.6      0.7078         31308.933
+ 30       11437.1      2.3675         29329.483
+ 31       12170.1      1.0099         32207.645
+ 32       11164.2      0.8989         44538.938
+ 33       10276.4      3.5365         35907.942
+ 34       10617.3      1.6640         45700.676
+ 35       13902.1      0.2819         40879.368
+ 36       10912.9      3.4632         29962.975
+ 37       10844.3      0.8100         48195.332
+ 38       11790.8      2.4896         28106.751
+ 39       13439.5      0.3809         37104.051
+ 40       11962.9      1.3331         33777.775
+ 41       11864.8      0.4609         51108.482
+ 42       14220.7      0.3751         32504.422
+ 43       11228.2      2.5221         30282.054
+ 44       10661.1      3.3403         35853.040
+ 45       11975.0      1.0822         32626.852
+ 46       12296.6      1.1828         30037.550
+ 47       13957.8      0.3394         34341.983
+ 48       10956.4      2.7490         30615.579
+ 49       16608.6      0.1673         72069.621
+ 50       16049.5      0.2206         75331.933
+ 51       11689.0      2.6696         28186.009
+ 52       16036.5      0.1360         78204.763
+ 53       11328.3      1.4031         33094.872
+ 54       11004.6      0.7441         48881.606
+ 55       13037.1      0.9420         28666.127
+ 56       13518.1      0.7601         30100.378
+ 57       15786.6      0.1871         77135.287
+ 58       11138.6      0.5269         57783.433
+ 59       12846.6      1.6185         29130.221
+ 60       10609.7      1.7275         43307.505
+ 61       10972.5      1.2643         37984.571
+ 62       11492.8      2.8412         29178.917
+ 63       16420.8      0.1521         72128.011
+ 64       17456.7      0.0987         65910.974
+ 65       11614.7      3.0464         28685.194
+ 66       14127.5      0.4158         32006.813
+ 67       11020.1      1.2353         39620.930
+ 68       11350.3      2.8696         28961.293
+ 69       10801.3      0.6729         51871.279
+ 70       15844.4      0.1568         79356.234
+ 71       10982.5      2.6190         30807.004
+ 72       10667.8      1.1839         51699.389
+ 73       11563.4      0.8515         35395.892
+ 74       12740.4      1.7358         27610.225
+ 75       10893.4      1.4594         37962.725
+ 76       16087.5      0.2120         75553.991
+ 77       16324.1      0.1639         76209.317
+ 78       11182.4      0.5056         53192.690
+ 79       16252.0      0.1755         75493.428
+ 80       12822.3      0.4252         35081.155
+
+CSV salvo: C:\Users\andre\PF2\results-wind\118bus\h00\pareto_nsga2_ieee118_2026-06-17_21-21-10.csv
+Gráfico salvo: C:\Users\andre\PF2\results-wind\118bus\h00\pareto_nsga2_ieee118_2026-06-17_21-21-10.png
