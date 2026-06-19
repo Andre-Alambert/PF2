@@ -27,7 +27,9 @@
       "Bash(mv results-wind/118bus/h17_run.log results-wind/118bus/h17/run.log)",
       "Bash(./.venv/Scripts/python.exe -m src.compare_wind_results)",
       "Bash(./.venv/Scripts/python.exe -c ' *)",
-      "Bash(./.venv/Scripts/python.exe -m src.analyze_results results-wind/118bus/base/pareto_nsga2_ieee118_2026-06-17_21-20-37.csv --voltage-profile)"
+      "Bash(./.venv/Scripts/python.exe -m src.analyze_results results-wind/118bus/base/pareto_nsga2_ieee118_2026-06-17_21-20-37.csv --voltage-profile)",
+      "Bash(./.venv/Scripts/python.exe *)",
+      "Bash(PYTHONIOENCODING=utf-8 ./.venv/Scripts/python.exe *)"
     ]
   }
 }

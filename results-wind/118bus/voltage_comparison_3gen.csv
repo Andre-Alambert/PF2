@@ -1,0 +1,473 @@
+scenario,bus,voltage_pu
+Base (sem vento),1_riversde,0.955000
+Base (sem vento),2_pokagon,0.971384
+Base (sem vento),3_hickryck,0.967674
+Base (sem vento),4_nwcarlsl,0.998000
+Base (sem vento),5_olive,1.001918
+Base (sem vento),6_kankakee,0.990000
+Base (sem vento),7_jacksnrd,0.989320
+Base (sem vento),8_olive,1.015000
+Base (sem vento),9_bequine,1.043231
+Base (sem vento),10_breed,1.050000
+Base (sem vento),11_southbnd,0.985120
+Base (sem vento),12_twinbrch,0.990000
+Base (sem vento),13_concord,0.968326
+Base (sem vento),14_goshenjt,0.983586
+Base (sem vento),15_ftwayne,0.970000
+Base (sem vento),16_ne,0.983786
+Base (sem vento),17_sorenson,0.994766
+Base (sem vento),18_mckinley,0.973000
+Base (sem vento),19_lincoln,0.963555
+Base (sem vento),20_adams,0.958736
+Base (sem vento),21_jay,0.959615
+Base (sem vento),22_randolph,0.970834
+Base (sem vento),23_collcrnr,1.000688
+Base (sem vento),24_trenton,0.992000
+Base (sem vento),25_tannrsck,1.050000
+Base (sem vento),26_tannrsck,1.015000
+Base (sem vento),27_madison,0.968000
+Base (sem vento),28_mullin,0.961404
+Base (sem vento),29_grant,0.962828
+Base (sem vento),30_sorenson,0.986600
+Base (sem vento),31_deercrk,0.967000
+Base (sem vento),32_delaware,0.964262
+Base (sem vento),33_haviland,0.971650
+Base (sem vento),34_rockhill,0.986047
+Base (sem vento),35_westlima,0.980723
+Base (sem vento),36_sterling,0.980000
+Base (sem vento),37_eastlima,0.992241
+Base (sem vento),38_eastlima,0.963120
+Base (sem vento),39_nwlibrty,0.970516
+Base (sem vento),40_westend,0.970000
+Base (sem vento),41_stiffin,0.966843
+Base (sem vento),42_howard,0.985000
+Base (sem vento),43_skenton,0.978822
+Base (sem vento),44_wmvernon,0.985334
+Base (sem vento),45_nnewark,0.986816
+Base (sem vento),46_wlancst,1.005000
+Base (sem vento),47_crooksvl,1.016197
+Base (sem vento),48_zanesvll,1.020484
+Base (sem vento),49_philo,1.025000
+Base (sem vento),50_wcambrdg,1.000746
+Base (sem vento),51_newcmrst,0.966259
+Base (sem vento),52_scoshoct,0.956152
+Base (sem vento),53_wooster,0.945642
+Base (sem vento),54_torrey,0.955000
+Base (sem vento),55_wagenhls,0.952000
+Base (sem vento),56_sunnysde,0.954000
+Base (sem vento),57_wnwphil1,0.970235
+Base (sem vento),58_wnwphil2,0.958643
+Base (sem vento),59_tidd,0.985000
+Base (sem vento),60_swkammer,0.993161
+Base (sem vento),61_wkammer,0.995000
+Base (sem vento),62_natrium,0.998000
+Base (sem vento),63_tidd,0.968500
+Base (sem vento),64_kammer,0.983515
+Base (sem vento),65_muskngum,1.005000
+Base (sem vento),66_muskngum,1.050000
+Base (sem vento),67_summerfl,1.019895
+Base (sem vento),68_sporn,1.003236
+Base (sem vento),69_sporn,1.035000
+Base (sem vento),70_portsmth,0.984000
+Base (sem vento),71_nportsmt,0.986840
+Base (sem vento),72_hillsbro,0.980000
+Base (sem vento),73_sargents,0.991000
+Base (sem vento),74_bellefnt,0.958000
+Base (sem vento),75_sthpoint,0.966800
+Base (sem vento),76_darrah,0.943000
+Base (sem vento),77_turner,1.006000
+Base (sem vento),78_chemical,1.003344
+Base (sem vento),79_capitlhl,1.009255
+Base (sem vento),80_cabincrk,1.040000
+Base (sem vento),81_kanawha,0.996108
+Base (sem vento),82_logan,0.988587
+Base (sem vento),83_sprigg,0.984365
+Base (sem vento),84_betsylne,0.979685
+Base (sem vento),85_beaverck,0.985000
+Base (sem vento),86_hazard,0.986348
+Base (sem vento),87_pinevlle,1.015000
+Base (sem vento),88_fremont,0.989135
+Base (sem vento),89_clinchrv,1.005000
+Base (sem vento),90_holston,0.985000
+Base (sem vento),91_holstont,0.980000
+Base (sem vento),92_saltvlle,0.992763
+Base (sem vento),93_tazewell,0.987750
+Base (sem vento),94_switchbk,0.990864
+Base (sem vento),95_caldwell,0.981303
+Base (sem vento),96_baileysv,0.993200
+Base (sem vento),97_sundial,1.011352
+Base (sem vento),98_bradley,1.021991
+Base (sem vento),99_hinton,1.010000
+Base (sem vento),100_glenlyn,1.015720
+Base (sem vento),101_wythe,0.992003
+Base (sem vento),102_smythe,0.991219
+Base (sem vento),103_claytor,1.000720
+Base (sem vento),104_hancock,0.971000
+Base (sem vento),105_roanoke,0.965990
+Base (sem vento),106_cloverdl,0.961697
+Base (sem vento),107_reusens,0.952000
+Base (sem vento),108_blaine,0.966537
+Base (sem vento),109_franklin,0.967200
+Base (sem vento),110_fieldale,0.973000
+Base (sem vento),111_danriver,0.980000
+Base (sem vento),112_danville,0.975000
+Base (sem vento),113_deercrk,0.993000
+Base (sem vento),114_wmedford,0.960835
+Base (sem vento),115_medford,0.960678
+Base (sem vento),116_kygercrk,1.005000
+Base (sem vento),117_corey,0.973824
+Base (sem vento),118_whuntngd,0.949060
+"h17 — 2,3% (99 MW)",1_riversde,0.955000
+"h17 — 2,3% (99 MW)",2_pokagon,0.971393
+"h17 — 2,3% (99 MW)",3_hickryck,0.967692
+"h17 — 2,3% (99 MW)",4_nwcarlsl,0.998000
+"h17 — 2,3% (99 MW)",5_olive,1.001983
+"h17 — 2,3% (99 MW)",6_kankakee,0.990000
+"h17 — 2,3% (99 MW)",7_jacksnrd,0.989328
+"h17 — 2,3% (99 MW)",8_olive,1.015000
+"h17 — 2,3% (99 MW)",9_bequine,1.041946
+"h17 — 2,3% (99 MW)",10_breed,1.050000
+"h17 — 2,3% (99 MW)",11_southbnd,0.985076
+"h17 — 2,3% (99 MW)",12_twinbrch,0.990000
+"h17 — 2,3% (99 MW)",13_concord,0.968267
+"h17 — 2,3% (99 MW)",14_goshenjt,0.983572
+"h17 — 2,3% (99 MW)",15_ftwayne,0.970000
+"h17 — 2,3% (99 MW)",16_ne,0.984104
+"h17 — 2,3% (99 MW)",17_sorenson,0.995716
+"h17 — 2,3% (99 MW)",18_mckinley,0.973000
+"h17 — 2,3% (99 MW)",19_lincoln,0.963528
+"h17 — 2,3% (99 MW)",20_adams,0.958347
+"h17 — 2,3% (99 MW)",21_jay,0.959012
+"h17 — 2,3% (99 MW)",22_randolph,0.970085
+"h17 — 2,3% (99 MW)",23_collcrnr,0.999979
+"h17 — 2,3% (99 MW)",24_trenton,0.992000
+"h17 — 2,3% (99 MW)",25_tannrsck,1.050000
+"h17 — 2,3% (99 MW)",26_tannrsck,1.015000
+"h17 — 2,3% (99 MW)",27_madison,0.968000
+"h17 — 2,3% (99 MW)",28_mullin,0.961572
+"h17 — 2,3% (99 MW)",29_grant,0.963147
+"h17 — 2,3% (99 MW)",30_sorenson,0.986581
+"h17 — 2,3% (99 MW)",31_deercrk,0.967000
+"h17 — 2,3% (99 MW)",32_delaware,0.963875
+"h17 — 2,3% (99 MW)",33_haviland,0.971653
+"h17 — 2,3% (99 MW)",34_rockhill,0.986157
+"h17 — 2,3% (99 MW)",35_westlima,0.980750
+"h17 — 2,3% (99 MW)",36_sterling,0.980000
+"h17 — 2,3% (99 MW)",37_eastlima,0.992391
+"h17 — 2,3% (99 MW)",38_eastlima,0.963841
+"h17 — 2,3% (99 MW)",39_nwlibrty,0.970437
+"h17 — 2,3% (99 MW)",40_westend,0.970000
+"h17 — 2,3% (99 MW)",41_stiffin,0.966872
+"h17 — 2,3% (99 MW)",42_howard,0.985000
+"h17 — 2,3% (99 MW)",43_skenton,0.979064
+"h17 — 2,3% (99 MW)",44_wmvernon,0.985996
+"h17 — 2,3% (99 MW)",45_nnewark,0.987773
+"h17 — 2,3% (99 MW)",46_wlancst,1.005000
+"h17 — 2,3% (99 MW)",47_crooksvl,1.017142
+"h17 — 2,3% (99 MW)",48_zanesvll,1.021107
+"h17 — 2,3% (99 MW)",49_philo,1.025000
+"h17 — 2,3% (99 MW)",50_wcambrdg,1.001034
+"h17 — 2,3% (99 MW)",51_newcmrst,0.969585
+"h17 — 2,3% (99 MW)",52_scoshoct,0.961334
+"h17 — 2,3% (99 MW)",53_wooster,0.953532
+"h17 — 2,3% (99 MW)",54_torrey,0.955000
+"h17 — 2,3% (99 MW)",55_wagenhls,0.952000
+"h17 — 2,3% (99 MW)",56_sunnysde,0.954000
+"h17 — 2,3% (99 MW)",57_wnwphil1,0.970533
+"h17 — 2,3% (99 MW)",58_wnwphil2,0.960549
+"h17 — 2,3% (99 MW)",59_tidd,0.985000
+"h17 — 2,3% (99 MW)",60_swkammer,0.993159
+"h17 — 2,3% (99 MW)",61_wkammer,0.995000
+"h17 — 2,3% (99 MW)",62_natrium,0.998000
+"h17 — 2,3% (99 MW)",63_tidd,0.969282
+"h17 — 2,3% (99 MW)",64_kammer,0.984267
+"h17 — 2,3% (99 MW)",65_muskngum,1.005000
+"h17 — 2,3% (99 MW)",66_muskngum,1.050000
+"h17 — 2,3% (99 MW)",67_summerfl,1.019771
+"h17 — 2,3% (99 MW)",68_sporn,1.003309
+"h17 — 2,3% (99 MW)",69_sporn,1.035000
+"h17 — 2,3% (99 MW)",70_portsmth,0.984000
+"h17 — 2,3% (99 MW)",71_nportsmt,0.986860
+"h17 — 2,3% (99 MW)",72_hillsbro,0.980000
+"h17 — 2,3% (99 MW)",73_sargents,0.991000
+"h17 — 2,3% (99 MW)",74_bellefnt,0.959498
+"h17 — 2,3% (99 MW)",75_sthpoint,0.969401
+"h17 — 2,3% (99 MW)",76_darrah,0.943000
+"h17 — 2,3% (99 MW)",77_turner,1.006000
+"h17 — 2,3% (99 MW)",78_chemical,1.003405
+"h17 — 2,3% (99 MW)",79_capitlhl,1.009237
+"h17 — 2,3% (99 MW)",80_cabincrk,1.040000
+"h17 — 2,3% (99 MW)",81_kanawha,0.996874
+"h17 — 2,3% (99 MW)",82_logan,0.990051
+"h17 — 2,3% (99 MW)",83_sprigg,0.986514
+"h17 — 2,3% (99 MW)",84_betsylne,0.980890
+"h17 — 2,3% (99 MW)",85_beaverck,0.985218
+"h17 — 2,3% (99 MW)",86_hazard,0.988814
+"h17 — 2,3% (99 MW)",87_pinevlle,1.015000
+"h17 — 2,3% (99 MW)",88_fremont,0.988639
+"h17 — 2,3% (99 MW)",89_clinchrv,1.005000
+"h17 — 2,3% (99 MW)",90_holston,0.985000
+"h17 — 2,3% (99 MW)",91_holstont,0.980000
+"h17 — 2,3% (99 MW)",92_saltvlle,0.993912
+"h17 — 2,3% (99 MW)",93_tazewell,0.989253
+"h17 — 2,3% (99 MW)",94_switchbk,0.992400
+"h17 — 2,3% (99 MW)",95_caldwell,0.982785
+"h17 — 2,3% (99 MW)",96_baileysv,0.994530
+"h17 — 2,3% (99 MW)",97_sundial,1.011913
+"h17 — 2,3% (99 MW)",98_bradley,1.022692
+"h17 — 2,3% (99 MW)",99_hinton,1.010000
+"h17 — 2,3% (99 MW)",100_glenlyn,1.017000
+"h17 — 2,3% (99 MW)",101_wythe,0.993716
+"h17 — 2,3% (99 MW)",102_smythe,0.992744
+"h17 — 2,3% (99 MW)",103_claytor,1.000432
+"h17 — 2,3% (99 MW)",104_hancock,0.971000
+"h17 — 2,3% (99 MW)",105_roanoke,0.965990
+"h17 — 2,3% (99 MW)",106_cloverdl,0.961787
+"h17 — 2,3% (99 MW)",107_reusens,0.952000
+"h17 — 2,3% (99 MW)",108_blaine,0.966832
+"h17 — 2,3% (99 MW)",109_franklin,0.967482
+"h17 — 2,3% (99 MW)",110_fieldale,0.973000
+"h17 — 2,3% (99 MW)",111_danriver,0.980000
+"h17 — 2,3% (99 MW)",112_danville,0.975000
+"h17 — 2,3% (99 MW)",113_deercrk,0.993000
+"h17 — 2,3% (99 MW)",114_wmedford,0.960605
+"h17 — 2,3% (99 MW)",115_medford,0.960473
+"h17 — 2,3% (99 MW)",116_kygercrk,1.005000
+"h17 — 2,3% (99 MW)",117_corey,0.973824
+"h17 — 2,3% (99 MW)",118_whuntngd,0.953267
+"h11 — 8,4% (357 MW)",1_riversde,0.955000
+"h11 — 8,4% (357 MW)",2_pokagon,0.971356
+"h11 — 8,4% (357 MW)",3_hickryck,0.967613
+"h11 — 8,4% (357 MW)",4_nwcarlsl,0.998000
+"h11 — 8,4% (357 MW)",5_olive,1.001722
+"h11 — 8,4% (357 MW)",6_kankakee,0.990000
+"h11 — 8,4% (357 MW)",7_jacksnrd,0.989292
+"h11 — 8,4% (357 MW)",8_olive,1.015000
+"h11 — 8,4% (357 MW)",9_bequine,1.045473
+"h11 — 8,4% (357 MW)",10_breed,1.050000
+"h11 — 8,4% (357 MW)",11_southbnd,0.985213
+"h11 — 8,4% (357 MW)",12_twinbrch,0.990000
+"h11 — 8,4% (357 MW)",13_concord,0.968439
+"h11 — 8,4% (357 MW)",14_goshenjt,0.983606
+"h11 — 8,4% (357 MW)",15_ftwayne,0.970000
+"h11 — 8,4% (357 MW)",16_ne,0.984278
+"h11 — 8,4% (357 MW)",17_sorenson,0.996736
+"h11 — 8,4% (357 MW)",18_mckinley,0.973000
+"h11 — 8,4% (357 MW)",19_lincoln,0.963662
+"h11 — 8,4% (357 MW)",20_adams,0.959252
+"h11 — 8,4% (357 MW)",21_jay,0.960325
+"h11 — 8,4% (357 MW)",22_randolph,0.971545
+"h11 — 8,4% (357 MW)",23_collcrnr,1.000753
+"h11 — 8,4% (357 MW)",24_trenton,0.992000
+"h11 — 8,4% (357 MW)",25_tannrsck,1.050000
+"h11 — 8,4% (357 MW)",26_tannrsck,1.015000
+"h11 — 8,4% (357 MW)",27_madison,0.968000
+"h11 — 8,4% (357 MW)",28_mullin,0.961389
+"h11 — 8,4% (357 MW)",29_grant,0.962809
+"h11 — 8,4% (357 MW)",30_sorenson,0.988238
+"h11 — 8,4% (357 MW)",31_deercrk,0.967000
+"h11 — 8,4% (357 MW)",32_delaware,0.964469
+"h11 — 8,4% (357 MW)",33_haviland,0.971402
+"h11 — 8,4% (357 MW)",34_rockhill,0.986230
+"h11 — 8,4% (357 MW)",35_westlima,0.980777
+"h11 — 8,4% (357 MW)",36_sterling,0.980000
+"h11 — 8,4% (357 MW)",37_eastlima,0.992547
+"h11 — 8,4% (357 MW)",38_eastlima,0.965314
+"h11 — 8,4% (357 MW)",39_nwlibrty,0.970452
+"h11 — 8,4% (357 MW)",40_westend,0.970000
+"h11 — 8,4% (357 MW)",41_stiffin,0.966878
+"h11 — 8,4% (357 MW)",42_howard,0.985000
+"h11 — 8,4% (357 MW)",43_skenton,0.979576
+"h11 — 8,4% (357 MW)",44_wmvernon,0.986583
+"h11 — 8,4% (357 MW)",45_nnewark,0.987935
+"h11 — 8,4% (357 MW)",46_wlancst,1.005000
+"h11 — 8,4% (357 MW)",47_crooksvl,1.018385
+"h11 — 8,4% (357 MW)",48_zanesvll,1.020620
+"h11 — 8,4% (357 MW)",49_philo,1.025000
+"h11 — 8,4% (357 MW)",50_wcambrdg,1.001659
+"h11 — 8,4% (357 MW)",51_newcmrst,0.975641
+"h11 — 8,4% (357 MW)",52_scoshoct,0.970895
+"h11 — 8,4% (357 MW)",53_wooster,0.969093
+"h11 — 8,4% (357 MW)",54_torrey,0.955000
+"h11 — 8,4% (357 MW)",55_wagenhls,0.952000
+"h11 — 8,4% (357 MW)",56_sunnysde,0.954081
+"h11 — 8,4% (357 MW)",57_wnwphil1,0.971188
+"h11 — 8,4% (357 MW)",58_wnwphil2,0.964043
+"h11 — 8,4% (357 MW)",59_tidd,0.985000
+"h11 — 8,4% (357 MW)",60_swkammer,0.993235
+"h11 — 8,4% (357 MW)",61_wkammer,0.995000
+"h11 — 8,4% (357 MW)",62_natrium,0.998000
+"h11 — 8,4% (357 MW)",63_tidd,0.971242
+"h11 — 8,4% (357 MW)",64_kammer,0.985689
+"h11 — 8,4% (357 MW)",65_muskngum,1.005000
+"h11 — 8,4% (357 MW)",66_muskngum,1.050000
+"h11 — 8,4% (357 MW)",67_summerfl,1.020094
+"h11 — 8,4% (357 MW)",68_sporn,1.002920
+"h11 — 8,4% (357 MW)",69_sporn,1.035000
+"h11 — 8,4% (357 MW)",70_portsmth,0.984345
+"h11 — 8,4% (357 MW)",71_nportsmt,0.987032
+"h11 — 8,4% (357 MW)",72_hillsbro,0.980000
+"h11 — 8,4% (357 MW)",73_sargents,0.991000
+"h11 — 8,4% (357 MW)",74_bellefnt,0.965451
+"h11 — 8,4% (357 MW)",75_sthpoint,0.976896
+"h11 — 8,4% (357 MW)",76_darrah,0.951738
+"h11 — 8,4% (357 MW)",77_turner,1.006000
+"h11 — 8,4% (357 MW)",78_chemical,1.003386
+"h11 — 8,4% (357 MW)",79_capitlhl,1.009246
+"h11 — 8,4% (357 MW)",80_cabincrk,1.040000
+"h11 — 8,4% (357 MW)",81_kanawha,0.995042
+"h11 — 8,4% (357 MW)",82_logan,0.987343
+"h11 — 8,4% (357 MW)",83_sprigg,0.985609
+"h11 — 8,4% (357 MW)",84_betsylne,0.980441
+"h11 — 8,4% (357 MW)",85_beaverck,0.985000
+"h11 — 8,4% (357 MW)",86_hazard,0.988713
+"h11 — 8,4% (357 MW)",87_pinevlle,1.015000
+"h11 — 8,4% (357 MW)",88_fremont,0.989339
+"h11 — 8,4% (357 MW)",89_clinchrv,1.005000
+"h11 — 8,4% (357 MW)",90_holston,0.985000
+"h11 — 8,4% (357 MW)",91_holstont,0.980000
+"h11 — 8,4% (357 MW)",92_saltvlle,0.994032
+"h11 — 8,4% (357 MW)",93_tazewell,0.989083
+"h11 — 8,4% (357 MW)",94_switchbk,0.991612
+"h11 — 8,4% (357 MW)",95_caldwell,0.981397
+"h11 — 8,4% (357 MW)",96_baileysv,0.993006
+"h11 — 8,4% (357 MW)",97_sundial,1.009394
+"h11 — 8,4% (357 MW)",98_bradley,1.020362
+"h11 — 8,4% (357 MW)",99_hinton,1.010000
+"h11 — 8,4% (357 MW)",100_glenlyn,1.017000
+"h11 — 8,4% (357 MW)",101_wythe,0.994119
+"h11 — 8,4% (357 MW)",102_smythe,0.993319
+"h11 — 8,4% (357 MW)",103_claytor,1.000720
+"h11 — 8,4% (357 MW)",104_hancock,0.971000
+"h11 — 8,4% (357 MW)",105_roanoke,0.965990
+"h11 — 8,4% (357 MW)",106_cloverdl,0.961614
+"h11 — 8,4% (357 MW)",107_reusens,0.952000
+"h11 — 8,4% (357 MW)",108_blaine,0.966410
+"h11 — 8,4% (357 MW)",109_franklin,0.967077
+"h11 — 8,4% (357 MW)",110_fieldale,0.973000
+"h11 — 8,4% (357 MW)",111_danriver,0.980000
+"h11 — 8,4% (357 MW)",112_danville,0.975000
+"h11 — 8,4% (357 MW)",113_deercrk,0.993000
+"h11 — 8,4% (357 MW)",114_wmedford,0.960954
+"h11 — 8,4% (357 MW)",115_medford,0.960781
+"h11 — 8,4% (357 MW)",116_kygercrk,1.005000
+"h11 — 8,4% (357 MW)",117_corey,0.973824
+"h11 — 8,4% (357 MW)",118_whuntngd,0.967941
+"h00 — 14,1% (600 MW)",1_riversde,0.955000
+"h00 — 14,1% (600 MW)",2_pokagon,0.971337
+"h00 — 14,1% (600 MW)",3_hickryck,0.967569
+"h00 — 14,1% (600 MW)",4_nwcarlsl,0.998000
+"h00 — 14,1% (600 MW)",5_olive,1.001599
+"h00 — 14,1% (600 MW)",6_kankakee,0.990000
+"h00 — 14,1% (600 MW)",7_jacksnrd,0.989271
+"h00 — 14,1% (600 MW)",8_olive,1.015000
+"h00 — 14,1% (600 MW)",9_bequine,1.045539
+"h00 — 14,1% (600 MW)",10_breed,1.050000
+"h00 — 14,1% (600 MW)",11_southbnd,0.985230
+"h00 — 14,1% (600 MW)",12_twinbrch,0.990000
+"h00 — 14,1% (600 MW)",13_concord,0.968421
+"h00 — 14,1% (600 MW)",14_goshenjt,0.983569
+"h00 — 14,1% (600 MW)",15_ftwayne,0.970000
+"h00 — 14,1% (600 MW)",16_ne,0.984869
+"h00 — 14,1% (600 MW)",17_sorenson,0.998372
+"h00 — 14,1% (600 MW)",18_mckinley,0.973000
+"h00 — 14,1% (600 MW)",19_lincoln,0.963613
+"h00 — 14,1% (600 MW)",20_adams,0.959656
+"h00 — 14,1% (600 MW)",21_jay,0.960951
+"h00 — 14,1% (600 MW)",22_randolph,0.972166
+"h00 — 14,1% (600 MW)",23_collcrnr,1.000581
+"h00 — 14,1% (600 MW)",24_trenton,0.992000
+"h00 — 14,1% (600 MW)",25_tannrsck,1.050000
+"h00 — 14,1% (600 MW)",26_tannrsck,1.015000
+"h00 — 14,1% (600 MW)",27_madison,0.968000
+"h00 — 14,1% (600 MW)",28_mullin,0.961506
+"h00 — 14,1% (600 MW)",29_grant,0.962977
+"h00 — 14,1% (600 MW)",30_sorenson,0.989331
+"h00 — 14,1% (600 MW)",31_deercrk,0.967000
+"h00 — 14,1% (600 MW)",32_delaware,0.964462
+"h00 — 14,1% (600 MW)",33_haviland,0.970845
+"h00 — 14,1% (600 MW)",34_rockhill,0.986052
+"h00 — 14,1% (600 MW)",35_westlima,0.980745
+"h00 — 14,1% (600 MW)",36_sterling,0.980000
+"h00 — 14,1% (600 MW)",37_eastlima,0.992351
+"h00 — 14,1% (600 MW)",38_eastlima,0.966070
+"h00 — 14,1% (600 MW)",39_nwlibrty,0.970323
+"h00 — 14,1% (600 MW)",40_westend,0.970000
+"h00 — 14,1% (600 MW)",41_stiffin,0.966885
+"h00 — 14,1% (600 MW)",42_howard,0.985000
+"h00 — 14,1% (600 MW)",43_skenton,0.979570
+"h00 — 14,1% (600 MW)",44_wmvernon,0.986882
+"h00 — 14,1% (600 MW)",45_nnewark,0.988407
+"h00 — 14,1% (600 MW)",46_wlancst,1.005000
+"h00 — 14,1% (600 MW)",47_crooksvl,1.018952
+"h00 — 14,1% (600 MW)",48_zanesvll,1.020969
+"h00 — 14,1% (600 MW)",49_philo,1.025000
+"h00 — 14,1% (600 MW)",50_wcambrdg,1.001978
+"h00 — 14,1% (600 MW)",51_newcmrst,0.977914
+"h00 — 14,1% (600 MW)",52_scoshoct,0.974850
+"h00 — 14,1% (600 MW)",53_wooster,0.977721
+"h00 — 14,1% (600 MW)",54_torrey,0.955000
+"h00 — 14,1% (600 MW)",55_wagenhls,0.952000
+"h00 — 14,1% (600 MW)",56_sunnysde,0.954288
+"h00 — 14,1% (600 MW)",57_wnwphil1,0.971570
+"h00 — 14,1% (600 MW)",58_wnwphil2,0.965357
+"h00 — 14,1% (600 MW)",59_tidd,0.983799
+"h00 — 14,1% (600 MW)",60_swkammer,0.993122
+"h00 — 14,1% (600 MW)",61_wkammer,0.995000
+"h00 — 14,1% (600 MW)",62_natrium,0.998000
+"h00 — 14,1% (600 MW)",63_tidd,0.970707
+"h00 — 14,1% (600 MW)",64_kammer,0.985666
+"h00 — 14,1% (600 MW)",65_muskngum,1.005000
+"h00 — 14,1% (600 MW)",66_muskngum,1.050000
+"h00 — 14,1% (600 MW)",67_summerfl,1.020129
+"h00 — 14,1% (600 MW)",68_sporn,1.001701
+"h00 — 14,1% (600 MW)",69_sporn,1.035000
+"h00 — 14,1% (600 MW)",70_portsmth,0.986032
+"h00 — 14,1% (600 MW)",71_nportsmt,0.987822
+"h00 — 14,1% (600 MW)",72_hillsbro,0.980000
+"h00 — 14,1% (600 MW)",73_sargents,0.991000
+"h00 — 14,1% (600 MW)",74_bellefnt,0.968195
+"h00 — 14,1% (600 MW)",75_sthpoint,0.979932
+"h00 — 14,1% (600 MW)",76_darrah,0.955878
+"h00 — 14,1% (600 MW)",77_turner,1.006000
+"h00 — 14,1% (600 MW)",78_chemical,1.003148
+"h00 — 14,1% (600 MW)",79_capitlhl,1.009189
+"h00 — 14,1% (600 MW)",80_cabincrk,1.040000
+"h00 — 14,1% (600 MW)",81_kanawha,0.988105
+"h00 — 14,1% (600 MW)",82_logan,0.972973
+"h00 — 14,1% (600 MW)",83_sprigg,0.971367
+"h00 — 14,1% (600 MW)",84_betsylne,0.968344
+"h00 — 14,1% (600 MW)",85_beaverck,0.975651
+"h00 — 14,1% (600 MW)",86_hazard,0.983902
+"h00 — 14,1% (600 MW)",87_pinevlle,1.015000
+"h00 — 14,1% (600 MW)",88_fremont,0.984738
+"h00 — 14,1% (600 MW)",89_clinchrv,1.005000
+"h00 — 14,1% (600 MW)",90_holston,0.985000
+"h00 — 14,1% (600 MW)",91_holstont,0.980000
+"h00 — 14,1% (600 MW)",92_saltvlle,0.991071
+"h00 — 14,1% (600 MW)",93_tazewell,0.981994
+"h00 — 14,1% (600 MW)",94_switchbk,0.983466
+"h00 — 14,1% (600 MW)",95_caldwell,0.970958
+"h00 — 14,1% (600 MW)",96_baileysv,0.981927
+"h00 — 14,1% (600 MW)",97_sundial,1.000756
+"h00 — 14,1% (600 MW)",98_bradley,1.013344
+"h00 — 14,1% (600 MW)",99_hinton,1.010000
+"h00 — 14,1% (600 MW)",100_glenlyn,1.017000
+"h00 — 14,1% (600 MW)",101_wythe,0.991572
+"h00 — 14,1% (600 MW)",102_smythe,0.990249
+"h00 — 14,1% (600 MW)",103_claytor,1.000720
+"h00 — 14,1% (600 MW)",104_hancock,0.971000
+"h00 — 14,1% (600 MW)",105_roanoke,0.965990
+"h00 — 14,1% (600 MW)",106_cloverdl,0.961929
+"h00 — 14,1% (600 MW)",107_reusens,0.952000
+"h00 — 14,1% (600 MW)",108_blaine,0.966604
+"h00 — 14,1% (600 MW)",109_franklin,0.967265
+"h00 — 14,1% (600 MW)",110_fieldale,0.973000
+"h00 — 14,1% (600 MW)",111_danriver,0.980000
+"h00 — 14,1% (600 MW)",112_danville,0.975000
+"h00 — 14,1% (600 MW)",113_deercrk,0.993000
+"h00 — 14,1% (600 MW)",114_wmedford,0.960948
+"h00 — 14,1% (600 MW)",115_medford,0.960775
+"h00 — 14,1% (600 MW)",116_kygercrk,1.005000
+"h00 — 14,1% (600 MW)",117_corey,0.973824
+"h00 — 14,1% (600 MW)",118_whuntngd,0.976949
