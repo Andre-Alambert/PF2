@@ -29,7 +29,19 @@
       "Bash(./.venv/Scripts/python.exe -c ' *)",
       "Bash(./.venv/Scripts/python.exe -m src.analyze_results results-wind/118bus/base/pareto_nsga2_ieee118_2026-06-17_21-20-37.csv --voltage-profile)",
       "Bash(./.venv/Scripts/python.exe *)",
-      "Bash(PYTHONIOENCODING=utf-8 ./.venv/Scripts/python.exe *)"
+      "Bash(PYTHONIOENCODING=utf-8 ./.venv/Scripts/python.exe *)",
+      "WebSearch",
+      "WebFetch(domain:link.springer.com)",
+      "WebFetch(domain:www.researchgate.net)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:www.ijcaonline.org)",
+      "WebFetch(domain:al-roomi.org)",
+      "WebFetch(domain:www.academia.edu)",
+      "WebFetch(domain:www.mdpi.com)",
+      "WebFetch(domain:www.scribd.com)",
+      "WebFetch(domain:ar5iv.labs.arxiv.org)",
+      "WebFetch(domain:www.al-roomi.org)",
+      "WebFetch(domain:research.ijcaonline.org)"
     ]
   }
 }
